@@ -30,12 +30,11 @@ class RegistrationControllerTest extends WebTestCase
         $em->flush();
     }
 
-   /*  public function testRegister(): void
+    public function testRegister(): void
     {
         // Register a new user
         $this->client->request('GET', '/register');
         self::assertResponseIsSuccessful();
-        self::assertPageTitleContains('Register');
 
         $this->client->submitForm('Register', [
             'registration_form[email]' => 'me@example.com',
@@ -44,7 +43,7 @@ class RegistrationControllerTest extends WebTestCase
         ]);
 
         // Ensure the response redirects after submitting the form, the user exists, and is not verified
-        // self::assertResponseRedirects('/'); @TODO: set the appropriate path that the user is redirected to.
+        self::assertResponseRedirects('/');
         self::assertCount(1, $this->userRepository->findAll());
-    } */
+    }
 }

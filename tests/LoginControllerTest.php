@@ -6,43 +6,49 @@ use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 class LoginControllerTest extends WebTestCase
 {
     private KernelBrowser $client;
+   
 
     protected function setUp(): void
     {
         $this->client = static::createClient();
-        $container = static::getContainer();
-        $em = $container->get('doctrine.orm.entity_manager');
-        $userRepository = $em->getRepository(User::class);
+
+        //$container = static::getContainer();
+        //$em = $container->get('doctrine.orm.entity_manager');
+        //$userRepository = $em->getRepository(User::class);
+        //$this->users = $userRepository->findAll();
 
         // Remove any existing users from the test database
-        foreach ($userRepository->findAll() as $user) {
-            $em->remove($user);
-        }
+        //foreach ($userRepository->findAll() as $user) {
+        //  $em->remove($user);
+        //}
 
-        $em->flush();
+        //$em->flush();
 
         // Create a User fixture
         /** @var UserPasswordHasherInterface $passwordHasher */
-        $passwordHasher = $container->get('security.user_password_hasher');
+        //$passwordHasher = $container->get('security.user_password_hasher');
 
-        $user = (new User())->setEmail('email@example.com');
-        $user->setPassword($passwordHasher->hashPassword($user, 'password'));
+        //$user = (new User())->setEmail('email@example.com');
+        //$user->setPassword($passwordHasher->hashPassword($user, 'password'));
 
-        $em->persist($user);
-        $em->flush();
+        //$em->persist($user);
+        //$em->flush();
+
     }
 
-    public function testLogin(): void
+
+    public function testLoginNotValid(): void
     {
         // Denied - Can't login with invalid email address.
         $this->client->request('GET', '/login');
         self::assertResponseIsSuccessful();
 
-        $this->client->submitForm('Sign in', [
+        $this->client->submitForm('Log in', [
             '_username' => 'doesNotExist@example.com',
             '_password' => 'password',
         ]);
@@ -52,12 +58,14 @@ class LoginControllerTest extends WebTestCase
 
         // Ensure we do not reveal if the user exists or not.
         self::assertSelectorTextContains('.alert-danger', 'Invalid credentials.');
-
+    }
+    public function testLoginWrongPassword(): void
+    {
         // Denied - Can't login with invalid password.
         $this->client->request('GET', '/login');
         self::assertResponseIsSuccessful();
 
-        $this->client->submitForm('Sign in', [
+        $this->client->submitForm('Log in', [
             '_username' => 'email@example.com',
             '_password' => 'bad-password',
         ]);
@@ -67,11 +75,55 @@ class LoginControllerTest extends WebTestCase
 
         // Ensure we do not reveal the user exists but the password is wrong.
         self::assertSelectorTextContains('.alert-danger', 'Invalid credentials.');
+    }
+
+    public static function userProvider(): array
+    {
+        return [
+            ['email' => 'alice.smith@example.com', 'password' => 'a1b2c3d4'],
+            ['email' => 'bob.jones@example.com', 'password' => 'b2c3d4e5'],
+            ['email' => 'charlie.brown@example.com', 'password' => 'c3d4e5f6'],
+            ['email' => 'diana.williams@example.com', 'password' => 'd4e5f6g7'],
+            ['email' => 'edward.johnson@example.com', 'password' => 'e5f6g7h8'],
+            ['email' => 'fiona.white@example.com', 'password' => 'f6g7h8i9'],
+            ['email' => 'george.green@example.com', 'password' => 'g7h8i9j0'],
+            ['email' => 'hannah.martin@example.com', 'password' => 'h8i9j0k1'],
+            ['email' => 'ian.davis@example.com', 'password' => 'i9j0k1l2'],
+            ['email' => 'julia.miller@example.com', 'password' => 'j0k1l2m3'],
+            ['email' => 'kevin.brown@example.com', 'password' => 'k1l2m3n4'],
+            ['email' => 'linda.moore@example.com', 'password' => 'l2m3n4o5'],
+            ['email' => 'michael.clark@example.com', 'password' => 'm3n4o5p6'],
+            ['email' => 'nina.hall@example.com', 'password' => 'n4o5p6q7'],
+            ['email' => 'oliver.king@example.com', 'password' => 'o5p6q7r8'],
+            ['email' => 'paul.lewis@example.com', 'password' => 'p6q7r8s9'],
+            ['email' => 'queen.robinson@example.com', 'password' => 'q7r8s9t0'],
+            ['email' => 'rachel.walker@example.com', 'password' => 'r8s9t0u1'],
+            ['email' => 'sam.thompson@example.com', 'password' => 's9t0u1v2'],
+            ['email' => 'tina.scott@example.com', 'password' => 't0u1v2w3'],
+            ['email' => 'ursula.young@example.com', 'password' => 'u1v2w3x4'],
+            ['email' => 'victor.adams@example.com', 'password' => 'v2w3x4y5'],
+            ['email' => 'wendy.baker@example.com', 'password' => 'w3x4y5z6'],
+            ['email' => 'xander.carter@example.com', 'password' => 'x4y5z6a7'],
+            ['email' => 'yvonne.davis@example.com', 'password' => 'y5z6a7b8'],
+            ['email' => 'zach.evans@example.com', 'password' => 'z6a7b8c9'],
+            ['email' => 'aaron.flores@example.com', 'password' => 'a7b8c9d0'],
+            ['email' => 'brenda.garcia@example.com', 'password' => 'b8c9d0e1'],
+            ['email' => 'carl.harris@example.com', 'password' => 'c9d0e1f2'],
+            ['email' => 'diana.lee@example.com', 'password' => 'd0e1f2g3'],
+            ['email' => 'ethan.martin@example.com', 'password' => 'e1f2g3h4'],
+        ];
+    }
+    /**
+     * @dataProvider userProvider
+     */
+    public function testLoginValid(string $email, string $password): void
+    {
 
         // Success - Login with valid credentials is allowed.
-        $this->client->submitForm('Sign in', [
-            '_username' => 'email@example.com',
-            '_password' => 'password',
+        $this->client->request('GET', '/login');
+        $this->client->submitForm('Log in', [
+            '_username' => $email,
+            '_password' => $password
         ]);
 
         self::assertResponseRedirects('/');
