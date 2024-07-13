@@ -7,6 +7,8 @@ use Doctrine\ORM\EntityManager;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
+// !!! A fixtures:load must be made before running the tests since the tests are based on checking if dummy users in the fixtures can use the login feature properly
+
 class RegistrationControllerTest extends WebTestCase
 {
     private KernelBrowser $client;
