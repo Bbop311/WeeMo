@@ -7,6 +7,8 @@ use Doctrine\ORM\EntityManager;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
+// !!! A fixtures:load must be made before running the tests since the tests are based on checking if dummy users in the fixtures can use the login feature properly
+
 class RegistrationControllerTest extends WebTestCase
 {
     private KernelBrowser $client;
@@ -30,12 +32,11 @@ class RegistrationControllerTest extends WebTestCase
         $em->flush();
     }
 
-   /*  public function testRegister(): void
+    public function testRegister(): void
     {
         // Register a new user
         $this->client->request('GET', '/register');
         self::assertResponseIsSuccessful();
-        self::assertPageTitleContains('Register');
 
         $this->client->submitForm('Register', [
             'registration_form[email]' => 'me@example.com',
@@ -44,7 +45,7 @@ class RegistrationControllerTest extends WebTestCase
         ]);
 
         // Ensure the response redirects after submitting the form, the user exists, and is not verified
-        // self::assertResponseRedirects('/'); @TODO: set the appropriate path that the user is redirected to.
+        self::assertResponseRedirects('/');
         self::assertCount(1, $this->userRepository->findAll());
-    } */
+    }
 }
