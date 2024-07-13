@@ -24,11 +24,11 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `paris_valeur_fonciere`
+-- Structure de la table `property`
 --
-
-DROP TABLE IF EXISTS `paris_valeur_fonciere`;
-CREATE TABLE IF NOT EXISTS `paris_valeur_fonciere` (
+/* 
+DROP TABLE IF EXISTS `property`;
+CREATE TABLE IF NOT EXISTS `property` (
   `id` int NOT NULL AUTO_INCREMENT,
   `date_mutation` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   `nature_mutation` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
@@ -43,20 +43,20 @@ CREATE TABLE IF NOT EXISTS `paris_valeur_fonciere` (
   `code_departement` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   `code_commune` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   `section` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
-  `nb_ lots` int DEFAULT NULL,
+  `nb_lots` int DEFAULT NULL,
   `code_type_local` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   `type_local` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   `surface_reelle_bati` double DEFAULT NULL,
   `nb_pieces` int DEFAULT NULL,
   `surface_terrain` double DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=32681 DEFAULT CHARSET=utf8mb3;
+) ENGINE=MyISAM AUTO_INCREMENT=32681 DEFAULT CHARSET=utf8mb3; */
 
 --
--- Déchargement des données de la table `paris_valeur_fonciere`
+-- Déchargement des données de la table `property`
 --
 
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (1, '04/01/2023', 'Vente', 140000, '178', '', 'RUE', '2387', 'DE COURCELLES', '75017', 'PARIS 17', '75', '117', 'BG', 2, '2', 'Appartement', 18, 1, 0),
 (2, '05/01/2023', 'Vente', 400000, '12', '', 'RUE', '9508', 'TURGOT', '75009', 'PARIS 09', '75', '109', 'BD', 1, '2', 'Appartement', 43, 1, 0),
 (3, '03/01/2023', 'Vente', 295000, '18', '', 'RUE', '3246', 'EMILE LEVEL', '75017', 'PARIS 17', '75', '117', 'DG', 2, '2', 'Appartement', 28, 2, 0),
@@ -392,7 +392,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (408, '24/01/2023', 'Vente', 583000, '43', '', 'RUE', '8678', 'ST LOUIS EN L ILE', '75004', 'PARIS 04', '75', '104', 'AV', 2, '2', 'Appartement', 60, 3, 0),
 (409, '06/01/2023', 'Vente', 260000, '82', '', 'RUE', '1723', 'CHAMPIONNET', '75018', 'PARIS 18', '75', '118', 'BD', 1, '2', 'Appartement', 25, 2, 0),
 (410, '24/01/2023', 'Vente', 441458, '42', '', 'RUE', '0131', 'ALBERT THOMAS', '75010', 'PARIS 10', '75', '110', 'BF', 2, '2', 'Appartement', 42, 2, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (411, '10/01/2023', 'Vente', 285000, '108', '', 'RUE', '6918', 'ORDENER', '75018', 'PARIS 18', '75', '118', 'BH', 2, '2', 'Appartement', 42, 2, 0),
 (412, '06/01/2023', 'Vente', 881720, '237', '', 'RUE', '8694', 'SAINT MARTIN', '75003', 'PARIS 03', '75', '103', 'AD', 2, '2', 'Appartement', 67, 4, 0),
 (413, '24/01/2023', 'Vente', 2000000, '29', '', 'RUE', '2543', 'DANIELLE CASANOVA', '75001', 'PARIS 01', '75', '101', 'AZ', 3, '2', 'Appartement', 126, 5, 0),
@@ -727,7 +727,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (831, '31/01/2023', 'Vente', 480000, '2', '', 'RUE', '0976', 'BIOT', '75017', 'PARIS 17', '75', '117', 'CM', 1, '2', 'Appartement', 46, 1, 0),
 (832, '27/01/2023', 'Vente', 347000, '4', '', 'RUE', '0531', 'AUDRAN', '75018', 'PARIS 18', '75', '118', 'AS', 1, '2', 'Appartement', 31, 2, 0),
 (833, '24/01/2023', 'Vente', 683000, '83', '', 'RUE', '9704', 'DE LA VERRERIE', '75004', 'PARIS 04', '75', '104', 'AD', 2, '2', 'Appartement', 50, 2, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (834, '31/01/2023', 'Vente', 226800, '5', '', 'RUE', '6566', 'MORNAY', '75004', 'PARIS 04', '75', '104', 'AS', 4, '2', 'Appartement', 29, 1, 0),
 (835, '31/01/2023', 'Vente', 273151, '12', '', 'RUE', '9064', 'SQUARE CARPEAUX', '75018', 'PARIS 18', '75', '118', 'AI', 2, '2', 'Appartement', 23, 1, 0),
 (836, '03/02/2023', 'Vente', 268000, '69', '', 'RUE', '7785', 'DES PRAIRIES', '75020', 'PARIS 20', '75', '120', 'CL', 2, '2', 'Appartement', 29, 1, 0),
@@ -1059,7 +1059,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (1214, '26/01/2023', 'Vente', 740025, '47', '', 'RUE', '4376', 'GUERSANT', '75017', 'PARIS 17', '75', '117', 'AR', 2, '2', 'Appartement', 68, 2, 0),
 (1215, '24/01/2023', 'Vente', 334500, '15', '', 'RUE', '4794', 'JACQUES KABLE', '75018', 'PARIS 18', '75', '118', 'DF', 1, '2', 'Appartement', 42, 3, 0),
 (1216, '01/02/2023', 'Vente', 569700, '3', '', 'RUE', '8845', 'SAUSSIER LEROY', '75017', 'PARIS 17', '75', '117', 'AL', 1, '2', 'Appartement', 49, 2, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (1217, '07/02/2023', 'Vente', 850000, '23', '', 'RUE', '0020', 'DES ABBESSES', '75018', 'PARIS 18', '75', '118', 'AR', 1, '2', 'Appartement', 72, 2, 0),
 (1221, '16/01/2023', 'Vente', 302000, '17', '', 'RUE', '4947', 'JEAN ROBERT', '75018', 'PARIS 18', '75', '118', 'CK', 2, '2', 'Appartement', 29, 2, 0),
 (1222, '31/01/2023', 'Vente', 795210, '8', '', 'RUE', '8606', 'SAINT FERDINAND', '75017', 'PARIS 17', '75', '117', 'AE', 1, '2', 'Appartement', 63, 3, 0),
@@ -1391,7 +1391,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (1603, '08/02/2023', 'Vente', 610000, '130', '', 'RUE', '5288', 'LAMARCK', '75018', 'PARIS 18', '75', '118', 'AK', 1, '2', 'Appartement', 54, 3, 0),
 (1604, '25/01/2023', 'Vente', 527500, '30', '', 'RUE', '1625', 'CAVENDISH', '75019', 'PARIS 19', '75', '119', 'EO', 1, '2', 'Appartement', 57, 3, 0),
 (1605, '27/01/2023', 'Vente', 581400, '14', '', 'RUE', '0016', 'DE L ABBE ROUSSELOT', '75017', 'PARIS 17', '75', '117', 'BX', 1, '2', 'Appartement', 72, 2, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (1606, '10/02/2023', 'Vente', 286123.03, '27', '', 'RUE', '8212', 'DE RICHELIEU', '75001', 'PARIS 01', '75', '101', 'AX', 1, '2', 'Appartement', 26, 1, 0),
 (1607, '03/02/2023', 'Vente', 1775000, '9', '', 'RUE', '1269', 'BREMONTIER', '75017', 'PARIS 17', '75', '117', 'BI', 1, '2', 'Appartement', 120, 5, 0),
 (1608, '02/02/2023', 'Vente', 604800, '61', '', 'RUE', '1214', 'BOURSAULT', '75017', 'PARIS 17', '75', '117', 'CQ', 2, '2', 'Appartement', 67, 4, 0),
@@ -1723,7 +1723,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (1999, '23/02/2023', 'Vente', 156000, '56', '', 'RUE', '4617', 'HERMEL', '75018', 'PARIS 18', '75', '118', 'BG', 2, '2', 'Appartement', 17, 1, 0),
 (2000, '24/02/2023', 'Vente', 300620, '2', '', 'RUE', '9834', 'DE LA VILLE NEUVE', '75002', 'PARIS 02', '75', '102', 'AO', 1, '2', 'Appartement', 20, 1, 0),
 (2001, '01/03/2023', 'Vente', 323000, '14', '', 'RUE', '8976', 'SIMART', '75018', 'PARIS 18', '75', '118', 'BJ', 2, '2', 'Appartement', 39, 2, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (2002, '16/02/2023', 'Vente', 224000, '1', '', 'RUE', '7167', 'PAUL LELONG', '75002', 'PARIS 02', '75', '102', 'AJ', 1, '2', 'Appartement', 24, 1, 0),
 (2003, '17/02/2023', 'Vente', 470000, '97', '', 'RUE', '7853', 'DE PRONY', '75017', 'PARIS 17', '75', '117', 'BG', 1, '2', 'Appartement', 34, 2, 0),
 (2004, '15/02/2023', 'Vente', 156000, '65', '', 'RUE', '5995', 'MARCADET', '75018', 'PARIS 18', '75', '118', 'BU', 2, '2', 'Appartement', 18, 1, 0),
@@ -2055,7 +2055,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (2365, '17/02/2023', 'Vente', 275500, '35', '', 'RUE', '5473', 'LEGENDRE', '75017', 'PARIS 17', '75', '117', 'CI', 2, '2', 'Appartement', 25, 1, 0),
 (2366, '03/03/2023', 'Vente', 268500, '54', '', 'RUE', '5273', 'DE LA JONQUIERE', '75017', 'PARIS 17', '75', '117', 'DN', 2, '2', 'Appartement', 32, 2, 0),
 (2367, '15/02/2023', 'Echange', 522500, '111', '', 'AV', '4903', 'JEAN JAURES', '75019', 'PARIS 19', '75', '119', 'AX', 1, '2', 'Appartement', 63, 3, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (2368, '15/02/2023', 'Echange', 197500, '119', '', 'RUE', '5976', 'MANIN', '75019', 'PARIS 19', '75', '119', 'CW', 2, '2', 'Appartement', 26, 1, 0),
 (2369, '02/03/2023', 'Vente', 349400, '18', '', 'RUE', '3370', 'DE L EST', '75020', 'PARIS 20', '75', '120', 'AR', 2, '2', 'Appartement', 41, 2, 0),
 (2370, '24/02/2023', 'Vente', 280000, '39', '', 'RUE', '6671', 'DE NANTES', '75019', 'PARIS 19', '75', '119', 'BH', 1, '2', 'Appartement', 40, 2, 0),
@@ -2388,7 +2388,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (2764, '23/02/2023', 'Vente', 507000, '13', '', 'BD', '9838', 'DE LA VILLETTE', '75010', 'PARIS 10', '75', '110', 'BK', 1, '2', 'Appartement', 45, 2, 0),
 (2765, '14/03/2023', 'Vente', 318720, '36', 'B', 'RUE', '5031', 'JOUFFROY D\'ABBANS', '75017', 'PARIS 17', '75', '117', 'BS', 2, '2', 'Appartement', 29, 2, 0),
 (2766, '01/03/2023', 'Vente', 143000, '178', '', 'RUE', '8699', 'SAINT MAUR', '75010', 'PARIS 10', '75', '110', 'BJ', 1, '2', 'Appartement', 14, 1, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (2767, '13/03/2023', 'Vente', 460000, '45', '', 'RUE', '5315', 'DE LANCRY', '75010', 'PARIS 10', '75', '110', 'BD', 1, '2', 'Appartement', 43, 1, 0),
 (2768, '02/03/2023', 'Vente', 210000, '2', '', 'RUE', '5503', 'LEMERCIER', '75017', 'PARIS 17', '75', '117', 'CN', 1, '2', 'Appartement', 20, 1, 0),
 (2769, '20/03/2023', 'Vente', 590000, '33', '', 'RUE', '2268', 'CONDORCET', '75009', 'PARIS 09', '75', '109', 'BA', 1, '2', 'Appartement', 47, 3, 0),
@@ -2720,7 +2720,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (3198, '10/03/2023', 'Vente', 777000, '176', '', 'RUE', '9191', 'DU TEMPLE', '75003', 'PARIS 03', '75', '103', 'AG', 1, '2', 'Appartement', 62, 3, 0),
 (3199, '10/03/2023', 'Vente', 777000, '176', '', 'RUE', '9191', 'DU TEMPLE', '75003', 'PARIS 03', '75', '103', 'AG', 1, '2', 'Appartement', 62, 3, 0),
 (3200, '01/03/2023', 'Vente', 2265000, '14', '', 'RUE', '8283', 'ROCHAMBEAU', '75009', 'PARIS 09', '75', '109', 'BF', 2, '2', 'Appartement', 189, 6, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (3201, '03/03/2023', 'Vente', 322500, '28', '', 'RUE', '5356', 'DE LA ROCHEFOUCAULD', '75009', 'PARIS 09', '75', '109', 'AH', 3, '2', 'Appartement', 30, 1, 0),
 (3202, '17/03/2023', 'Vente', 2051950, '39', '', 'AV', '5122', 'JUNOT', '75018', 'PARIS 18', '75', '118', 'AU', 5, '2', 'Appartement', 159, 3, 0),
 (3203, '15/03/2023', 'Vente', 625000, '53', '', 'BD', '9838', 'DE LA VILLETTE', '75010', 'PARIS 10', '75', '110', 'BM', 2, '2', 'Appartement', 69, 3, 0),
@@ -3051,7 +3051,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (3574, '03/04/2023', 'Vente', 332500, '21', '', 'RUE', '4293', 'LA GRANGE AUX BELLES', '75010', 'PARIS 10', '75', '110', 'BP', 1, '2', 'Appartement', 29, 1, 0),
 (3576, '10/03/2023', 'Vente', 275000, '19', '', 'RUE', '3417', 'EUGENE JUMIN', '75019', 'PARIS 19', '75', '119', 'CY', 1, '2', 'Appartement', 25, 2, 0),
 (3577, '31/03/2023', 'Vente', 340000, '10', '', 'RUE', '1614', 'CAULAINCOURT', '75018', 'PARIS 18', '75', '118', 'AQ', 1, '2', 'Appartement', 35, 2, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (3578, '28/03/2023', 'Vente', 1300000, '146', '', 'RUE', '6513', 'MONTMARTRE', '75002', 'PARIS 02', '75', '102', 'AI', 2, '2', 'Appartement', 83, 4, 0),
 (3579, '06/03/2023', 'Vente', 280000, '30', '', 'RUE', '8986', 'DU SIMPLON', '75018', 'PARIS 18', '75', '118', 'BW', 3, '2', 'Appartement', 22, 2, 0),
 (3583, '03/04/2023', 'Vente', 1200000, '58', '', 'RUE', '2118', 'DE CLIGNANCOURT', '75018', 'PARIS 18', '75', '118', 'BU', 2, '2', 'Appartement', 92, 4, 0),
@@ -3382,7 +3382,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (3997, '30/03/2023', 'Vente', 713200, '10', '', 'RUE', '8299', 'RODIER', '75009', 'PARIS 09', '75', '109', 'AZ', 2, '2', 'Appartement', 64, 3, 0),
 (3998, '04/04/2023', 'Vente', 510000, '67', '', 'RUE', '8678', 'ST LOUIS EN L ILE', '75004', 'PARIS 04', '75', '104', 'AV', 1, '2', 'Appartement', 40, 1, 0),
 (3999, '05/04/2023', 'Vente', 980000, '74', '', 'RUE', '3516', 'DU FBG SAINT DENIS', '75010', 'PARIS 10', '75', '110', 'AR', 2, '2', 'Appartement', 85, 4, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (4000, '11/04/2023', 'Vente', 315000, '83', '', 'RUE', '3516', 'DU FBG SAINT DENIS', '75010', 'PARIS 10', '75', '110', 'AR', 1, '2', 'Appartement', 29, 2, 0),
 (4001, '12/04/2023', 'Vente', 125000, '59', '', 'RUE', '6918', 'ORDENER', '75018', 'PARIS 18', '75', '118', 'BV', 1, '2', 'Appartement', 10, 1, 0),
 (4002, '20/03/2023', 'Vente', 321170, '24', '', 'RUE', '8218', 'RICHER', '75009', 'PARIS 09', '75', '109', 'AX', 2, '2', 'Appartement', 30, 2, 0),
@@ -3714,7 +3714,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (4393, '21/04/2023', 'Vente', 1091800, '52', '', 'RUE', '6573', 'DE MOSCOU', '75008', 'PARIS 08', '75', '108', 'CE', 2, '2', 'Appartement', 75, 4, 0),
 (4394, '30/03/2023', 'Vente', 1344130, '31', 'B', 'BD', '8692', 'SAINT MARTIN', '75003', 'PARIS 03', '75', '103', 'AB', 3, '2', 'Appartement', 105, 4, 0),
 (4395, '13/04/2023', 'Vente', 800850, '20', '', 'RUE', '5302', 'DE LA MICHODIERE', '75002', 'PARIS 02', '75', '102', 'AC', 1, '2', 'Appartement', 55, 3, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (4396, '19/04/2023', 'Vente', 327500, '26', '', 'RUE', '7043', 'DE PARADIS', '75010', 'PARIS 10', '75', '110', 'AP', 2, '2', 'Appartement', 32, 1, 0),
 (4398, '18/04/2023', 'Vente', 613500, '7', '', 'RUE', '3549', 'DE LA FELICITE', '75017', 'PARIS 17', '75', '117', 'CG', 1, '2', 'Appartement', 72, 3, 0),
 (4399, '18/04/2023', 'Vente', 490000, '48', '', 'RUE', '6147', 'DES MARTYRS', '75009', 'PARIS 09', '75', '109', 'BA', 2, '2', 'Appartement', 35, 2, 0),
@@ -4045,7 +4045,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (4776, '11/04/2023', 'Vente', 220000, '7', '', 'RUE', '5974', 'MANDAR', '75002', 'PARIS 02', '75', '102', 'AK', 2, '2', 'Appartement', 19, 1, 0),
 (4777, '28/04/2023', 'Vente', 1180000, '10', '', 'RUE', '5010', 'JOSEPH DE MAISTRE', '75018', 'PARIS 18', '75', '118', 'AS', 1, '2', 'Appartement', 75, 3, 0),
 (4778, '21/04/2023', 'Vente', 1638000, '4', '', 'RUE', '9711', 'DU VERTBOIS', '75003', 'PARIS 03', '75', '103', 'AF', 5, '2', 'Appartement', 150, 4, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (4779, '20/04/2023', 'Vente', 755000, '162', '', 'RUE', '0626', 'DE BAGNOLET', '75020', 'PARIS 20', '75', '120', 'DC', 1, '2', 'Appartement', 88, 4, 0),
 (4780, '19/04/2023', 'Vente', 790000, '12', '', 'RUE', '4295', 'DE GRANGE BATELIERE', '75009', 'PARIS 09', '75', '109', 'AU', 1, '2', 'Appartement', 66, 3, 0),
 (4781, '24/04/2023', 'Vente', 283600, '14', '', 'RUE', '2153', 'CLOVIS HUGUES', '75019', 'PARIS 19', '75', '119', 'AV', 3, '2', 'Appartement', 34, 1, 0),
@@ -4376,7 +4376,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (5188, '09/05/2023', 'Vente', 197500, '12', '', 'RUE', '9462', 'DES TROIS FRERES', '75018', 'PARIS 18', '75', '118', 'BO', 1, '2', 'Appartement', 16, 1, 0),
 (5189, '26/04/2023', 'Vente', 310000, '15', '', 'RUE', '1129', 'BOUCHARDON', '75010', 'PARIS 10', '75', '110', 'AX', 2, '2', 'Appartement', 37, 2, 0),
 (5190, '11/05/2023', 'Vente', 227000, '27', '', 'RUE', '8792', 'SALNEUVE', '75017', 'PARIS 17', '75', '117', 'CH', 2, '2', 'Appartement', 18, 1, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (5191, '10/05/2023', 'Vente', 715000, '14', '', 'RUE', '5192', 'LABIE', '75017', 'PARIS 17', '75', '117', 'AE', 1, '2', 'Appartement', 64, 3, 0),
 (5193, '10/05/2023', 'Vente', 208800, '18', '', 'RUE', '9298', 'DE THORIGNY', '75003', 'PARIS 03', '75', '103', 'AL', 1, '2', 'Appartement', 16, 1, 0),
 (5194, '10/05/2023', 'Vente', 559050, '11', '', 'RUE', '9549', 'VALENCIENNES', '75010', 'PARIS 10', '75', '110', 'AL', 1, '2', 'Appartement', 58, 3, 0),
@@ -4707,7 +4707,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (5602, '15/05/2023', 'Vente', 1184000, '237', '', 'BD', '7258', 'PEREIRE', '75017', 'PARIS 17', '75', '117', 'AE', 2, '2', 'Appartement', 100, 5, 0),
 (5603, '11/05/2023', 'Vente', 444000, '138', '', 'RUE', '7228', 'PELLEPORT', '75020', 'PARIS 20', '75', '120', 'AS', 2, '2', 'Appartement', 63, 3, 0),
 (5604, '10/05/2023', 'Vente', 100000, '36', '', 'RUE', '2118', 'DE CLIGNANCOURT', '75018', 'PARIS 18', '75', '118', 'BT', 1, '2', 'Appartement', 10, 1, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (5606, '28/04/2023', 'Vente', 970000, '120', '', 'QUAI', '4964', 'DE JEMMAPES', '75010', 'PARIS 10', '75', '110', 'BP', 2, '2', 'Appartement', 84, 4, 0),
 (5607, '11/05/2023', 'Vente', 220000, '3', '', 'RUE', '1396', 'BUZELIN', '75018', 'PARIS 18', '75', '118', 'DA', 1, '2', 'Appartement', 22, 1, 0),
 (5608, '12/05/2023', 'Vente', 183000, '16', '', 'PAS', '5507', 'LEMOINE', '75002', 'PARIS 02', '75', '102', 'AP', 1, '2', 'Appartement', 22, 1, 0),
@@ -5039,7 +5039,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (6013, '03/05/2023', 'Vente', 337000, '20', '', 'RUE', '9628', 'VAUVENARGUES', '75018', 'PARIS 18', '75', '118', 'AI', 2, '2', 'Appartement', 36, 2, 0),
 (6015, '17/05/2023', 'Vente', 1380000, '38', '', 'RUE', '9506', 'DE TURENNE', '75003', 'PARIS 03', '75', '103', 'AN', 7, '2', 'Appartement', 104, 3, 0),
 (6016, '16/05/2023', 'Vente', 130000, '60', '', 'AV', '8718', 'DE SAINT OUEN', '75018', 'PARIS 18', '75', '118', 'AL', 2, '2', 'Appartement', 16, 1, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (6017, '16/05/2023', 'Vente', 624000, '22', '', 'RUE', '7593', 'PONCELET', '75017', 'PARIS 17', '75', '117', 'AL', 2, '2', 'Appartement', 52, 3, 0),
 (6018, '22/05/2023', 'Vente', 163000, '10', '', 'RUE', '3308', 'DE L EQUERRE', '75019', 'PARIS 19', '75', '119', 'EC', 2, '2', 'Appartement', 15, 1, 0),
 (6019, '24/05/2023', 'Vente', 270660, '110', '', 'RUE', '2118', 'DE CLIGNANCOURT', '75018', 'PARIS 18', '75', '118', 'BV', 3, '2', 'Appartement', 29, 2, 0),
@@ -5371,7 +5371,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (6382, '06/06/2023', 'Vente', 180000, '29', '', 'RUE', '5850', 'DE LA LUNE', '75002', 'PARIS 02', '75', '102', 'AO', 1, '2', 'Appartement', 20, 1, 0),
 (6383, '12/05/2023', 'Vente', 122000, '96', '', 'AV', '8718', 'DE SAINT OUEN', '75018', 'PARIS 18', '75', '118', 'AH', 1, '2', 'Appartement', 18, 1, 0),
 (6384, '31/05/2023', 'Vente', 2100000, '44', '', 'AV', '4271', 'DE LA GRANDE ARMEE', '75017', 'PARIS 17', '75', '117', 'AF', 2, '2', 'Appartement', 150, 4, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (6385, '22/05/2023', 'Vente', 1100000, '78', '', 'RUE', '6834', 'NOTRE-DAME DE NAZARETH', '75003', 'PARIS 03', '75', '103', 'AB', 2, '2', 'Appartement', 88, 4, 0),
 (6386, '31/05/2023', 'Vente', 315000, '22', '', 'RUE', '2786', 'DE LA DHUIS', '75020', 'PARIS 20', '75', '120', 'BM', 2, '2', 'Appartement', 40, 2, 0),
 (6387, '08/06/2023', 'Vente', 524850, '9', '', 'RUE', '2597', 'DAUTANCOURT', '75017', 'PARIS 17', '75', '117', 'DL', 2, '2', 'Appartement', 51, 3, 0),
@@ -5703,7 +5703,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (6771, '02/06/2023', 'Vente', 518800, '27', 'B', 'RUE', '5010', 'JOSEPH DE MAISTRE', '75018', 'PARIS 18', '75', '118', 'AJ', 1, '2', 'Appartement', 52, 2, 0),
 (6772, '13/06/2023', 'Vente', 644500, '11', '', 'RUE', '5266', 'DE LAGNY', '75020', 'PARIS 20', '75', '120', 'DV', 2, '2', 'Appartement', 70, 4, 0),
 (6773, '25/05/2023', 'Vente', 286500, '63', '', 'RUE', '6149', 'MARX DORMOY', '75018', 'PARIS 18', '75', '118', 'CK', 1, '2', 'Appartement', 42, 2, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (6774, '15/06/2023', 'Vente', 350100, '39', '', 'RUE', '8603', 'SAINT FARGEAU', '75020', 'PARIS 20', '75', '120', 'AW', 2, '2', 'Appartement', 34, 1, 0),
 (6775, '12/06/2023', 'Vente', 323400, '43', '', 'RUE', '9462', 'DES TROIS FRERES', '75018', 'PARIS 18', '75', '118', 'BO', 1, '2', 'Appartement', 24, 1, 0),
 (6776, '05/06/2023', 'Vente', 635500, '1', '', 'RUE', '3114', 'EDGAR POE', '75019', 'PARIS 19', '75', '119', 'EV', 2, '2', 'Appartement', 95, 3, 0),
@@ -6036,7 +6036,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (7131, '02/06/2023', 'Vente', 165000, '12', '', 'RUE', '4047', 'DU GENERAL HENRYS', '75017', 'PARIS 17', '75', '117', 'DQ', 1, '2', 'Appartement', 19, 1, 0),
 (7132, '16/06/2023', 'Vente', 360000, '3', '', 'PL', '3935', 'GAMBETTA', '75020', 'PARIS 20', '75', '120', 'CK', 1, '2', 'Appartement', 44, 2, 0),
 (7133, '26/06/2023', 'Vente', 180420, '13', '', 'RUE', '3549', 'DE LA FELICITE', '75017', 'PARIS 17', '75', '117', 'CG', 1, '2', 'Appartement', 17, 1, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (7134, '27/06/2023', 'Vente', 340000, '41', '', 'RUE', '2185', 'DU COLISEE', '75008', 'PARIS 08', '75', '108', 'BI', 2, '2', 'Appartement', 30, 1, 0),
 (7136, '27/06/2023', 'Vente', 308700, '7', '', 'PAS', '6423', 'MONCEY', '75017', 'PARIS 17', '75', '117', 'DL', 2, '2', 'Appartement', 29, 2, 0),
 (7137, '21/06/2023', 'Vente', 407000, '33', '', 'RUE', '5683', 'DES LILAS', '75019', 'PARIS 19', '75', '119', 'DK', 2, '2', 'Appartement', 47, 2, 0),
@@ -6367,7 +6367,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (7498, '28/06/2023', 'Vente', 718700, '47', '', 'RUE', '8289', 'DE ROCHECHOUART', '75009', 'PARIS 09', '75', '109', 'BA', 1, '2', 'Appartement', 47, 2, 0),
 (7499, '27/06/2023', 'Vente', 427500, '168', '', 'QUAI', '4964', 'DE JEMMAPES', '75010', 'PARIS 10', '75', '110', 'BU', 2, '2', 'Appartement', 71, 3, 0),
 (7500, '20/06/2023', 'Vente', 269500, '30', '', 'RUE', '6918', 'ORDENER', '75018', 'PARIS 18', '75', '118', 'BV', 1, '2', 'Appartement', 29, 2, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (7501, '27/06/2023', 'Vente', 129450, '67', '', 'RUE', '6980', 'DE L OURCQ', '75019', 'PARIS 19', '75', '119', 'AM', 1, '2', 'Appartement', 18, 1, 0),
 (7502, '29/06/2023', 'Vente', 420000, '55', '', 'RUE', '6236', 'DE MEAUX', '75019', 'PARIS 19', '75', '119', 'AT', 1, '2', 'Appartement', 42, 3, 0),
 (7503, '27/06/2023', 'Vente', 459050, '61', '', 'RUE', '5595', 'LEPIC', '75018', 'PARIS 18', '75', '118', 'AT', 1, '2', 'Appartement', 33, 2, 0),
@@ -6698,7 +6698,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (7948, '04/07/2023', 'Vente', 184000, '8', '', 'RUE', '7899', 'DE LA PY', '75020', 'PARIS 20', '75', '120', 'BK', 1, '2', 'Appartement', 24, 1, 0),
 (7949, '16/06/2023', 'Vente', 520000, '12', '', 'RUE', '1610', 'CAUCHOIS', '75018', 'PARIS 18', '75', '118', 'AQ', 2, '2', 'Appartement', 39, 3, 0),
 (7950, '28/06/2023', 'Vente', 417466, '110', '', 'RUE', '2118', 'DE CLIGNANCOURT', '75018', 'PARIS 18', '75', '118', 'BV', 3, '2', 'Appartement', 55, 3, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (7951, '03/07/2023', 'Vente', 450000, '21', '', 'AV', '6773', 'NIEL', '75017', 'PARIS 17', '75', '117', 'AO', 2, '2', 'Appartement', 45, 2, 0),
 (7952, '05/07/2023', 'Vente', 370000, '15', '', 'PL', '9217', 'DU TERTRE', '75018', 'PARIS 18', '75', '118', 'BN', 2, '2', 'Appartement', 30, 1, 0),
 (7953, '10/07/2023', 'Vente', 1437000, '34', '', 'RUE', '0749', 'BAYEN', '75017', 'PARIS 17', '75', '117', 'AN', 2, '2', 'Appartement', 87, 3, 0),
@@ -7030,7 +7030,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (8438, '26/06/2023', 'Vente', 430000, '13', '', 'RUE', '5012', 'JOSEPH DIJON', '75018', 'PARIS 18', '75', '118', 'BG', 1, '2', 'Appartement', 43, 3, 0),
 (8439, '03/07/2023', 'Vente', 1280000, '11', '', 'RUE', '4318', 'GRENETA', '75003', 'PARIS 03', '75', '103', 'AD', 1, '2', 'Appartement', 100, 4, 0),
 (8440, '07/07/2023', 'Vente', 370000, '55', '', 'RUE', '3512', 'DU FG POISSONNIERE', '75009', 'PARIS 09', '75', '109', 'AX', 1, '2', 'Appartement', 46, 3, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (8441, '03/07/2023', 'Vente', 202000, '40', '', 'RUE', '3992', 'GAUTHEY', '75017', 'PARIS 17', '75', '117', 'DH', 2, '2', 'Appartement', 21, 1, 0),
 (8442, '13/07/2023', 'Vente', 484320, '3', '', 'RUE', '9112', 'DE SUEZ', '75018', 'PARIS 18', '75', '118', 'CG', 1, '2', 'Appartement', 58, 3, 0),
 (8443, '03/07/2023', 'Vente', 215000, '48', '', 'AV', '6172', 'MATHURIN MOREAU', '75019', 'PARIS 19', '75', '119', 'EV', 2, '2', 'Appartement', 26, 1, 0),
@@ -7361,7 +7361,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (8817, '10/07/2023', 'Vente', 170700, '86', '', 'RUE', '7385', 'PHILIPPE DE GIRARD', '75018', 'PARIS 18', '75', '118', 'DD', 2, '2', 'Appartement', 20, 1, 0),
 (8818, '03/07/2023', 'Vente', 860000, '28', '', 'VLA', '5684', 'DES LILAS', '75019', 'PARIS 19', '75', '119', 'DK', 0, '1', 'Maison', 90, 4, 68),
 (8819, '03/07/2023', 'Vente', 320000, '6', '', 'RUE', '7970', 'QUINCAMPOIX', '75004', 'PARIS 04', '75', '104', 'AC', 1, '2', 'Appartement', 30, 1, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (8820, '29/06/2023', 'Vente', 650000, '126', '', 'RUE', '9506', 'DE TURENNE', '75003', 'PARIS 03', '75', '103', 'AH', 2, '2', 'Appartement', 55, 2, 0),
 (8821, '06/07/2023', 'Vente', 840000, '42', '', 'RUE', '2534', 'DAMREMONT', '75018', 'PARIS 18', '75', '118', 'AK', 1, '2', 'Appartement', 78, 3, 0),
 (8822, '21/07/2023', 'Vente', 595000, '142', '', 'RUE', '3516', 'DU FBG SAINT DENIS', '75010', 'PARIS 10', '75', '110', 'AK', 1, '2', 'Appartement', 64, 3, 0),
@@ -7692,7 +7692,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (9235, '28/07/2023', 'Vente', 1175700, '5', '', 'RUE', '1607', 'CATULLE MENDES', '75017', 'PARIS 17', '75', '117', 'AY', 1, '2', 'Appartement', 108, 3, 0),
 (9236, '27/07/2023', 'Vente', 421150, '4', '', 'RUE', '9991', 'YVONNE LE TAC', '75018', 'PARIS 18', '75', '118', 'BO', 7, '2', 'Appartement', 35, 2, 0),
 (9237, '26/07/2023', 'Vente', 1256600, '25', '', 'RUE', '6467', 'DU MONT CENIS', '75018', 'PARIS 18', '75', '118', 'BM', 5, '2', 'Appartement', 180, 5, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (9238, '26/07/2023', 'Vente', 520000, '40', '', 'RUE', '6401', 'DES MOINES', '75017', 'PARIS 17', '75', '117', 'DJ', 2, '2', 'Appartement', 45, 2, 0),
 (9239, '21/07/2023', 'Vente', 270000, '7', '', 'PAS', '1549', 'CARDINET', '75017', 'PARIS 17', '75', '117', 'CG', 2, '2', 'Appartement', 25, 2, 0),
 (9240, '25/07/2023', 'Vente', 469000, '49', '', 'BD', '9838', 'DE LA VILLETTE', '75010', 'PARIS 10', '75', '110', 'BM', 2, '2', 'Appartement', 33, 2, 0),
@@ -8024,7 +8024,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (9739, '26/07/2023', 'Vente', 279000, '3', '', 'RUE', '9700', 'VERON', '75018', 'PARIS 18', '75', '118', 'AR', 1, '2', 'Appartement', 25, 1, 0),
 (9740, '25/07/2023', 'Vente', 200000, '3', '', 'RUE', '8365', 'DES ROSES', '75018', 'PARIS 18', '75', '118', 'CZ', 1, '2', 'Appartement', 25, 1, 0),
 (9741, '21/07/2023', 'Vente', 200000, '78', '', 'RUE', '6270', 'DE MENILMONTANT', '75020', 'PARIS 20', '75', '120', 'BW', 2, '2', 'Appartement', 27, 1, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (9742, '25/07/2023', 'Vente', 945900, '17', '', 'RUE', '1315', 'BROCHANT', '75017', 'PARIS 17', '75', '117', 'CS', 2, '2', 'Appartement', 80, 3, 0),
 (9743, '28/07/2023', 'Vente', 655030, '165', '', 'AV', '9933', 'DE WAGRAM', '75017', 'PARIS 17', '75', '117', 'BT', 2, '2', 'Appartement', 59, 3, 0),
 (9744, '18/07/2023', 'Vente', 520000, '8', '', 'RUE', '9437', 'DE TRETAIGNE', '75018', 'PARIS 18', '75', '118', 'BI', 1, '2', 'Appartement', 44, 3, 0),
@@ -8355,7 +8355,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (10132, '23/08/2023', 'Vente', 139000, '161', '', 'RUE', '7904', 'DES PYRENEES', '75020', 'PARIS 20', '75', '120', 'CO', 1, '2', 'Appartement', 17, 1, 0),
 (10133, '04/08/2023', 'Vente', 420000, '79', '', 'RUE', '8076', 'REBEVAL', '75019', 'PARIS 19', '75', '119', 'EC', 2, '2', 'Appartement', 43, 3, 0),
 (10134, '03/08/2023', 'Vente', 125000, '67', '', 'RUE', '1676', 'DE CHABROL', '75010', 'PARIS 10', '75', '110', 'AO', 1, '2', 'Appartement', 13, 1, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (10135, '31/07/2023', 'Vente', 730000, '59', '', 'RUE', '7330', 'DES PETITES ECURIES', '75010', 'PARIS 10', '75', '110', 'AT', 2, '2', 'Appartement', 70, 3, 0),
 (10136, '23/08/2023', 'Vente', 312000, '6', '', 'VLA', '9329', 'TOCCATA', '75019', 'PARIS 19', '75', '119', 'BB', 1, '2', 'Appartement', 37, 2, 0),
 (10137, '01/08/2023', 'Vente', 280000, '140', '', 'RUE', '3516', 'DU FBG SAINT DENIS', '75010', 'PARIS 10', '75', '110', 'AK', 3, '2', 'Appartement', 41, 3, 0),
@@ -8684,7 +8684,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (10501, '31/08/2023', 'Vente', 685000, '13', '', 'RUE', '6469', 'DU MONT-DORE', '75017', 'PARIS 17', '75', '117', 'CL', 1, '2', 'Appartement', 61, 3, 0),
 (10502, '05/09/2023', 'Vente', 149000, '78', '', 'RUE', '9839', 'DE LA VILLETTE', '75019', 'PARIS 19', '75', '119', 'DZ', 2, '2', 'Appartement', 18, 1, 0),
 (10503, '06/09/2023', 'Vente', 440000, '17', '', 'RUE', '4041', 'DU GENERAL FOY', '75008', 'PARIS 08', '75', '108', 'CH', 2, '2', 'Appartement', 38, 2, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (10504, '04/09/2023', 'Vente', 247000, '18', '', 'RUE', '3417', 'EUGENE JUMIN', '75019', 'PARIS 19', '75', '119', 'CZ', 2, '2', 'Appartement', 35, 3, 0),
 (10505, '30/08/2023', 'Vente', 376250, '10', '', 'RUE', '4641', 'HITTORF', '75010', 'PARIS 10', '75', '110', 'AZ', 1, '2', 'Appartement', 39, 2, 0),
 (10506, '25/08/2023', 'Vente', 484300, '74', '', 'RUE', '2494', 'CURIAL', '75019', 'PARIS 19', '75', '119', 'BN', 2, '2', 'Appartement', 71, 3, 0),
@@ -9013,7 +9013,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (10859, '08/09/2023', 'Vente', 665000, '10', '', 'QUAI', '6109', 'DE LA MARNE', '75019', 'PARIS 19', '75', '119', 'BA', 2, '2', 'Appartement', 65, 3, 0),
 (10860, '18/09/2023', 'Vente', 239000, '12', '', 'RUE', '3293', 'DES ENVIERGES', '75020', 'PARIS 20', '75', '120', 'AC', 1, '2', 'Appartement', 23, 1, 0),
 (10861, '14/09/2023', 'Vente', 670000, '141', '', 'RUE', '7904', 'DES PYRENEES', '75020', 'PARIS 20', '75', '120', 'CX', 2, '2', 'Appartement', 80, 4, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (10862, '14/09/2023', 'Vente', 236360, '5', '', 'RUE', '0339', 'ANDROUET', '75018', 'PARIS 18', '75', '118', 'BO', 1, '2', 'Appartement', 15, 2, 0),
 (10863, '06/09/2023', 'Vente', 2300000, '89', '', 'AV', '9841', 'DE VILLIERS', '75017', 'PARIS 17', '75', '117', 'BH', 1, '2', 'Appartement', 233, 6, 0),
 (10864, '15/09/2023', 'Vente', 194000, '1', '', 'BD', '3642', 'DES FILLES DU CALVAIRE', '75003', 'PARIS 03', '75', '103', 'AK', 2, '2', 'Appartement', 26, 2, 0),
@@ -9343,7 +9343,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (11241, '20/09/2023', 'Vente', 545000, '7', '', 'RUE', '3723', 'DES FONTAINES DU TEMPLE', '75003', 'PARIS 03', '75', '103', 'AE', 2, '2', 'Appartement', 40, 3, 0),
 (11242, '04/09/2023', 'Vente', 303779.4, '118', '', 'AV', '4903', 'JEAN JAURES', '75019', 'PARIS 19', '75', '119', 'CT', 2, '2', 'Appartement', 30, 1, 0),
 (11243, '14/09/2023', 'Vente', 302635, '3', '', 'RUE', '2209', 'DU COLONEL MOLL', '75017', 'PARIS 17', '75', '117', 'AG', 1, '2', 'Appartement', 25, 1, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (11244, '25/09/2023', 'Vente', 279127, '1', '', 'RUE', '5091', 'JULES JOUY', '75018', 'PARIS 18', '75', '118', 'BK', 2, '2', 'Appartement', 26, 1, 0),
 (11245, '01/09/2023', 'Vente', 295000, '52', '', 'RUE', '7314', 'PETIT', '75019', 'PARIS 19', '75', '119', 'CV', 3, '2', 'Appartement', 38, 2, 0),
 (11246, '15/09/2023', 'Vente', 850500, '101', '', 'AV', '2112', 'DE CLICHY', '75017', 'PARIS 17', '75', '117', 'DJ', 2, '2', 'Appartement', 71, 5, 0),
@@ -9673,7 +9673,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (11629, '27/09/2023', 'Vente', 200000, '11', '', 'RUE', '4452', 'DES HAIES', '75020', 'PARIS 20', '75', '120', 'DS', 1, '2', 'Appartement', 22, 1, 0),
 (11630, '22/09/2023', 'Vente', 295000, '62', '', 'RUE', '8076', 'REBEVAL', '75019', 'PARIS 19', '75', '119', 'EC', 1, '2', 'Appartement', 35, 2, 0),
 (11631, '07/09/2023', 'Vente', 120000, '37', '', 'RUE', '5188', 'LABAT', '75018', 'PARIS 18', '75', '118', 'BU', 1, '2', 'Appartement', 13, 1, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (11632, '08/09/2023', 'Vente', 275000, '4', '', 'RUE', '3587', 'FERDINAND FLOCON', '75018', 'PARIS 18', '75', '118', 'BJ', 2, '2', 'Appartement', 29, 2, 0),
 (11633, '28/09/2023', 'Vente', 950000, '7', '', 'RUE', '3510', 'DU FBOURG MONTMARTRE', '75009', 'PARIS 09', '75', '109', 'AU', 4, '2', 'Appartement', 83, 3, 0),
 (11634, '28/09/2023', 'Vente', 153000, '38', '', 'RUE', '6149', 'MARX DORMOY', '75018', 'PARIS 18', '75', '118', 'DD', 1, '2', 'Appartement', 25, 1, 0),
@@ -10003,7 +10003,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (12045, '06/10/2023', 'Vente', 590000, '75', '', 'RUE', '7970', 'QUINCAMPOIX', '75003', 'PARIS 03', '75', '103', 'AU', 2, '2', 'Appartement', 51, 4, 0),
 (12046, '09/10/2023', 'Vente', 635000, '118', '', 'AV', '4903', 'JEAN JAURES', '75019', 'PARIS 19', '75', '119', 'CT', 2, '2', 'Appartement', 100, 5, 0),
 (12048, '12/10/2023', 'Vente', 885000, '6', '', 'RUE', '8782', 'ST VINCENT DE PAUL', '75010', 'PARIS 10', '75', '110', 'AM', 2, '2', 'Appartement', 98, 4, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (12049, '29/09/2023', 'Vente', 270000, '37', '', 'CRS', '9850', 'DE VINCENNES', '75020', 'PARIS 20', '75', '120', 'DV', 1, '2', 'Appartement', 25, 2, 0),
 (12050, '09/10/2023', 'Vente', 470000, '18', '', 'RUE', '9330', 'DE TOCQUEVILLE', '75017', 'PARIS 17', '75', '117', 'BP', 2, '2', 'Appartement', 36, 2, 0),
 (12051, '26/09/2023', 'Vente', 400000, '76', 'B', 'RUE', '2974', 'DUHESME', '75018', 'PARIS 18', '75', '118', 'BH', 2, '2', 'Appartement', 40, 2, 0),
@@ -10334,7 +10334,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (12437, '04/10/2023', 'Vente', 1400000, '6', '', 'RUE', '2909', 'DE DOUAI', '75009', 'PARIS 09', '75', '109', 'AD', 3, '2', 'Appartement', 150, 7, 0),
 (12438, '18/10/2023', 'Vente', 295000, '7', '', 'RUE', '2443', 'DE CRIMEE', '75019', 'PARIS 19', '75', '119', 'DZ', 1, '2', 'Appartement', 35, 1, 0),
 (12440, '11/10/2023', 'Vente', 130000, '83', '', 'RUE', '2990', 'DE DUNKERQUE', '75009', 'PARIS 09', '75', '109', 'BC', 1, '2', 'Appartement', 11, 1, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (12441, '11/10/2023', 'Vente', 130000, '83', '', 'RUE', '2990', 'DE DUNKERQUE', '75009', 'PARIS 09', '75', '109', 'BC', 1, '2', 'Appartement', 10, 1, 0),
 (12442, '06/10/2023', 'Vente', 155000, '50', '', 'RUE', '2610', 'DAVY', '75017', 'PARIS 17', '75', '117', 'DM', 2, '2', 'Appartement', 16, 1, 0),
 (12443, '14/10/2023', 'Vente', 110000, '187', '', 'RUE', '5995', 'MARCADET', '75018', 'PARIS 18', '75', '118', 'AV', 1, '2', 'Appartement', 10, 1, 0),
@@ -10664,7 +10664,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (12841, '06/10/2023', 'Vente', 375000, '20', '', 'RUE', '3522', 'DU FBG ST MARTIN', '75010', 'PARIS 10', '75', '110', 'AX', 1, '2', 'Appartement', 40, 2, 0),
 (12842, '19/10/2023', 'Vente', 185400, '12', '', 'RUE', '4047', 'DU GENERAL HENRYS', '75017', 'PARIS 17', '75', '117', 'DQ', 1, '2', 'Appartement', 24, 1, 0),
 (12843, '27/10/2023', 'Vente', 511600, '30', '', 'RUE', '1438', 'CALMELS PROLONGEE', '75018', 'PARIS 18', '75', '118', 'AX', 1, '2', 'Appartement', 53, 2, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (12844, '30/10/2023', 'Vente', 460000, '61', '', 'RUE', '3516', 'DU FBG SAINT DENIS', '75010', 'PARIS 10', '75', '110', 'AU', 3, '2', 'Appartement', 47, 3, 0),
 (12845, '26/10/2023', 'Vente', 246900, '5', '', 'RUE', '7766', 'POUCHET', '75017', 'PARIS 17', '75', '117', 'DG', 1, '2', 'Appartement', 25, 2, 0),
 (12846, '27/10/2023', 'Vente', 228320, '40', '', 'RUE', '1195', 'BOURET', '75019', 'PARIS 19', '75', '119', 'AV', 2, '2', 'Appartement', 33, 1, 0),
@@ -10993,7 +10993,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (13246, '20/10/2023', 'Vente', 474000, '13', '', 'RUE', '4619', 'HEROLD', '75001', 'PARIS 01', '75', '101', 'AR', 2, '2', 'Appartement', 35, 2, 0),
 (13247, '08/11/2023', 'Vente', 330000, '61', '', 'RUE', '7755', 'DU POTEAU', '75018', 'PARIS 18', '75', '118', 'AX', 2, '2', 'Appartement', 25, 1, 0),
 (13259, '08/11/2023', 'Vente', 140000, '54', '', 'RUE', '5291', 'LAMARTINE', '75009', 'PARIS 09', '75', '109', 'AZ', 1, '2', 'Appartement', 14, 1, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (13260, '14/11/2023', 'Vente', 500000, '6', '', 'RUE', '1434', 'DE CALAIS', '75009', 'PARIS 09', '75', '109', 'AA', 1, '2', 'Appartement', 49, 3, 0),
 (13261, '15/11/2023', 'Vente', 275000, '23', '', 'RUE', '1502', 'DU CAPITAINE LAGACHE', '75017', 'PARIS 17', '75', '117', 'DM', 2, '2', 'Appartement', 38, 2, 0),
 (13262, '10/10/2023', 'Vente', 344000, '6', '', 'PL', '2115', 'DE CLICHY', '75009', 'PARIS 09', '75', '109', 'AA', 1, '2', 'Appartement', 27, 2, 0),
@@ -11323,7 +11323,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (13917, '20/11/2023', 'Vente', 461000, '21', '', 'RUE', '9628', 'VAUVENARGUES', '75018', 'PARIS 18', '75', '118', 'AI', 2, '2', 'Appartement', 49, 2, 0),
 (13918, '16/11/2023', 'Vente', 277000, '59', '', 'AV', '3933', 'GAMBETTA', '75020', 'PARIS 20', '75', '120', 'CE', 1, '2', 'Appartement', 24, 1, 0),
 (13919, '22/11/2023', 'Vente', 378000, '41', '', 'RUE', '8986', 'DU SIMPLON', '75018', 'PARIS 18', '75', '118', 'BF', 1, '2', 'Appartement', 45, 1, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (13920, '09/11/2023', 'Vente', 235000, '4', '', 'RUE', '3390', 'ETIENNE JODELLE', '75018', 'PARIS 18', '75', '118', 'AM', 2, '2', 'Appartement', 33, 2, 0),
 (13921, '07/11/2023', 'Vente', 875000, '89', '', 'RUE', '4497', 'D HAUTEVILLE', '75010', 'PARIS 10', '75', '110', 'AN', 2, '2', 'Appartement', 76, 3, 0),
 (13922, '16/11/2023', 'Vente', 1080000, '6', '', 'RUE', '6034', 'DU MARCHE ST HONORE', '75001', 'PARIS 01', '75', '101', 'AY', 2, '2', 'Appartement', 73, 3, 0),
@@ -11652,7 +11652,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (14355, '10/11/2023', 'Vente', 792950, '30', '', 'RUE', '7810', 'DU PRESSOIR', '75020', 'PARIS 20', '75', '120', 'AN', 2, '2', 'Appartement', 97, 5, 0),
 (14356, '06/12/2023', 'Vente', 844362, '9', '', 'RUE', '4290', 'DU GRAND VENEUR', '75003', 'PARIS 03', '75', '103', 'AM', 1, '2', 'Appartement', 67, 2, 0),
 (14357, '04/12/2023', 'Vente', 320000, '36', '', 'RUE', '4497', 'D HAUTEVILLE', '75010', 'PARIS 10', '75', '110', 'AU', 1, '2', 'Appartement', 31, 1, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (14358, '05/12/2023', 'Vente', 415000, '12', '', 'RUE', '2357', 'DE LA COSSONNERIE', '75001', 'PARIS 01', '75', '101', 'AP', 1, '2', 'Appartement', 45, 2, 0),
 (14360, '24/11/2023', 'Vente', 315000, '187', '', 'RUE', '8525', 'SAINT-DENIS', '75002', 'PARIS 02', '75', '102', 'AM', 2, '2', 'Appartement', 29, 2, 0),
 (14361, '04/12/2023', 'Vente', 1355100, '100', '', 'RUE', '8635', 'SAINT-HONORE', '75001', 'PARIS 01', '75', '101', 'AT', 3, '2', 'Appartement', 98, 2, 0),
@@ -11981,7 +11981,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (14751, '18/12/2023', 'Vente', 183000, '22', '', 'AV', '8718', 'DE SAINT OUEN', '75018', 'PARIS 18', '75', '118', 'AM', 1, '2', 'Appartement', 19, 1, 0),
 (14755, '18/12/2023', 'Vente', 1800000, '2', '', 'RUE', '3820', 'DES FRANCS BOURGEOIS', '75003', 'PARIS 03', '75', '103', 'AN', 1, '2', 'Appartement', 125, 4, 0),
 (14757, '15/12/2023', 'Vente', 192380, '181', '', 'RUE', '8699', 'SAINT MAUR', '75010', 'PARIS 10', '75', '110', 'BJ', 1, '2', 'Appartement', 27, 1, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (14758, '19/12/2023', 'Vente', 280000, '9', '', 'RUE', '7593', 'PONCELET', '75017', 'PARIS 17', '75', '117', 'AL', 1, '2', 'Appartement', 42, 2, 0),
 (14759, '20/12/2023', 'Vente', 460000, '17', '', 'AV', '3933', 'GAMBETTA', '75020', 'PARIS 20', '75', '120', 'BZ', 1, '2', 'Appartement', 45, 2, 0),
 (14760, '19/12/2023', 'Vente', 332500, '15', '', 'RUE', '4973', 'DES JEUNEURS', '75002', 'PARIS 02', '75', '102', 'AI', 1, '2', 'Appartement', 29, 1, 0),
@@ -12310,7 +12310,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (15363, '28/09/2023', 'Vente', 290000, '6', '', 'VLA', '9329', 'TOCCATA', '75019', 'PARIS 19', '75', '119', 'BB', 1, '2', 'Appartement', 36, 1, 0),
 (15364, '29/11/2023', 'Vente', 660000, '58', '', 'BD', '1887', 'DE CHARONNE', '75020', 'PARIS 20', '75', '120', 'DS', 2, '2', 'Appartement', 82, 4, 0),
 (15365, '22/12/2023', 'Vente', 551500, '1', '', 'PL', '8259', 'ROBERT DESNOS', '75010', 'PARIS 10', '75', '110', 'BU', 2, '2', 'Appartement', 72, 3, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (15366, '21/12/2023', 'Vente', 527000, '25', '', 'RUE', '2728', 'DESCOMBES', '75017', 'PARIS 17', '75', '117', 'AX', 1, '2', 'Appartement', 60, 3, 0),
 (15367, '11/12/2023', 'Vente', 564962, '5', '', 'RUE', '4445', 'GUY PATIN', '75010', 'PARIS 10', '75', '110', 'AA', 1, '2', 'Appartement', 76, 4, 0),
 (15368, '13/12/2023', 'Vente', 2022250, '7', '', 'RUE', '6482', 'DE MONTENOTTE', '75017', 'PARIS 17', '75', '117', 'AK', 2, '2', 'Appartement', 144, 5, 0),
@@ -12640,7 +12640,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (15816, '21/12/2023', 'Vente', 170400, '171', '', 'RUE', '5473', 'LEGENDRE', '75017', 'PARIS 17', '75', '117', 'DM', 1, '2', 'Appartement', 24, 2, 0),
 (15817, '22/12/2023', 'Vente', 265000, '176', '', 'BD', '1887', 'DE CHARONNE', '75020', 'PARIS 20', '75', '120', 'CT', 1, '2', 'Appartement', 32, 1, 0),
 (15819, '21/12/2023', 'Vente', 230000, '61', '', 'RUE', '3512', 'DU FG POISSONNIERE', '75009', 'PARIS 09', '75', '109', 'AX', 1, '2', 'Appartement', 19, 1, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (15820, '15/12/2023', 'Vente', 360000, '24', '', 'RUE', '7426', 'PIERRE DEMOURS', '75017', 'PARIS 17', '75', '117', 'AO', 1, '2', 'Appartement', 32, 2, 0),
 (15824, '27/12/2023', 'Vente', 300000, '74', '', 'BD', '2113', 'DE CLICHY', '75018', 'PARIS 18', '75', '118', 'AR', 2, '2', 'Appartement', 26, 3, 0),
 (15826, '21/12/2023', 'Vente', 400000, '3', '', 'BD', '4252', 'GOUVION ST-CYR', '75017', 'PARIS 17', '75', '117', 'AX', 2, '2', 'Appartement', 60, 2, 0),
@@ -12970,7 +12970,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (16192, '09/01/2023', 'Vente', 230000, '68', '', 'RUE', '0679', 'BARRAULT', '75013', 'PARIS 13', '75', '113', 'DL', 2, '2', 'Appartement', 20, 1, 0),
 (16193, '16/01/2023', 'Vente', 347000, '19', '', 'RUE', '8175', 'DE REUILLY', '75012', 'PARIS 12', '75', '112', 'CS', 1, '2', 'Appartement', 36, 2, 0),
 (16194, '09/01/2023', 'Vente', 595880, '17', '', 'RUE', '9599', 'VARET', '75015', 'PARIS 15', '75', '115', 'ES', 1, '2', 'Appartement', 57, 3, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (16195, '06/01/2023', 'Vente', 464450, '140', '', 'RUE', '8513', 'SAINT CHARLES', '75015', 'PARIS 15', '75', '115', 'FV', 2, '2', 'Appartement', 47, 2, 0),
 (16196, '06/01/2023', 'Vente', 297295, '1', '', 'RUE', '4002', 'GAZAN', '75014', 'PARIS 14', '75', '114', 'AY', 1, '2', 'Appartement', 31, 1, 0),
 (16197, '12/01/2023', 'Vente', 1075000, '33', '', 'RUE', '3921', 'GALANDE', '75005', 'PARIS 05', '75', '105', 'BQ', 4, '2', 'Appartement', 84, 2, 0),
@@ -13298,7 +13298,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (16554, '31/01/2023', 'Vente', 876700, '29', '', 'BD', '5081', 'JULES FERRY', '75011', 'PARIS 11', '75', '111', 'AA', 3, '2', 'Appartement', 101, 5, 0),
 (16557, '05/01/2023', 'Vente', 209160, '54', '', 'RUE', '8809', 'DE LA SANTE', '75014', 'PARIS 14', '75', '114', 'AT', 1, '2', 'Appartement', 21, 2, 0),
 (16558, '13/01/2023', 'Vente', 680000, '191', '', 'RUE', '8513', 'SAINT CHARLES', '75015', 'PARIS 15', '75', '115', 'ES', 1, '2', 'Appartement', 68, 4, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (16559, '25/01/2023', 'Vente', 236250, '3', '', 'RUE', '8286', 'ROCHEBRUNE', '75011', 'PARIS 11', '75', '111', 'AZ', 1, '2', 'Appartement', 27, 2, 0),
 (16560, '13/01/2023', 'Vente', 790474, '16', '', 'AV', '4075', 'DU GAL MICHEL BIZOT', '75012', 'PARIS 12', '75', '112', 'BN', 1, '2', 'Appartement', 98, 3, 0),
 (16562, '06/01/2023', 'Vente', 130804, '4', '', 'RUE', '1834', 'CHARLES FOURIER', '75013', 'PARIS 13', '75', '113', 'DW', 1, '2', 'Appartement', 20, 1, 0),
@@ -13627,7 +13627,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (16950, '30/01/2023', 'Vente', 388000, '18', '', 'RUE', '3545', 'FELICIEN DAVID', '75016', 'PARIS 16', '75', '116', 'BZ', 2, '2', 'Appartement', 40, 1, 0),
 (16952, '16/01/2023', 'Vente', 529000, '95', '', 'RUE', '1454', 'CAMBRONNE', '75015', 'PARIS 15', '75', '115', 'CE', 2, '2', 'Appartement', 65, 3, 0),
 (16953, '08/02/2023', 'Vente', 190500, '7', '', 'RUE', '8209', 'RICHARD LENOIR', '75011', 'PARIS 11', '75', '111', 'BX', 1, '2', 'Appartement', 18, 1, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (16954, '18/01/2023', 'Vente', 232000, '12', '', 'RUE', '4661', 'DE L HOTEL COLBERT', '75005', 'PARIS 05', '75', '105', 'BQ', 1, '2', 'Appartement', 26, 1, 0),
 (16955, '26/01/2023', 'Vente', 725000, '57', '', 'RUE', '2513', 'DAGUERRE', '75014', 'PARIS 14', '75', '114', 'CN', 1, '2', 'Appartement', 57, 2, 0),
 (16956, '02/02/2023', 'Vente', 1052850, '69', '', 'RUE', '5401', 'LAURISTON', '75016', 'PARIS 16', '75', '116', 'FK', 2, '2', 'Appartement', 68, 3, 0),
@@ -13956,7 +13956,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (17332, '19/01/2023', 'Vente', 330000, '112', '', 'RUE', '1966', 'DU CHEMIN VERT', '75011', 'PARIS 11', '75', '111', 'BM', 2, '2', 'Appartement', 40, 2, 0),
 (17333, '08/02/2023', 'Vente', 413500, '6', '', 'AV', '4012', 'DU GAL BALFOURIER', '75016', 'PARIS 16', '75', '116', 'AO', 2, '2', 'Appartement', 48, 2, 0),
 (17334, '01/02/2023', 'Vente', 719000, '90', '', 'RUE', '8066', 'RAYNOUARD', '75016', 'PARIS 16', '75', '116', 'CD', 2, '2', 'Appartement', 69, 3, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (17335, '08/02/2023', 'Vente', 466000, '80', '', 'RUE', '8358', 'DE LA ROQUETTE', '75011', 'PARIS 11', '75', '111', 'BY', 1, '2', 'Appartement', 44, 2, 0),
 (17336, '10/02/2023', 'Vente', 830000, '17', '', 'RUE', '5626', 'LETELLIER', '75015', 'PARIS 15', '75', '115', 'DG', 2, '2', 'Appartement', 75, 3, 0),
 (17337, '13/02/2023', 'Vente', 800000, '4', '', 'RUE', '4555', 'HENRI DUCHENE', '75015', 'PARIS 15', '75', '115', 'EF', 1, '2', 'Appartement', 82, 4, 0),
@@ -14285,7 +14285,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (17827, '17/02/2023', 'Vente', 240000, '28', '', 'RUE', '0830', 'DES BELLES FEUILLES', '75016', 'PARIS 16', '75', '116', 'DW', 2, '2', 'Appartement', 29, 2, 0),
 (17828, '20/02/2023', 'Vente', 957500, '134', '', 'BD', '9907', 'VOLTAIRE', '75011', 'PARIS 11', '75', '111', 'BV', 2, '2', 'Appartement', 115, 5, 0),
 (17829, '07/02/2023', 'Vente', 925000, '45', '', 'RUE', '1966', 'DU CHEMIN VERT', '75011', 'PARIS 11', '75', '111', 'BC', 1, '2', 'Appartement', 74, 4, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (17830, '10/02/2023', 'Vente', 360000, '61', '', 'BD', '1333', 'BRUNE', '75014', 'PARIS 14', '75', '114', 'CY', 1, '2', 'Appartement', 42, 2, 0),
 (17831, '08/02/2023', 'Vente', 234300, '15', '', 'RUE', '3366', 'ESQUIROL', '75013', 'PARIS 13', '75', '113', 'AQ', 1, '2', 'Appartement', 25, 2, 0),
 (17832, '17/02/2023', 'Vente', 600000, '1', 'B', 'RUE', '7070', 'PARROT', '75012', 'PARIS 12', '75', '112', 'EN', 2, '2', 'Appartement', 60, 3, 0),
@@ -14614,7 +14614,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (18193, '07/03/2023', 'Vente', 450000, '294', '', 'RUE', '1794', 'DE CHARENTON', '75012', 'PARIS 12', '75', '112', 'DE', 2, '2', 'Appartement', 50, 2, 0),
 (18198, '15/02/2023', 'Vente', 379500, '3', '', 'RUE', '1932', 'DE CHATILLON', '75014', 'PARIS 14', '75', '114', 'CI', 2, '2', 'Appartement', 39, 2, 0),
 (18199, '22/02/2023', 'Vente', 155000, '4', '', 'RUE', '2817', 'DOCTEUR BLANCHE', '75016', 'PARIS 16', '75', '116', 'BN', 1, '2', 'Appartement', 20, 1, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (18200, '03/03/2023', 'Vente', 650000, '140', '', 'RUE', '8513', 'SAINT CHARLES', '75015', 'PARIS 15', '75', '115', 'FV', 2, '2', 'Appartement', 64, 3, 0),
 (18201, '24/02/2023', 'Vente', 590000, '6', '', 'RUE', '5513', 'LENEVEUX', '75014', 'PARIS 14', '75', '114', 'BU', 2, '2', 'Appartement', 57, 3, 0),
 (18202, '02/03/2023', 'Vente', 110000, '102', '', 'RUE', '6693', 'NATIONALE', '75013', 'PARIS 13', '75', '113', 'BB', 1, '2', 'Appartement', 18, 1, 0),
@@ -14943,7 +14943,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (18577, '15/03/2023', 'Vente', 256000, '40', '', 'BD', '0402', 'ARAGO', '75013', 'PARIS 13', '75', '113', 'EL', 1, '2', 'Appartement', 32, 2, 0),
 (18580, '02/03/2023', 'Vente', 230000, '29', '', 'RUE', '2595', 'DAUPHINE', '75006', 'PARIS 06', '75', '106', 'AC', 2, '2', 'Appartement', 16, 1, 0),
 (18581, '28/02/2023', 'Vente', 1281700, '2', '', 'RUE', '3789', 'FRANCISQUE SARCEY', '75016', 'PARIS 16', '75', '116', 'DO', 2, '2', 'Appartement', 114, 3, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (18582, '02/03/2023', 'Vente', 272000, '11', '', 'RUE', '1638', 'CELS', '75014', 'PARIS 14', '75', '114', 'AM', 2, '2', 'Appartement', 23, 2, 0),
 (18583, '21/02/2023', 'Vente', 116000, '3', '', 'RUE', '0608', 'DE L AVRE', '75015', 'PARIS 15', '75', '115', 'DF', 1, '2', 'Appartement', 11, 1, 0),
 (18584, '08/03/2023', 'Vente', 1780000, '6', '', 'RUE', '9355', 'TOULLIER', '75005', 'PARIS 05', '75', '105', 'BJ', 1, '2', 'Appartement', 112, 5, 0),
@@ -15272,7 +15272,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (18985, '21/03/2023', 'Vente', 840000, '33', '', 'RUE', '1154', 'DE BOULAINVILLIERS', '75016', 'PARIS 16', '75', '116', 'CK', 2, '2', 'Appartement', 70, 3, 0),
 (18989, '02/02/2023', 'Vente', 5179080, '115', '', 'RUE', '7587', 'DE LA POMPE', '75016', 'PARIS 16', '75', '116', 'EB', 4, '2', 'Appartement', 313, 8, 0),
 (18992, '14/03/2023', 'Vente', 255750, '27', '', 'RUE', '6530', 'DE MONTREUIL', '75011', 'PARIS 11', '75', '111', 'CT', 1, '2', 'Appartement', 36, 1, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (18993, '08/03/2023', 'Vente', 315000, '19', '', 'RUE', '1040', 'BOBILLOT', '75013', 'PARIS 13', '75', '113', 'EA', 2, '2', 'Appartement', 27, 1, 0),
 (18994, '03/03/2023', 'Vente', 690000, '301', '', 'RUE', '9624', 'DE VAUGIRARD', '75015', 'PARIS 15', '75', '115', 'BS', 2, '2', 'Appartement', 56, 3, 0),
 (18995, '13/03/2023', 'Vente', 349000, '116', '', 'RUE', '1019', 'BLOMET', '75015', 'PARIS 15', '75', '115', 'BT', 2, '2', 'Appartement', 38, 2, 0),
@@ -15601,7 +15601,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (19389, '14/03/2023', 'Vente', 407756.1, '5', '', 'RUE', '5915', 'MAILLARD', '75011', 'PARIS 11', '75', '111', 'BT', 1, '2', 'Appartement', 40, 2, 0),
 (19390, '24/03/2023', 'Vente', 1192500, '24', '', 'AV', '9253', 'THEOPHILE GAUTIER', '75016', 'PARIS 16', '75', '116', 'BZ', 2, '2', 'Appartement', 130, 4, 0),
 (19391, '28/03/2023', 'Vente', 390000, '148', '', 'RUE', '1794', 'DE CHARENTON', '75012', 'PARIS 12', '75', '112', 'HA', 3, '2', 'Appartement', 51, 3, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (19392, '10/03/2023', 'Vente', 378000, '101', '', 'BD', '9907', 'VOLTAIRE', '75011', 'PARIS 11', '75', '111', 'BL', 3, '2', 'Appartement', 34, 1, 0),
 (19393, '02/02/2023', 'Vente', 325000, '61', '', 'RUE', '6858', 'OBERKAMPF', '75011', 'PARIS 11', '75', '111', 'AM', 1, '2', 'Appartement', 32, 2, 0),
 (19394, '03/04/2023', 'Vente', 315000, '26', 'B', 'RUE', '5042', 'JOUVENET', '75016', 'PARIS 16', '75', '116', 'AP', 2, '2', 'Appartement', 26, 1, 0),
@@ -15930,7 +15930,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (19786, '04/04/2023', 'Vente', 1245000, '93', '', 'AV', '4063', 'DU GENERAL LECLERC', '75014', 'PARIS 14', '75', '114', 'BW', 6, '2', 'Appartement', 130, 5, 0),
 (19787, '27/03/2023', 'Vente', 1961835, '2', '', 'SQ', '2449', 'DU CROISIC', '75015', 'PARIS 15', '75', '115', 'CV', 3, '2', 'Appartement', 161, 6, 0),
 (19788, '03/04/2023', 'Vente', 541900, '162', '', 'BD', '2792', 'DIDEROT', '75012', 'PARIS 12', '75', '112', 'CP', 2, '2', 'Appartement', 55, 3, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (19789, '20/03/2023', 'Vente', 935000, '34', '', 'RUE', '2572', 'DAREAU', '75014', 'PARIS 14', '75', '114', 'BP', 2, '2', 'Appartement', 100, 4, 0),
 (19790, '24/03/2023', 'Vente', 815000, '34', '', 'RUE', '7402', 'DE PICPUS', '75012', 'PARIS 12', '75', '112', 'CH', 1, '2', 'Appartement', 91, 6, 0),
 (19791, '05/04/2023', 'Vente', 164500, '63', '', 'BD', '7597', 'PONIATOWSKI', '75012', 'PARIS 12', '75', '112', 'BN', 1, '2', 'Appartement', 21, 2, 0),
@@ -16258,7 +16258,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (20206, '14/04/2023', 'Vente', 497000, '11', '', 'RUE', '5042', 'JOUVENET', '75016', 'PARIS 16', '75', '116', 'AQ', 2, '2', 'Appartement', 54, 3, 0),
 (20208, '03/04/2023', 'Vente', 970000, '9', '', 'RUE', '3225', 'EMILE DUBOIS', '75014', 'PARIS 14', '75', '114', 'BP', 2, '2', 'Appartement', 100, 4, 0),
 (20209, '05/04/2023', 'Vente', 290000, '16', '', 'RUE', '3483', 'FAGON', '75013', 'PARIS 13', '75', '113', 'AX', 2, '2', 'Appartement', 28, 2, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (20210, '31/03/2023', 'Vente', 250000, '301', '', 'RUE', '9624', 'DE VAUGIRARD', '75015', 'PARIS 15', '75', '115', 'BS', 1, '2', 'Appartement', 40, 2, 0),
 (20211, '12/04/2023', 'Vente', 840000, '35', '', 'RUE', '1019', 'BLOMET', '75015', 'PARIS 15', '75', '115', 'CG', 2, '2', 'Appartement', 66, 3, 0),
 (20212, '13/04/2023', 'Vente', 1288000, '5', '', 'SQ', '6629', 'MOZART', '75016', 'PARIS 16', '75', '116', 'CN', 1, '2', 'Appartement', 110, 4, 0),
@@ -16587,7 +16587,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (20600, '21/04/2023', 'Vente', 335000, '1', '', 'RUE', '5542', 'LEON DELAGRANGE', '75015', 'PARIS 15', '75', '115', 'BE', 1, '2', 'Appartement', 42, 2, 0),
 (20601, '21/04/2023', 'Vente', 345000, '14', '', 'RUE', '8970', 'SIDI BRAHIM', '75012', 'PARIS 12', '75', '112', 'BY', 1, '2', 'Appartement', 27, 2, 0),
 (20602, '24/04/2023', 'Vente', 389300, '73', '', 'RUE', '0012', 'DE L ABBE GROULT', '75015', 'PARIS 15', '75', '115', 'BT', 1, '2', 'Appartement', 33, 2, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (20603, '27/04/2023', 'Vente', 970000, '1', '', 'AV', '4209', 'DES GOBELINS', '75005', 'PARIS 05', '75', '105', 'AU', 2, '2', 'Appartement', 68, 3, 0),
 (20604, '04/04/2023', 'Vente', 243000, '13', '', 'RUE', '2057', 'DE LA CITE UNIVERSITAIRE', '75014', 'PARIS 14', '75', '114', 'AZ', 2, '2', 'Appartement', 34, 2, 0),
 (20605, '06/04/2023', 'Vente', 346200, '12', '', 'RUE', '2521', 'DALOU', '75015', 'PARIS 15', '75', '115', 'CS', 1, '2', 'Appartement', 26, 2, 0),
@@ -16916,7 +16916,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (20981, '04/05/2023', 'Vente', 287000, '22', '', 'RUE', '7510', 'DE PLAISANCE', '75014', 'PARIS 14', '75', '114', 'CP', 1, '2', 'Appartement', 28, 1, 0),
 (20982, '14/04/2023', 'Vente', 1030000, '50', '', 'RUE', '7263', 'PERGOLESE', '75016', 'PARIS 16', '75', '116', 'EW', 1, '2', 'Appartement', 94, 4, 0),
 (20983, '13/04/2023', 'Vente', 386000, '5', 'B', 'RUE', '0372', 'ANTOINE BOURDELLE', '75015', 'PARIS 15', '75', '115', 'CP', 2, '2', 'Appartement', 29, 1, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (20984, '18/04/2023', 'Vente', 640000, '243', 'B', 'RUE', '9624', 'DE VAUGIRARD', '75015', 'PARIS 15', '75', '115', 'CH', 2, '2', 'Appartement', 52, 3, 0),
 (20986, '14/04/2023', 'Vente', 901460, '44', '', 'RUE', '6771', 'NICOLO', '75016', 'PARIS 16', '75', '116', 'DL', 3, '2', 'Appartement', 86, 3, 0),
 (20987, '28/04/2023', 'Vente', 2130000, '35', '', 'AV', '1373', 'BUGEAUD', '75016', 'PARIS 16', '75', '116', 'DY', 2, '2', 'Appartement', 150, 5, 0),
@@ -17244,7 +17244,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (21376, '04/05/2023', 'Vente', 123000, '41', '', 'RUE', '2076', 'CLAUDE DECAEN', '75012', 'PARIS 12', '75', '112', 'BP', 1, '2', 'Appartement', 11, 1, 0),
 (21377, '12/05/2023', 'Vente', 835000, '247', '', 'RUE', '9624', 'DE VAUGIRARD', '75015', 'PARIS 15', '75', '115', 'AB', 2, '2', 'Appartement', 72, 3, 0),
 (21378, '09/05/2023', 'Vente', 840000, '124', '', 'BD', '0541', 'AUGUSTE BLANQUI', '75013', 'PARIS 13', '75', '113', 'EJ', 1, '2', 'Appartement', 94, 4, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (21379, '12/05/2023', 'Vente', 150000, '2', '', 'RUE', '4267', 'DE GRANCEY', '75014', 'PARIS 14', '75', '114', 'AN', 1, '2', 'Appartement', 12, 1, 0),
 (21380, '27/04/2023', 'Vente', 160000, '8', '', 'RUE', '7626', 'POPINCOURT', '75011', 'PARIS 11', '75', '111', 'BK', 1, '2', 'Appartement', 25, 1, 0),
 (21381, '27/04/2023', 'Vente', 890000, '31', '', 'RUE', '4002', 'GAZAN', '75014', 'PARIS 14', '75', '114', 'AY', 2, '2', 'Appartement', 70, 2, 0),
@@ -17573,7 +17573,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (21751, '09/05/2023', 'Vente', 550000, '99', '', 'BD', '7597', 'PONIATOWSKI', '75012', 'PARIS 12', '75', '112', 'AX', 0, '2', 'Appartement', 50, 3, 134),
 (21752, '09/05/2023', 'Vente', 550000, '99', '', 'BD', '7597', 'PONIATOWSKI', '75012', 'PARIS 12', '75', '112', 'AX', 0, '2', 'Appartement', 34, 2, 134),
 (21753, '09/05/2023', 'Vente', 550000, '99', '', 'BD', '7597', 'PONIATOWSKI', '75012', 'PARIS 12', '75', '112', 'AX', 0, '2', 'Appartement', 34, 2, 134);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (21754, '16/05/2023', 'Vente', 424000, '73', '', 'AV', '7380', 'PHILIPPE AUGUSTE', '75011', 'PARIS 11', '75', '111', 'CK', 2, '2', 'Appartement', 49, 2, 0),
 (21755, '22/05/2023', 'Vente', 149760, '4', '', 'RUE', '5052', 'JUGE', '75015', 'PARIS 15', '75', '115', 'DK', 1, '2', 'Appartement', 14, 1, 0),
 (21756, '11/05/2023', 'Vente', 390000, '14', '', 'BD', '8174', 'DE REUILLY', '75012', 'PARIS 12', '75', '112', 'CB', 1, '2', 'Appartement', 62, 3, 0),
@@ -17902,7 +17902,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (22149, '01/06/2023', 'Vente', 600000, '34', '', 'RUE', '8061', 'RAYMOND LOSSERAND', '75014', 'PARIS 14', '75', '114', 'DQ', 1, '2', 'Appartement', 61, 3, 0),
 (22150, '15/05/2023', 'Vente', 140000, '56', '', 'RUE', '1154', 'DE BOULAINVILLIERS', '75016', 'PARIS 16', '75', '116', 'CI', 1, '2', 'Appartement', 18, 1, 0),
 (22152, '31/05/2023', 'Vente', 897500, '6', '', 'RUE', '4046', 'DU GENERAL GUILHEM', '75011', 'PARIS 11', '75', '111', 'AY', 2, '2', 'Appartement', 70, 3, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (22153, '05/05/2023', 'Vente', 845000, '100', '', 'RUE', '2300', 'DE LA CONVENTION', '75015', 'PARIS 15', '75', '115', 'EN', 2, '2', 'Appartement', 82, 4, 0),
 (22154, '17/05/2023', 'Vente', 272727, '24', '', 'RUE', '4915', 'JEAN MARIDOR', '75015', 'PARIS 15', '75', '115', 'EU', 2, '2', 'Appartement', 34, 2, 0),
 (22155, '10/05/2023', 'Vente', 211000, '7', '', 'RUE', '4367', 'GUENEGAUD', '75006', 'PARIS 06', '75', '106', 'AC', 1, '2', 'Appartement', 15, 1, 0),
@@ -18231,7 +18231,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (22551, '07/06/2023', 'Vente', 1560000, '125', '', 'AV', '9706', 'DE VERSAILLES', '75016', 'PARIS 16', '75', '116', 'AI', 2, '2', 'Appartement', 159, 5, 0),
 (22552, '31/05/2023', 'Vente', 247000, '6', '', 'RUE', '5283', 'LALO', '75016', 'PARIS 16', '75', '116', 'EV', 1, '2', 'Appartement', 18, 1, 0),
 (22553, '08/06/2023', 'Vente', 2037000, '16', '', 'RUE', '5456', 'LECOURBE', '75015', 'PARIS 15', '75', '115', 'CD', 2, '2', 'Appartement', 138, 5, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (22555, '08/06/2023', 'Vente', 267880, '17', '', 'RUE', '4400', 'GUISARDE', '75006', 'PARIS 06', '75', '106', 'AH', 1, '2', 'Appartement', 18, 1, 0),
 (22556, '05/06/2023', 'Vente', 355200, '97', '', 'AV', '8682', 'DE SAINT-MANDE', '75012', 'PARIS 12', '75', '112', 'AI', 1, '2', 'Appartement', 41, 3, 0),
 (22557, '08/06/2023', 'Vente', 147000, '4', '', 'RUE', '4046', 'DU GENERAL GUILHEM', '75011', 'PARIS 11', '75', '111', 'AY', 2, '2', 'Appartement', 14, 1, 0),
@@ -18561,7 +18561,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (22943, '14/06/2023', 'Vente', 410632, '88', '', 'RUE', '3700', 'DE LA FOLIE MERICOURT', '75011', 'PARIS 11', '75', '111', 'AB', 1, '2', 'Appartement', 39, 2, 0),
 (22944, '14/06/2023', 'Vente', 160000, '124', '', 'BD', '0541', 'AUGUSTE BLANQUI', '75013', 'PARIS 13', '75', '113', 'EJ', 1, '2', 'Appartement', 16, 1, 0),
 (22945, '07/06/2023', 'Vente', 299000, '89', '', 'AV', '4075', 'DU GAL MICHEL BIZOT', '75012', 'PARIS 12', '75', '112', 'AS', 2, '2', 'Appartement', 25, 1, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (22946, '01/06/2023', 'Vente', 380000, '90', '', 'CRS', '9850', 'DE VINCENNES', '75012', 'PARIS 12', '75', '112', 'AI', 2, '2', 'Appartement', 48, 3, 0),
 (22947, '25/05/2023', 'Vente', 410000, '69', '', 'RUE', '2469', 'DE CROULEBARBE', '75013', 'PARIS 13', '75', '113', 'ES', 1, '2', 'Appartement', 34, 2, 0),
 (22948, '24/05/2023', 'Vente', 171350, '26', '', 'RUE', '9919', 'DE VOUILLE', '75015', 'PARIS 15', '75', '115', 'AJ', 1, '2', 'Appartement', 16, 1, 0),
@@ -18890,7 +18890,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (23353, '27/06/2023', 'Vente', 390476, '4', '', 'RUE', '3154', 'EDOUARD QUENU', '75005', 'PARIS 05', '75', '105', 'AX', 1, '2', 'Appartement', 55, 3, 0),
 (23354, '27/06/2023', 'Vente', 390476, '4', '', 'RUE', '3154', 'EDOUARD QUENU', '75005', 'PARIS 05', '75', '105', 'AX', 1, '2', 'Appartement', 34, 2, 0),
 (23355, '16/06/2023', 'Vente', 597750, '204', '', 'AV', '5922', 'DU MAINE', '75014', 'PARIS 14', '75', '114', 'CJ', 2, '2', 'Appartement', 56, 3, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (23356, '09/06/2023', 'Vente', 410000, '65', '', 'RUE', '4171', 'DE GERGOVIE', '75014', 'PARIS 14', '75', '114', 'CQ', 1, '2', 'Appartement', 34, 2, 0),
 (23357, '14/06/2023', 'Vente', 560000, '50', '', 'RUE', '1454', 'CAMBRONNE', '75015', 'PARIS 15', '75', '115', 'BY', 2, '2', 'Appartement', 57, 2, 0),
 (23358, '16/06/2023', 'Vente', 360000, '4', '', 'RUE', '6916', 'DES ORCHIDEES', '75013', 'PARIS 13', '75', '113', 'DJ', 1, '2', 'Appartement', 48, 2, 0),
@@ -19219,7 +19219,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (23777, '23/06/2023', 'Vente', 1063988, '200', '', 'RUE', '4843', 'DE JAVEL', '75015', 'PARIS 15', '75', '115', 'BP', 4, '2', 'Appartement', 96, 5, 0),
 (23779, '22/06/2023', 'Vente', 775000, '3', '', 'RUE', '3377', 'DE L ESTRAPADE', '75005', 'PARIS 05', '75', '105', 'AZ', 2, '2', 'Appartement', 70, 2, 0),
 (23780, '06/06/2023', 'Vente', 200000, '14', '', 'RUE', '4370', 'GUENOT', '75011', 'PARIS 11', '75', '111', 'CR', 2, '2', 'Appartement', 25, 2, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (23781, '20/06/2023', 'Vente', 355000, '3', '', 'RUE', '7344', 'DU PETIT PONT', '75005', 'PARIS 05', '75', '105', 'BQ', 2, '2', 'Appartement', 35, 3, 0),
 (23782, '26/06/2023', 'Vente', 1246500, '23', '', 'RUE', '7518', 'DES PLANTES', '75014', 'PARIS 14', '75', '114', 'CJ', 1, '2', 'Appartement', 102, 5, 0),
 (23783, '29/06/2023', 'Vente', 650000, '195', '', 'RUE', '9624', 'DE VAUGIRARD', '75015', 'PARIS 15', '75', '115', 'CS', 1, '2', 'Appartement', 70, 3, 0),
@@ -19547,7 +19547,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (24162, '28/06/2023', 'Vente', 301750, '34', '', 'RUE', '3031', 'DURANTON', '75015', 'PARIS 15', '75', '115', 'EQ', 1, '2', 'Appartement', 47, 3, 0),
 (24164, '04/07/2023', 'Vente', 423650, '26', '', 'RUE', '2962', 'DUFRENOY', '75016', 'PARIS 16', '75', '116', 'EG', 1, '2', 'Appartement', 40, 1, 0),
 (24165, '19/06/2023', 'Vente', 746000, '31', '', 'BD', '8208', 'RICHARD LENOIR', '75011', 'PARIS 11', '75', '111', 'BH', 4, '2', 'Appartement', 80, 4, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (24167, '23/06/2023', 'Vente', 230000, '23', '', 'RUE', '6581', 'MOUFFETARD', '75005', 'PARIS 05', '75', '105', 'AK', 1, '2', 'Appartement', 29, 1, 0),
 (24168, '11/07/2023', 'Vente', 396550, '27', '', 'RUE', '3873', 'FROIDEVAUX', '75014', 'PARIS 14', '75', '114', 'AN', 2, '2', 'Appartement', 30, 2, 0),
 (24169, '20/06/2023', 'Vente', 335000, '63', '', 'RUE', '2459', 'DE LA CROIX NIVERT', '75015', 'PARIS 15', '75', '115', 'BX', 2, '2', 'Appartement', 30, 1, 0),
@@ -19876,7 +19876,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (24605, '06/07/2023', 'Vente', 303000, '182', '', 'RUE', '0143', 'D ALESIA', '75014', 'PARIS 14', '75', '114', 'DN', 1, '2', 'Appartement', 39, 2, 0),
 (24606, '11/07/2023', 'Vente', 1300000, '2', '', 'AV', '5294', 'DE LAMBALLE', '75016', 'PARIS 16', '75', '116', 'CE', 1, '2', 'Appartement', 105, 4, 0),
 (24607, '05/07/2023', 'Vente', 535000, '16', '', 'RUE', '3132', 'EDMOND ROGER', '75015', 'PARIS 15', '75', '115', 'DY', 2, '2', 'Appartement', 41, 2, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (24608, '07/07/2023', 'Vente', 816950, '1', '', 'RUE', '6771', 'NICOLO', '75016', 'PARIS 16', '75', '116', 'DO', 2, '2', 'Appartement', 80, 3, 0),
 (24609, '26/06/2023', 'Vente', 168000, '6', '', 'RUE', '2128', 'CLODION', '75015', 'PARIS 15', '75', '115', 'DL', 3, '2', 'Appartement', 16, 1, 0),
 (24610, '06/07/2023', 'Vente', 331000, '127', '', 'RUE', '5456', 'LECOURBE', '75015', 'PARIS 15', '75', '115', 'BU', 2, '2', 'Appartement', 38, 2, 0),
@@ -20205,7 +20205,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (25000, '03/07/2023', 'Vente', 295255, '12', '', 'RUE', '2724', 'DESCARTES', '75005', 'PARIS 05', '75', '105', 'BL', 1, '2', 'Appartement', 24, 1, 0),
 (25001, '29/06/2023', 'Vente', 402000, '136', '', 'BD', '2792', 'DIDEROT', '75012', 'PARIS 12', '75', '112', 'CP', 2, '2', 'Appartement', 39, 1, 0),
 (25003, '26/06/2023', 'Vente', 340000, '44', 'B', 'RUE', '3541', 'DE LA FEDERATION', '75015', 'PARIS 15', '75', '115', 'DP', 1, '2', 'Appartement', 34, 2, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (25004, '07/07/2023', 'Vente', 453000, '22', '', 'AV', '3553', 'FELIX FAURE', '75015', 'PARIS 15', '75', '115', 'EJ', 1, '2', 'Appartement', 35, 2, 0),
 (25005, '10/07/2023', 'Vente', 764320, '26', '', 'RUE', '7277', 'PERNETY', '75014', 'PARIS 14', '75', '114', 'CP', 10, '2', 'Appartement', 70, 3, 0),
 (25006, '27/06/2023', 'Vente', 290000, '36', '', 'RUE', '3967', 'GASSENDI', '75014', 'PARIS 14', '75', '114', 'CN', 1, '2', 'Appartement', 20, 1, 0),
@@ -20534,7 +20534,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (25384, '04/07/2023', 'Vente', 982063, '60', '', 'RUE', '1454', 'CAMBRONNE', '75015', 'PARIS 15', '75', '115', 'BY', 2, '2', 'Appartement', 86, 3, 0),
 (25399, '19/07/2023', 'Vente', 215300, '4', '', 'CITE', '4710', 'DE L INDUSTRIE', '75011', 'PARIS 11', '75', '111', 'AT', 1, '2', 'Appartement', 24, 1, 0),
 (25400, '13/07/2023', 'Vente', 465800, '48', 'B', 'RUE', '1040', 'BOBILLOT', '75013', 'PARIS 13', '75', '113', 'ED', 1, '2', 'Appartement', 45, 2, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (25401, '28/07/2023', 'Vente', 300000, '13', '', 'RUE', '2475', 'DE CRUSSOL', '75011', 'PARIS 11', '75', '111', 'AO', 1, '2', 'Appartement', 25, 2, 0),
 (25402, '28/07/2023', 'Vente', 365000, '68', '', 'RUE', '1255', 'BRANCION', '75015', 'PARIS 15', '75', '115', 'AJ', 1, '2', 'Appartement', 38, 2, 0),
 (25403, '21/07/2023', 'Vente', 304810, '18', '', 'RUE', '2328', 'DES CORDELIERES', '75013', 'PARIS 13', '75', '113', 'EO', 2, '2', 'Appartement', 24, 1, 0),
@@ -20862,7 +20862,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (25794, '25/07/2023', 'Vente', 2060200, '6', '', 'RUE', '4436', 'GUY DE MAUPASSANT', '75016', 'PARIS 16', '75', '116', 'DI', 6, '2', 'Appartement', 145, 4, 0),
 (25795, '17/07/2023', 'Vente', 395250, '7', '', 'RUE', '1158', 'BOULARD', '75014', 'PARIS 14', '75', '114', 'AN', 2, '2', 'Appartement', 36, 1, 0),
 (25796, '31/07/2023', 'Vente', 736850, '14', '', 'RUE', '5463', 'LE DANTEC', '75013', 'PARIS 13', '75', '113', 'EF', 2, '2', 'Appartement', 73, 4, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (25797, '27/07/2023', 'Vente', 285900, '42', '', 'RUE', '7445', 'PIERRE LAROUSSE', '75014', 'PARIS 14', '75', '114', 'CW', 2, '2', 'Appartement', 28, 1, 0),
 (25798, '03/08/2023', 'Vente', 1325000, '5', '', 'RUE', '4199', 'GIT-LE-COEUR', '75006', 'PARIS 06', '75', '106', 'AE', 2, '2', 'Appartement', 90, 3, 0),
 (25799, '27/07/2023', 'Vente', 460000, '31', '', 'BD', '6639', 'MURAT', '75016', 'PARIS 16', '75', '116', 'AY', 1, '2', 'Appartement', 50, 2, 0),
@@ -21191,7 +21191,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (26216, '27/07/2023', 'Vente', 1015000, '148', '', 'AV', '2584', 'DAUMESNIL', '75012', 'PARIS 12', '75', '112', 'CC', 1, '2', 'Appartement', 100, 5, 0),
 (26217, '27/07/2023', 'Vente', 720000, '9', '', 'RUE', '1172', 'BOULITTE', '75014', 'PARIS 14', '75', '114', 'CT', 2, '2', 'Appartement', 91, 5, 0),
 (26218, '28/07/2023', 'Vente', 310000, '9', '', 'RUE', '0457', 'ARMAND MOISANT', '75015', 'PARIS 15', '75', '115', 'CP', 1, '2', 'Appartement', 32, 1, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (26219, '27/07/2023', 'Vente', 470000, '24', '', 'RUE', '9968', 'WURTZ', '75013', 'PARIS 13', '75', '113', 'DL', 1, '2', 'Appartement', 51, 2, 0),
 (26220, '08/08/2023', 'Vente', 515000, '88', '', 'BD', '5037', 'JOURDAN', '75014', 'PARIS 14', '75', '114', 'BY', 2, '2', 'Appartement', 80, 4, 0),
 (26222, '28/07/2023', 'Vente', 392300, '74', '', 'RUE', '2992', 'DUNOIS', '75013', 'PARIS 13', '75', '113', 'BN', 2, '2', 'Appartement', 51, 2, 0),
@@ -21520,7 +21520,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (26616, '31/08/2023', 'Vente', 457000, '39', '', 'RUE', '4201', 'DE LA GLACIERE', '75013', 'PARIS 13', '75', '113', 'EP', 2, '2', 'Appartement', 48, 2, 0),
 (26617, '22/08/2023', 'Vente', 300000, '29', '', 'RUE', '8175', 'DE REUILLY', '75012', 'PARIS 12', '75', '112', 'CS', 1, '2', 'Appartement', 29, 1, 0),
 (26618, '29/08/2023', 'Vente', 201000, '8', '', 'RUE', '6747', 'DE NICE', '75011', 'PARIS 11', '75', '111', 'CK', 2, '2', 'Appartement', 26, 2, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (26619, '21/08/2023', 'Vente', 645000, '80', '', 'BD', '8174', 'DE REUILLY', '75012', 'PARIS 12', '75', '112', 'BY', 2, '2', 'Appartement', 65, 3, 0),
 (26620, '30/08/2023', 'Vente', 1151720, '11', '', 'VLA', '7554', 'POIRIER', '75015', 'PARIS 15', '75', '115', 'BZ', 2, '2', 'Appartement', 90, 4, 0),
 (26621, '29/08/2023', 'Vente', 611850, '51', '', 'RUE', '8066', 'RAYNOUARD', '75016', 'PARIS 16', '75', '116', 'CJ', 1, '2', 'Appartement', 56, 2, 0),
@@ -21849,7 +21849,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (27017, '05/09/2023', 'Vente', 275000, '246', '', 'RUE', '1794', 'DE CHARENTON', '75012', 'PARIS 12', '75', '112', 'DD', 1, '2', 'Appartement', 33, 1, 0),
 (27018, '04/09/2023', 'Vente', 807600, '97', '', 'AV', '5467', 'LEDRU ROLLIN', '75011', 'PARIS 11', '75', '111', 'CE', 2, '2', 'Appartement', 66, 3, 0),
 (27019, '08/09/2023', 'Vente', 165000, '86', '', 'BD', '0402', 'ARAGO', '75014', 'PARIS 14', '75', '114', 'AR', 1, '2', 'Appartement', 19, 1, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (27020, '11/09/2023', 'Vente', 310000, '212', '', 'BD', '9907', 'VOLTAIRE', '75011', 'PARIS 11', '75', '111', 'CT', 1, '2', 'Appartement', 25, 2, 0),
 (27021, '08/09/2023', 'Vente', 475000, '137', '', 'RUE', '9337', 'DE TOLBIAC', '75013', 'PARIS 13', '75', '113', 'DX', 1, '2', 'Appartement', 34, 3, 0),
 (27022, '03/08/2023', 'Vente', 450000, '3', '', 'RUE', '3656', 'FIZEAU', '75015', 'PARIS 15', '75', '115', 'AQ', 1, '2', 'Appartement', 57, 3, 0),
@@ -22178,7 +22178,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (27402, '14/09/2023', 'Vente', 340000, '18', '', 'RUE', '0200', 'D ALIGRE', '75012', 'PARIS 12', '75', '112', 'EX', 1, '2', 'Appartement', 29, 2, 0),
 (27403, '13/09/2023', 'Vente', 1090000, '115', '', 'AV', '7380', 'PHILIPPE AUGUSTE', '75011', 'PARIS 11', '75', '111', 'BS', 3, '2', 'Appartement', 115, 5, 0),
 (27404, '08/09/2023', 'Vente', 699650, '59', '', 'RUE', '2745', 'DESNOUETTES', '75015', 'PARIS 15', '75', '115', 'BI', 2, '2', 'Appartement', 68, 3, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (27405, '06/09/2023', 'Vente', 244000, '231', '', 'RUE', '1794', 'DE CHARENTON', '75012', 'PARIS 12', '75', '112', 'CB', 2, '2', 'Appartement', 21, 2, 0),
 (27407, '20/09/2023', 'Vente', 285000, '76', 'B', 'RUE', '6304', 'DES MEUNIERS', '75012', 'PARIS 12', '75', '112', 'BS', 2, '2', 'Appartement', 32, 2, 0),
 (27409, '08/09/2023', 'Vente', 615500, '17', '', 'RUE', '6495', 'MONTGALLET', '75012', 'PARIS 12', '75', '112', 'CE', 2, '2', 'Appartement', 57, 3, 0),
@@ -22507,7 +22507,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (27784, '21/09/2023', 'Vente', 344000, '89', '', 'AV', '6626', 'MOZART', '75016', 'PARIS 16', '75', '116', 'BV', 1, '2', 'Appartement', 32, 2, 0),
 (27785, '28/09/2023', 'Vente', 1589000, '28', '', 'RUE', '5401', 'LAURISTON', '75016', 'PARIS 16', '75', '116', 'FF', 2, '2', 'Appartement', 104, 5, 0),
 (27786, '19/09/2023', 'Vente', 365000, '66', '', 'BD', '0541', 'AUGUSTE BLANQUI', '75013', 'PARIS 13', '75', '113', 'ES', 2, '2', 'Appartement', 39, 2, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (27787, '15/09/2023', 'Vente', 340000, '122', '', 'AV', '9761', 'VICTOR HUGO', '75016', 'PARIS 16', '75', '116', 'EA', 3, '2', 'Appartement', 30, 1, 0),
 (27788, '20/09/2023', 'Vente', 127000, '4', '', 'RUE', '2894', 'DE DOMREMY', '75013', 'PARIS 13', '75', '113', 'BJ', 1, '2', 'Appartement', 12, 1, 0),
 (27789, '13/09/2023', 'Vente', 850000, '2', '', 'RUE', '3751', 'DES FOSSES ST MARCEL', '75005', 'PARIS 05', '75', '105', 'AS', 3, '2', 'Appartement', 62, 3, 0),
@@ -22837,7 +22837,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (28169, '11/09/2023', 'Vente', 160240, '42', '', 'RUE', '1496', 'CANTAGREL', '75013', 'PARIS 13', '75', '113', 'CG', 1, '2', 'Appartement', 16, 1, 0),
 (28170, '19/09/2023', 'Vente', 1465000, '26', '', 'RUE', '9066', 'DE STAEL', '75015', 'PARIS 15', '75', '115', 'CT', 2, '2', 'Appartement', 119, 5, 0),
 (28171, '08/09/2023', 'Vente', 310000, '4', '', 'RUE', '7090', 'PASTEUR', '75011', 'PARIS 11', '75', '111', 'BA', 1, '2', 'Appartement', 28, 2, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (28172, '14/09/2023', 'Vente', 500000, '80', '', 'RUE', '0004', 'DE L ABBE CARTON', '75014', 'PARIS 14', '75', '114', 'CT', 2, '2', 'Appartement', 52, 2, 0),
 (28174, '08/09/2023', 'Vente', 135000, '15', '', 'RUE', '2002', 'CHEVREUL', '75011', 'PARIS 11', '75', '111', 'CP', 1, '2', 'Appartement', 12, 1, 0),
 (28175, '29/09/2023', 'Vente', 1082200, '31', '', 'BD', '7740', 'DE PORT-ROYAL', '75013', 'PARIS 13', '75', '113', 'EN', 2, '2', 'Appartement', 95, 4, 0),
@@ -23166,7 +23166,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (28554, '22/09/2023', 'Vente', 612000, '55', '', 'RUE', '8941', 'SERVAN', '75011', 'PARIS 11', '75', '111', 'AY', 1, '2', 'Appartement', 52, 2, 0),
 (28555, '20/09/2023', 'Vente', 540000, '5', '', 'RUE', '8995', 'SIVEL', '75014', 'PARIS 14', '75', '114', 'CM', 2, '2', 'Appartement', 51, 4, 0),
 (28556, '11/10/2023', 'Vente', 1114000, '39', '', 'RUE', '0594', 'D AUTEUIL', '75016', 'PARIS 16', '75', '116', 'AN', 2, '2', 'Appartement', 110, 4, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (28557, '18/09/2023', 'Vente', 530000, '160', '', 'BD', '9853', 'VINCENT AURIOL', '75013', 'PARIS 13', '75', '113', 'AP', 2, '2', 'Appartement', 53, 2, 0),
 (28558, '11/10/2023', 'Vente', 190000, '4', '', 'PAS', '7749', 'DES POSTES', '75005', 'PARIS 05', '75', '105', 'AY', 1, '2', 'Appartement', 19, 1, 0),
 (28560, '22/09/2023', 'Vente', 954635, '106', '', 'AV', '3553', 'FELIX FAURE', '75015', 'PARIS 15', '75', '115', 'ET', 2, '2', 'Appartement', 114, 5, 0),
@@ -23495,7 +23495,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (28946, '02/10/2023', 'Vente', 669050, '48', '', 'RUE', '7117', 'PAUL BARRUEL', '75015', 'PARIS 15', '75', '115', 'AC', 2, '2', 'Appartement', 65, 4, 0),
 (28947, '27/09/2023', 'Vente', 800000, '17', '', 'RUE', '7263', 'PERGOLESE', '75016', 'PARIS 16', '75', '116', 'FA', 2, '2', 'Appartement', 72, 3, 0),
 (28948, '27/09/2023', 'Vente', 2110000, '48', '', 'RUE', '2817', 'DOCTEUR BLANCHE', '75016', 'PARIS 16', '75', '116', 'BS', 4, '2', 'Appartement', 160, 6, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (28949, '29/09/2023', 'Vente', 285000, '53', '', 'RUE', '6594', 'DU MOULIN DES PRES', '75013', 'PARIS 13', '75', '113', 'DZ', 2, '2', 'Appartement', 33, 1, 0),
 (28950, '05/10/2023', 'Vente', 270000, '35', '', 'RUE', '5554', 'LEON FROT', '75011', 'PARIS 11', '75', '111', 'BW', 2, '2', 'Appartement', 34, 2, 0),
 (28951, '20/10/2023', 'Vente', 135000, '9', '', 'RUE', '4998', 'JONAS', '75013', 'PARIS 13', '75', '113', 'EC', 1, '2', 'Appartement', 20, 1, 0),
@@ -23824,7 +23824,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (29340, '14/09/2023', 'Vente', 130100, '20', '', 'RUE', '8440', 'DE RUNGIS', '75013', 'PARIS 13', '75', '113', 'DJ', 1, '2', 'Appartement', 20, 1, 0),
 (29341, '17/10/2023', 'Vente', 311800, '8', '', 'RUE', '9759', 'VICTOR GELEZ', '75011', 'PARIS 11', '75', '111', 'AW', 1, '2', 'Appartement', 38, 2, 0),
 (29342, '05/10/2023', 'Vente', 180000, '28', '', 'RUE', '6377', 'MIOLLIS', '75015', 'PARIS 15', '75', '115', 'CY', 2, '2', 'Appartement', 18, 1, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (29343, '12/10/2023', 'Vente', 2371700, '1', '', 'RUE', '0566', 'AUGUSTE VACQUERIE', '75016', 'PARIS 16', '75', '116', 'FH', 1, '2', 'Appartement', 300, 8, 0),
 (29344, '12/10/2023', 'Vente', 470000, '1', '', 'RUE', '4002', 'GAZAN', '75014', 'PARIS 14', '75', '114', 'AY', 2, '2', 'Appartement', 48, 2, 0),
 (29345, '26/10/2023', 'Vente', 842700, '245', '', 'RUE', '0881', 'DE BERCY', '75012', 'PARIS 12', '75', '112', 'EL', 1, '2', 'Appartement', 73, 3, 0),
@@ -24153,7 +24153,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (29759, '30/10/2023', 'Vente', 412800, '15', '', 'RUE', '8122', 'DE REMUSAT', '75016', 'PARIS 16', '75', '116', 'AL', 2, '2', 'Appartement', 67, 2, 0),
 (29760, '08/11/2023', 'Vente', 482000, '1', '', 'RUE', '2587', 'DAUMIER', '75016', 'PARIS 16', '75', '116', 'AE', 2, '2', 'Appartement', 60, 3, 0),
 (29761, '18/10/2023', 'Vente', 1150000, '42', '', 'AV', '3696', 'FOCH', '75016', 'PARIS 16', '75', '116', 'FA', 1, '2', 'Appartement', 84, 3, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (29762, '25/10/2023', 'Vente', 422330, '49', '', 'RUE', '1154', 'DE BOULAINVILLIERS', '75016', 'PARIS 16', '75', '116', 'CM', 1, '2', 'Appartement', 42, 1, 0),
 (29763, '31/10/2023', 'Vente', 350000, '8', '', 'RUE', '6135', 'MARTIN BERNARD', '75013', 'PARIS 13', '75', '113', 'ED', 2, '2', 'Appartement', 40, 2, 0),
 (29764, '30/10/2023', 'Vente', 199950, '21', '', 'VLA', '2964', 'DUFRESNE', '75016', 'PARIS 16', '75', '116', 'AE', 1, '2', 'Appartement', 18, 1, 0),
@@ -24482,7 +24482,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (30161, '10/11/2023', 'Vente', 285000, '8', '', 'RUE', '0110', 'ALASSEUR', '75015', 'PARIS 15', '75', '115', 'DH', 2, '2', 'Appartement', 23, 1, 0),
 (30162, '09/11/2023', 'Vente', 813750, '9', '', 'RUE', '0463', 'DE L ARMORIQUE', '75015', 'PARIS 15', '75', '115', 'CN', 1, '2', 'Appartement', 69, 3, 0),
 (30164, '27/10/2023', 'Vente', 817000, '159', '', 'RUE', '2300', 'DE LA CONVENTION', '75015', 'PARIS 15', '75', '115', 'BR', 1, '2', 'Appartement', 82, 4, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (30165, '25/10/2023', 'Vente', 515000, '25', '', 'RUE', '2084', 'CLAUDE TERRASSE', '75016', 'PARIS 16', '75', '116', 'AE', 2, '2', 'Appartement', 45, 3, 0),
 (30166, '15/11/2023', 'Vente', 310000, '146', '', 'BD', '4310', 'DE GRENELLE', '75015', 'PARIS 15', '75', '115', 'DF', 1, '2', 'Appartement', 31, 1, 0),
 (30167, '15/11/2023', 'Vente', 368681.3, '7', '', 'RUE', '5648', 'LHOMOND', '75005', 'PARIS 05', '75', '105', 'AZ', 1, '2', 'Appartement', 26, 1, 0),
@@ -24810,7 +24810,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (30545, '09/11/2023', 'Vente', 458000, '32', '', 'AV', '8158', 'DE LA REPUBLIQUE', '75011', 'PARIS 11', '75', '111', 'AM', 1, '2', 'Appartement', 55, 3, 0),
 (30546, '30/11/2023', 'Vente', 930000, '84', '', 'BD', '0402', 'ARAGO', '75014', 'PARIS 14', '75', '114', 'AR', 2, '2', 'Appartement', 61, 2, 0),
 (30548, '09/11/2023', 'Vente', 1350800, '10', '', 'RUE', '8361', 'ROSA BONHEUR', '75015', 'PARIS 15', '75', '115', 'CW', 1, '2', 'Appartement', 97, 4, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (30549, '16/11/2023', 'Vente', 470000, '13', '', 'RUE', '3859', 'DES FRERES MORANE', '75015', 'PARIS 15', '75', '115', 'EI', 2, '2', 'Appartement', 43, 2, 0),
 (30550, '30/11/2023', 'Vente', 159550, '93', '', 'BD', '9907', 'VOLTAIRE', '75011', 'PARIS 11', '75', '111', 'BL', 2, '2', 'Appartement', 15, 1, 0),
 (30551, '30/11/2023', 'Vente', 105000, '13', '', 'RUE', '0757', 'BEATRIX DUSSANE', '75015', 'PARIS 15', '75', '115', 'DK', 1, '2', 'Appartement', 11, 1, 0),
@@ -25139,7 +25139,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (30937, '04/12/2023', 'Vente', 430000, '35', 'B', 'RUE', '7518', 'DES PLANTES', '75014', 'PARIS 14', '75', '114', 'CI', 2, '2', 'Appartement', 53, 3, 0),
 (30938, '11/12/2023', 'Vente', 800000, '6', '', 'RUE', '0475', 'D ARSONVAL', '75015', 'PARIS 15', '75', '115', 'CJ', 2, '2', 'Appartement', 77, 3, 0),
 (30939, '13/12/2023', 'Vente', 340000, '30', '', 'RUE', '5344', 'DE LAPPE', '75011', 'PARIS 11', '75', '111', 'CC', 1, '2', 'Appartement', 33, 2, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (30940, '07/12/2023', 'Vente', 565000, '130', '', 'AV', '7067', 'PARMENTIER', '75011', 'PARIS 11', '75', '111', 'AC', 2, '2', 'Appartement', 51, 3, 0),
 (30941, '04/12/2023', 'Vente', 325000, '120', '', 'RUE', '8699', 'SAINT MAUR', '75011', 'PARIS 11', '75', '111', 'AK', 1, '2', 'Appartement', 27, 2, 0),
 (30942, '29/11/2023', 'Vente', 830000, '16', '', 'RUE', '9860', 'VINEUSE', '75016', 'PARIS 16', '75', '116', 'DP', 2, '2', 'Appartement', 66, 3, 0),
@@ -25467,7 +25467,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (31386, '19/12/2023', 'Vente', 161500, '18', '', 'RUE', '2355', 'CORVISART', '75013', 'PARIS 13', '75', '113', 'EP', 1, '2', 'Appartement', 19, 1, 0),
 (31387, '14/12/2023', 'Vente', 910250, '55', '', 'RUE', '9691', 'DE VERNEUIL', '75007', 'PARIS 07', '75', '107', 'AN', 2, '2', 'Appartement', 62, 3, 0),
 (31388, '30/11/2023', 'Vente', 999290, '25', '', 'RUE', '4535', 'HENRI BARBUSSE', '75005', 'PARIS 05', '75', '105', 'BG', 1, '2', 'Appartement', 76, 3, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (31389, '30/11/2023', 'Vente', 999290, '25', '', 'RUE', '4535', 'HENRI BARBUSSE', '75005', 'PARIS 05', '75', '105', 'BG', 1, '2', 'Appartement', 76, 3, 0),
 (31390, '01/12/2023', 'Vente', 2688000, '22', '', 'BD', '8705', 'SAINT MICHEL', '75006', 'PARIS 06', '75', '106', 'AF', 2, '2', 'Appartement', 167, 5, 0),
 (31391, '18/12/2023', 'Vente', 726000, '54', '', 'RUE', '6304', 'DES MEUNIERS', '75012', 'PARIS 12', '75', '112', 'BS', 2, '2', 'Appartement', 101, 4, 0),
@@ -25797,7 +25797,7 @@ INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `
 (31872, '11/12/2023', 'Vente', 348000, '9', '', 'RUE', '3479', 'FABRE D EGLANTINE', '75012', 'PARIS 12', '75', '112', 'CM', 1, '2', 'Appartement', 30, 2, 0),
 (31875, '29/12/2023', 'Vente', 382000, '3', '', 'RUE', '5459', 'LECUIROT', '75014', 'PARIS 14', '75', '114', 'CS', 2, '2', 'Appartement', 53, 3, 0),
 (31876, '12/12/2023', 'Vente', 200000, '158', '', 'RUE', '7587', 'DE LA POMPE', '75016', 'PARIS 16', '75', '116', 'DX', 1, '2', 'Appartement', 19, 1, 0);
-INSERT INTO `paris_valeur_fonciere` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_ lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
+INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (31877, '29/12/2023', 'Vente', 961800, '84', '', 'BD', '0402', 'ARAGO', '75014', 'PARIS 14', '75', '114', 'AR', 3, '2', 'Appartement', 97, 5, 0),
 (31878, '21/12/2023', 'Vente', 650000, '9', '', 'RUE', '9239', 'THEODORE DECK', '75015', 'PARIS 15', '75', '115', 'BL', 2, '2', 'Appartement', 93, 3, 0),
 (31879, '21/12/2023', 'Vente', 849824, '25', '', 'QUAI', '0318', 'ANDRE CITROEN', '75015', 'PARIS 15', '75', '115', 'FZ', 3, '2', 'Appartement', 75, 4, 0),
