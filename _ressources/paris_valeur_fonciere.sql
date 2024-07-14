@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `property` (
 -- Déchargement des données de la table `property`
 --
 INSERT INTO `user` (`email`, `roles`, `password`, `firstname`, `lastname`) VALUES
-('admin@email.com', '["ROLE_USER", "ROLE_ADMIN"]', 'lplp', 'admin', 'admin')
+('admin@email.com', '["ROLE_USER", "ROLE_ADMIN"]', 'lplp', 'admin', 'admin');
 
 INSERT INTO `property` (`id`, `date_mutation`, `nature_mutation`, `valeur_fonciere`, `no_voie`, `b_t_q`, `type_voie`, `code_voie`, `voie`, `code_postal`, `commune`, `code_departement`, `code_commune`, `section`, `nb_lots`, `code_type_local`, `type_local`, `surface_reelle_bati`, `nb_pieces`, `surface_terrain`) VALUES
 (1, '04/01/2023', 'Vente', 140000, '178', '', 'RUE', '2387', 'DE COURCELLES', '75017', 'PARIS 17', '75', '117', 'BG', 2, '2', 'Appartement', 18, 1, 0),
