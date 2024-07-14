@@ -1,0 +1,17 @@
+<ul>
+    <div class="container">
+            <div class="row">
+        {% for property in properties %}
+            <div class="card col-4" style="width: 18rem;">
+                <div class="card-body">
+                <img src="..." class="card-img-top" alt="...">
+                    <h5 class="card-title">Bel Appartement</h5>
+                    <p class="card-text">Une belle propriété quelque part dans Paris</p>
+                    <p>{{ property.noVoie }} {{ property.typeVoie }} {{ property.voie }}</p>
+                    <a href="#" class="btn btn-primary">Détails</a>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</ul>
