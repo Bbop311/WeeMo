@@ -6,18 +6,24 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use App\Repository\PropertyRepository;
+use App\Service\propertyListGenerator;
 
 
 class HomeController extends AbstractController
 {
-    #[Route('/', name: 'app_home')]
-    public function index(PropertyRepository $propertyRepository): Response
+    #[Route('/{page}', name: 'app_home')]
+    public function index(PropertyRepository $propertyRepository, propertyListGenerator $propertyListGenerator, int $page = 1): Response
     {
-        $properties = $propertyRepository->findAll();
-        
+        $properties_list = $propertyListGenerator->getList($propertyRepository);
+        $properties = [];
+        for ($i = 24*($page-1)+1 ; $i < 24*($page)+1 ;$i++ )
+        {
+            $properties[] = $properties_list[$i];
+        }
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
-            'properties' => $properties
+            'properties' => $properties,
+            'page' => $page
         ]);
     }
 }

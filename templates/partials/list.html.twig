@@ -1,17 +1,39 @@
 <ul>
     <div class="container">
-            <div class="row">
-        {% for property in properties %}
+
+        <div class="row">
+            {% for property in properties %}
             <div class="card col-4" style="width: 18rem;">
                 <div class="card-body">
-                <img src="..." class="card-img-top" alt="...">
+                    <img src="..." class="card-img-top" alt="...">
                     <h5 class="card-title">Bel Appartement</h5>
                     <p class="card-text">Une belle propriété quelque part dans Paris</p>
                     <p>{{ property.noVoie }} {{ property.typeVoie }} {{ property.voie }}</p>
                     <a href="#" class="btn btn-primary">Détails</a>
                 </div>
             </div>
-        {% endfor %}
+            {% endfor %}
         </div>
     </div>
+    {%if page == 1%}
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" href="/">1</a></li>
+          <li class="page-item"><a class="page-link" href="{{ path('app_home', {'page': 2}) }}">2</a></li>
+          <li class="page-item"><a class="page-link" href="{{ path('app_home', {'page': 3}) }}">3</a></li>
+          <li class="page-item"><a class="page-link" href="{{ path('app_home', {'page': page+3}) }}">Next</a></li>
+        </ul>
+      </nav>
+    {% else %}
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" href="{{ path('app_home', {'page': page-2}) }}">Previous</a></li>
+          <li class="page-item"><a class="page-link" href="{{ path('app_home', {'page': page-1}) }}">{{ page - 1 }}</a></li>
+          <li class="page-item"><a class="page-link" href="{{ path('app_home', {'page': page}) }}">{{page}}</a></li>
+          <li class="page-item"><a class="page-link" href="{{ path('app_home', {'page': page+1}) }}">{{page + 1}}</a></li>
+          <li class="page-item"><a class="page-link" href="{{ path('app_home', {'page': page+2}) }}">Next</a></li>
+        </ul>
+      </nav>
+    {% endif %}
 </ul>
+
