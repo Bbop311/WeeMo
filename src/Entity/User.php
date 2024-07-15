@@ -43,8 +43,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(nullable: true)]
     private ?int $phone_number = null;
 
-    #[ORM\Column(type: Types::ARRAY)]
-    private array $role = [];
+    /* #[ORM\Column(type: Types::ARRAY)]
+    private array $role = []; */
 
     public function getId(): ?int
     {
@@ -157,7 +157,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getRole(): array
+    /* public function getRole(): array
     {
         return $this->role;
     }
@@ -167,5 +167,5 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->role = $role;
 
         return $this;
-    }
-}
+    }*/
+} 
