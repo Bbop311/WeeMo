@@ -11,7 +11,7 @@ use App\Service\propertyListGenerator;
 
 class HomeController extends AbstractController
 {
-    #[Route('/{page}', name: 'app_home')]
+    #[Route('/home/{page}', name: 'app_home')]
     public function index(PropertyRepository $propertyRepository, propertyListGenerator $propertyListGenerator, int $page = 1): Response
     {
         $properties_list = $propertyListGenerator->getList($propertyRepository);
