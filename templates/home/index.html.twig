@@ -6,7 +6,12 @@
 
 <section class="mt-5">
 
-    <h1>SymfonyImmo</h1>
+    <h1>WeeMo</h1>
+    <ul>
+        {% for property in properties %}
+            <li>{{ property.noVoie }} {{ property.typeVoie }} {{ property.voie }}</li>
+        {% endfor %}
+    </ul>
 
 </section>
 
