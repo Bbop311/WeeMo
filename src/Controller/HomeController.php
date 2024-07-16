@@ -32,4 +32,13 @@ class HomeController extends AbstractController
     {
         return $this->redirectToRoute('app_home');
     }
+
+    #[Route('/property/{id}', name:'property_show')]
+    public function property_show(PropertyRepository $propertyRepository, int $id): Response
+    {
+        $property = $propertyRepository->find($id);
+        return $this->render('property/property.html.twig', [
+            'property' => $property
+        ]);
+    }
 }
