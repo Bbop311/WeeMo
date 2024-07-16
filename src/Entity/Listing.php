@@ -29,6 +29,9 @@ class Listing
     #[ORM\Column(length: 20)]
     private ?string $status = null;
 
+    #[ORM\ManyToOne(inversedBy: 'listings')]
+    private ?property $property = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -90,6 +93,18 @@ class Listing
     public function setStatus(string $status): static
     {
         $this->status = $status;
+
+        return $this;
+    }
+
+    public function getProperty(): ?property
+    {
+        return $this->property;
+    }
+
+    public function setProperty(?property $property): static
+    {
+        $this->property = $property;
 
         return $this;
     }

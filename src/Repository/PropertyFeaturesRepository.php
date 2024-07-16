@@ -2,22 +2,22 @@
 
 namespace App\Repository;
 
-use App\Entity\PropretyFeatures;
+use App\Entity\PropertyFeatures;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<PropretyFeatures>
+ * @extends ServiceEntityRepository<PropertyFeatures>
  */
-class PropretyFeaturesRepository extends ServiceEntityRepository
+class PropertyFeaturesRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, PropretyFeatures::class);
+        parent::__construct($registry, PropertyFeatures::class);
     }
 
 //    /**
-//     * @return PropretyFeatures[] Returns an array of PropretyFeatures objects
+//     * @return PropertyFeatures[] Returns an array of PropertyFeatures objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -31,7 +31,7 @@ class PropretyFeaturesRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?PropretyFeatures
+//    public function findOneBySomeField($value): ?PropertyFeatures
 //    {
 //        return $this->createQueryBuilder('p')
 //            ->andWhere('p.exampleField = :val')

@@ -16,6 +16,9 @@ class Image
     #[ORM\Column(length: 255)]
     private ?string $img_url = null;
 
+    #[ORM\ManyToOne(inversedBy: 'images')]
+    private ?property $property = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -29,6 +32,18 @@ class Image
     public function setImgUrl(string $img_url): static
     {
         $this->img_url = $img_url;
+
+        return $this;
+    }
+
+    public function getProperty(): ?property
+    {
+        return $this->property;
+    }
+
+    public function setProperty(?property $property): static
+    {
+        $this->property = $property;
 
         return $this;
     }
