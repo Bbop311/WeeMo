@@ -271,7 +271,7 @@ class AppFixtures extends Fixture
         foreach ($propertyfeatures as $propertyfeatureData) {
             $propertyfeature = new PropertyFeatures;
 
-           $propertyfeature->setProperty($propertyfeatureData['property_id']);
+         // $propertyfeature->setProperty($propertyfeatureData['property_id']);
            $propertyfeature->setTypeOfRooms($propertyfeatureData['type_of_rooms']);
            $propertyfeature->setNumberOfBedrooms($propertyfeatureData['number_of_bedrooms']);
 
@@ -292,6 +292,10 @@ class AppFixtures extends Fixture
            $manager->persist($propertyfeature);
        }
        $manager->flush();
+
+
+
+
    }
 
 
