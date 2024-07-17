@@ -19,6 +19,7 @@ class AppFixtures extends Fixture
     public function load(ObjectManager $manager): void
     {
         $users = [
+            ['email' => 'admin@example.com', 'password' => 'lplp', 'firstname' => 'admin', 'lastname' => 'weemo', 'roles' => ['ROLE_ADMIN'],['ROLE_USER']],
             ['email' => 'alice.smith@example.com', 'password' => 'a1b2c3d4', 'firstname' => 'Alice', 'lastname' => 'Smith', 'roles' => ['ROLE_USER']],
             ['email' => 'bob.jones@example.com', 'password' => 'b2c3d4e5', 'firstname' => 'Bob', 'lastname' => 'Jones', 'roles' => ['ROLE_USER']],
             ['email' => 'charlie.brown@example.com', 'password' => 'c3d4e5f6', 'firstname' => 'Charlie', 'lastname' => 'Brown', 'roles' => ['ROLE_USER']],
