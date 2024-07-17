@@ -118,7 +118,7 @@ class AppFixtures extends Fixture
             "type_of_rooms" => "T4",
             "number_of_bedrooms" => 4,
             "floor" => "4",
-            
+
             "property_condition" => "good",
             "energy_class" => "D",
             "elevator" => false,
@@ -271,7 +271,7 @@ class AppFixtures extends Fixture
         foreach ($propertyfeatures as $propertyfeatureData) {
             $propertyfeature = new PropertyFeatures;
 
-           $propertyfeature->setProperty($propertyfeature['property_id']);
+           $propertyfeature->setProperty($propertyfeatureData['property_id']);
            $propertyfeature->setTypeOfRooms($propertyfeatureData['type_of_rooms']);
            $propertyfeature->setNumberOfBedrooms($propertyfeatureData['number_of_bedrooms']);
 
