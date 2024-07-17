@@ -16,7 +16,7 @@ class HomeController extends AbstractController
     {
         $properties_list = $propertyListGenerator->getList($propertyRepository);
         $properties = [];
-        for ($i = 24*($page-1)+1 ; $i < 24*($page)+1 ;$i++ )
+        for ($i = 24*($page-1) ; $i < 24*($page) ;$i++ )
         {
             $properties[] = $properties_list[$i];
         }

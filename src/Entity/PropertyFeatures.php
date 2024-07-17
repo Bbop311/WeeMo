@@ -43,8 +43,8 @@ class PropertyFeatures
     #[ORM\Column(nullable: true)]
     private ?bool $air_condition = null;
 
-    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
-    private ?property $property = null;
+    #[ORM\OneToOne(inversedBy: 'propertyFeatures', cascade: ['persist', 'remove'])]
+    private ?Property $property = null;
 
     public function getId(): ?int
     {
@@ -171,12 +171,12 @@ class PropertyFeatures
         return $this;
     }
 
-    public function getProperty(): ?property
+    public function getProperty(): ?Property
     {
         return $this->property;
     }
 
-    public function setProperty(?property $property): static
+    public function setProperty(?Property $property): static
     {
         $this->property = $property;
 
