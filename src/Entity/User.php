@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -42,6 +44,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(nullable: true)]
     private ?int $phone_number = null;
+
+    /**
+     * @var Collection<int, property>
+     */
+    #[ORM\OneToMany(targetEntity: property::class, mappedBy: 'user')]
+    private Collection $property;
+
+    public function __construct()
+    {
+        $this->property = new ArrayCollection();
+    }
 
     /* #[ORM\Column(type: Types::ARRAY)]
     private array $role = []; */
@@ -168,4 +181,34 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }*/
+
+    /**
+     * @return Collection<int, property>
+     */
+    public function getProperty(): Collection
+    {
+        return $this->property;
+    }
+
+    public function addProperty(property $property): static
+    {
+        if (!$this->property->contains($property)) {
+            $this->property->add($property);
+            $property->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProperty(property $property): static
+    {
+        if ($this->property->removeElement($property)) {
+            // set the owning side to null (unless already changed)
+            if ($property->getUser() === $this) {
+                $property->setUser(null);
+            }
+        }
+
+        return $this;
+    }
 } 

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\PropertyRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: PropertyRepository::class)]
@@ -69,6 +71,31 @@ class Property
 
     #[ORM\Column(nullable: true)]
     private ?int $surface_terrain = null;
+
+    /**
+     * @var Collection<int, Image>
+     */
+    #[ORM\OneToMany(targetEntity: Image::class, mappedBy: 'property')]
+    private Collection $images;
+
+    #[ORM\ManyToOne(inversedBy: 'property')]
+    private ?User $user = null;
+
+    /**
+     * @var Collection<int, Listing>
+     */
+    #[ORM\OneToMany(targetEntity: Listing::class, mappedBy: 'property')]
+    private Collection $listings;
+
+    #[ORM\OneToOne(mappedBy: 'property', cascade: ['persist', 'remove'])]
+    private ?PropertyFeatures $propertyFeatures = null;
+
+
+    public function __construct()
+    {
+        $this->images = new ArrayCollection();
+        $this->listings = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -302,4 +329,99 @@ class Property
 
         return $this;
     }
+
+    /**
+     * @return Collection<int, Image>
+     */
+    public function getImages(): Collection
+    {
+        return $this->images;
+    }
+
+    public function addImage(Image $image): static
+    {
+        if (!$this->images->contains($image)) {
+            $this->images->add($image);
+            $image->setProperty($this);
+        }
+
+        return $this;
+    }
+
+    public function removeImage(Image $image): static
+    {
+        if ($this->images->removeElement($image)) {
+            // set the owning side to null (unless already changed)
+            if ($image->getProperty() === $this) {
+                $image->setProperty(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): static
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Listing>
+     */
+    public function getListings(): Collection
+    {
+        return $this->listings;
+    }
+
+    public function addListing(Listing $listing): static
+    {
+        if (!$this->listings->contains($listing)) {
+            $this->listings->add($listing);
+            $listing->setProperty($this);
+        }
+
+        return $this;
+    }
+
+    public function removeListing(Listing $listing): static
+    {
+        if ($this->listings->removeElement($listing)) {
+            // set the owning side to null (unless already changed)
+            if ($listing->getProperty() === $this) {
+                $listing->setProperty(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getPropertyFeatures(): ?PropertyFeatures
+    {
+        return $this->propertyFeatures;
+    }
+
+    public function setPropertyFeatures(?PropertyFeatures $propertyFeatures): static
+    {
+        // unset the owning side of the relation if necessary
+        if ($propertyFeatures === null && $this->propertyFeatures !== null) {
+            $this->propertyFeatures->setProperty(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($propertyFeatures !== null && $propertyFeatures->getProperty() !== $this) {
+            $propertyFeatures->setProperty($this);
+        }
+
+        $this->propertyFeatures = $propertyFeatures;
+
+        return $this;
+    }
+
 }
