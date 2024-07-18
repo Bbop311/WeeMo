@@ -1,3 +1,14 @@
 body {
     background-color: white;
 }
+
+.logo-img {
+    width: 180px; /* Adjust the size as needed */
+    height: auto;
+    vertical-align: middle;
+}
+/* align li img with li text*/
+li {
+    display: flex;
+    align-items: center;
+  }
