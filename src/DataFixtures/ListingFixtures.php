@@ -1,0 +1,126 @@
+<?php
+
+namespace App\DataFixtures;
+
+use App\Entity\Listing;
+use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Persistence\ObjectManager;
+use Doctrine\Common\DataFixtures\DependentFixtureInterface;
+use DateTime;
+use DateTimeImmutable;
+
+class ListingFixtures extends Fixture implements DependentFixtureInterface
+{
+    public function load(ObjectManager $manager) : void
+    {
+        //Code written by ChatGPT to generate an array of listings
+        $listings = [];
+        $titles = [
+            'Luxurious Apartment in Paris',
+            'Charming Studio in the Heart of Paris',
+            'Spacious Flat with Eiffel Tower View',
+            'Modern Loft Near Champs-Élysées',
+            'Cozy 1-Bedroom Apartment in Montmartre',
+            'Elegant 2-Bedroom Apartment in Le Marais',
+            'Sunny Apartment with Balcony in Paris',
+            'Stylish Duplex in the Latin Quarter',
+            'Renovated Apartment in Historical Building',
+            'Contemporary Apartment near Seine River',
+            'Beautiful Apartment with Garden View',
+            'Luxury Penthouse in Central Paris',
+            'Bright and Airy Apartment in Paris',
+            'Quaint Studio Near Sacré-Cœur',
+            'Exclusive Apartment in Saint-Germain',
+            'Classic Parisian Apartment with High Ceilings',
+            'Designer Loft in the Marais District',
+            'Chic Apartment with Modern Amenities',
+            'Top Floor Apartment with City Views',
+            'Charming Flat in Parisian Style',
+            'Cozy Studio in Paris 7th Arrondissement',
+            'Spacious Apartment with Terrace',
+            'Elegant Flat in the Golden Triangle',
+            'Bright Apartment in Paris 6th Arrondissement',
+            'Charming 2-Bedroom Flat in Paris 5th',
+            'Luxury Studio in Paris 1st Arrondissement',
+            'Modern Apartment in Paris 8th Arrondissement',
+            'Beautiful Apartment in Paris 15th Arrondissement',
+            'Gorgeous Flat in Paris 16th Arrondissement',
+            'Prestigious Apartment in Paris 2nd Arrondissement',
+        ];
+        
+        $descriptions = [
+            'A luxurious apartment with stunning views of Paris.',
+            'A charming studio located in the heart of Paris.',
+            'A spacious flat offering a breathtaking view of the Eiffel Tower.',
+            'A modern loft located near the famous Champs-Élysées.',
+            'A cozy 1-bedroom apartment situated in Montmartre.',
+            'An elegant 2-bedroom apartment located in Le Marais.',
+            'A sunny apartment with a balcony, perfect for enjoying Paris.',
+            'A stylish duplex in the vibrant Latin Quarter.',
+            'A renovated apartment in a historical building.',
+            'A contemporary apartment located near the Seine River.',
+            'A beautiful apartment with a garden view.',
+            'A luxury penthouse located in the center of Paris.',
+            'A bright and airy apartment perfect for Parisian living.',
+            'A quaint studio near the famous Sacré-Cœur.',
+            'An exclusive apartment located in Saint-Germain.',
+            'A classic Parisian apartment with high ceilings.',
+            'A designer loft in the trendy Marais District.',
+            'A chic apartment with modern amenities.',
+            'A top-floor apartment offering stunning city views.',
+            'A charming flat in true Parisian style.',
+            'A cozy studio in the 7th Arrondissement of Paris.',
+            'A spacious apartment with a terrace.',
+            'An elegant flat located in the Golden Triangle.',
+            'A bright apartment in the 6th Arrondissement of Paris.',
+            'A charming 2-bedroom flat in the 5th Arrondissement.',
+            'A luxury studio in the 1st Arrondissement of Paris.',
+            'A modern apartment in the 8th Arrondissement.',
+            'A beautiful apartment in the 15th Arrondissement of Paris.',
+            'A gorgeous flat in the 16th Arrondissement of Paris.',
+            'A prestigious apartment in the 2nd Arrondissement of Paris.',
+        ];
+        
+        $statuses = ['active', 'inactive', 'expired', 'suspended'];
+        $propertyIds = range(1, 31);
+        unset($propertyIds[array_search(29, $propertyIds)]);
+        $propertyIds = array_values($propertyIds);
+        shuffle($propertyIds);
+        
+        for ($i = 0; $i < 30; $i++) {
+            $startDate = new DateTimeImmutable();
+            $endDate = (clone $startDate)->modify('+'.mt_rand(1, 8).' weeks');
+        
+            $listings[] = [
+                'property_id' => $propertyIds[$i],
+                'listing_title' => $titles[array_rand($titles)],
+                'listing_description' => $descriptions[array_rand($descriptions)],
+                'start_date' => $startDate,
+                'end_date' => $endDate,
+                'status' => $statuses[array_rand($statuses)]
+            ];
+        }
+        //end of the code generated by ChatGPT
+        
+        foreach ($listings as $listingData) {
+            $listing = new Listing;
+
+            $listing->setProperty($this->getReference('property_' . $listingData['property_id']));
+            $listing->setListingTitle($listingData['listing_title']);
+            $listing->setListingDescription($listingData['listing_description']);
+            $listing->setStartDate($listingData['start_date']);
+            $listing->setEndDate($listingData['end_date']);
+            $listing->setStatus($listingData['status']);
+            
+            $manager->persist($listing);
+        }
+        $manager->flush();
+    }
+
+    public function getDependencies()
+    {
+        return [
+            PropertyFixtures::class,
+        ];
+    }
+}

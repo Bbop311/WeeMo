@@ -12,9 +12,24 @@ li {
     display: flex;
     align-items: center;
   }
+
 /* format img list*/
   .listimg{
     width: 375px;
   }
 
- 
+.search-form label {
+    color: rgb(255, 0, 0);
+    text-align: center;
+}
+
+.form-input {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+::placeholder {
+	text-align: center;
+}
+
