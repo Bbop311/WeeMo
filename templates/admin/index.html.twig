@@ -9,7 +9,17 @@
 </style>
 
 <div class="example-wrapper">
-
-    <p>Hello dear Admin !</p>
+    <p>Hello {{ app.user.firstName }} !</p>
+    {% for listing in listings %}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+          <p class="card-text">{{ listing.listingDescription }}</p>
+          <a href="{{ path('listing_validation', {listing_id : listing.id})}}" class="card-link">Validation page</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+    {% endfor %}
 </div>
 {% endblock %}
