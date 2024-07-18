@@ -30,9 +30,9 @@ class PropertyFixtures extends Fixture implements DependentFixtureInterface
         $smt->execute();
         $immos = $smt->fetchAll();
 
+        $i=1;
         foreach ($immos as $immo) {
             $property = new Property();
-            $user_count = 
             $property
             ->setNatureMutation($immo['nature_mutation'])
             ->setDateMutation($immo['date_mutation'])
@@ -57,7 +57,8 @@ class PropertyFixtures extends Fixture implements DependentFixtureInterface
 
             $manager->persist($property);
 
-            $this->addReference('property_' . $immo['id'], $property);
+            $this->addReference('property_' . $i, $property);
+            $i++;
         }
         $manager->flush();
     }
