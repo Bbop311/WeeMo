@@ -24,15 +24,24 @@
                 <a href="{{ path('app_admin')}}" class="nav-link link-body-emphasis px-2">Espace Administrateur</a>
             </li>
             {% endif %}
-            <li class="nav-item">
-                <a href="#" class="nav-link link-body-emphasis px-2">MON ESPACE</a>
-            </li>
-            <li class="nav-item">
+
+            {% if app.user %}
+            <div class="mb-3">
+                <a class="btn btn-primary disabled" href="#">MON ESPACE</a> <a class="btn btn-danger" href="{{ path('app_logout') }}">Se deconnecter</a>
+            </div>
+            {% else %}
+            <ul class="nav">
+                <li class="nav-item"><a class="btn btn-primary me-1" href="/login" class="nav-link link-body-emphasis px-2">Se connecter</a></li>
+                <li class="nav-item"><a class="btn btn-danger me-1" href="/register" class="nav-link link-body-emphasis px-2">S'inscrire</a></li>
+            </ul>
+            {% endif %}
+
+            {# <li class="nav-item">
                 <a href="{{ path('app_login')}}" class="nav-link link-body-emphasis px-2">Se connecter</a>
             </li>
             <li class="nav-item">
                 <a href="{{ path('app_register')}}" class="nav-link link-body-emphasis px-2">S'inscrire</a>
-            </li>
+            </li> #}
         </ul>
     </div>
 </nav>
