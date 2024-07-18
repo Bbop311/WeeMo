@@ -17,8 +17,7 @@ class UserFixtures extends Fixture
         ['email' => 'diana.williams@example.com', 'password' => 'd4e5f6g7', 'firstname' => 'Diana', 'lastname' => 'Williams', 'roles' => ['ROLE_USER']],
         ['email' => 'edward.johnson@example.com', 'password' => 'e5f6g7h8', 'firstname' => 'Edward', 'lastname' => 'Johnson', 'roles' => ['ROLE_USER']],
         ['email' => 'fiona.white@example.com', 'password' => 'f6g7h8i9', 'firstname' => 'Fiona', 'lastname' => 'White', 'roles' => ['ROLE_USER']],
-        ['email' => 'george.green@example.com', 'password' => 'g7h8i9j0', 'firstname' => 'George', 'lastname' => 'Green', 'roles' => ['ROLE
-    _USER']],
+        ['email' => 'george.green@example.com', 'password' => 'g7h8i9j0', 'firstname' => 'George', 'lastname' => 'Green', 'roles' => ['ROLE_USER']],
         ['email' => 'hannah.martin@example.com', 'password' => 'h8i9j0k1', 'firstname' => 'Hannah', 'lastname' => 'Martin', 'roles' => ['ROLE_USER']],
         ['email' => 'ian.davis@example.com', 'password' => 'i9j0k1l2', 'firstname' => 'Ian', 'lastname' => 'Davis', 'roles' => ['ROLE_USER']],
         ['email' => 'julia.miller@example.com', 'password' => 'j0k1l2m3', 'firstname' => 'Julia', 'lastname' => 'Miller', 'roles' => ['ROLE_USER']],

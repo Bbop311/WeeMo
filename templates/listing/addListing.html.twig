@@ -1,0 +1,39 @@
+{# templates/add_listing/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Add Listing{% endblock %}
+
+{% block body %}
+
+<h1>Add a New Property Listing</h1>
+
+{{ form_start(form) }}
+    {{ form_errors(form) }}
+    
+  {{ form_start(form) }}
+    {{ form_errors(form) }}
+    {{ form_row(form.dateMutation) }}
+    {{ form_row(form.natureMutation) }}
+    {{ form_row(form.valeurFonciere) }}
+    {{ form_row(form.noVoie) }}
+    {{ form_row(form.bTQ) }}
+    {{ form_row(form.typeVoie) }}
+    {{ form_row(form.codeVoie) }}
+    {{ form_row(form.voie) }}
+    {{ form_row(form.codePostal) }}
+    {{ form_row(form.commune) }}
+    {{ form_row(form.codeDepartement) }}
+    {{ form_row(form.codeCommune) }}
+    {{ form_row(form.section) }}
+    {{ form_row(form.nbLots) }}
+    {{ form_row(form.codeTypeLocal) }}
+    {{ form_row(form.typeLocal) }}
+    {{ form_row(form.surfaceReelleBati) }}
+    {{ form_row(form.nbPieces) }}
+    {{ form_row(form.surfaceTerrain) }}
+    {{ form_row(form.images) }}
+    <button class="btn btn-primary">Envoyer</button>
+{{ form_end(form) }}
+
+
+{% endblock %}

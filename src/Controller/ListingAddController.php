@@ -1,9 +1,10 @@
 <?php
 
+// src/Controller/AddListingController.php
 namespace App\Controller;
 
-use App\Entity\Listing;
-use App\Form\AddListingFormType;
+use App\Entity\Property;
+use App\Form\ListingFormType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -12,27 +13,34 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ListingAddController extends AbstractController
 {
-    #[Route('/listing/add', name: 'app_listing_add')]
-    public function index(Request $request, EntityManagerInterface $entityManager): Response
+    #[Route('/add-listing', name: 'app_listing_add')]
+    public function propertyList(Request $request, EntityManagerInterface $em): Response
+    //public function addListing(Request $request, EntityManagerInterface $em): Response
     {
+    
+        $property = new Property();
 
-        $listing = new Listing();
-        $form = $this->createForm(AddListingFormType::class, $listing);
-
+        $form = $this->createForm(ListingFormType::class, $property);
         $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager->persist($listing);
-            $entityManager->flush();
 
-            return $this->redirectToRoute('listing_success'); // Vous devez créer une route pour 'listing_success'
+        if ($form->isSubmitted() && $form->isValid()) {
+            $user = $this->getUser();
+            $property->setUser($user);
+
+            $em->persist($property);
+            $em->flush();
+
+        // Add flash message and redirect
+        // $this->addFlash('success', 'Listing added successfully!');
+
+            return $this->redirectToRoute('listing_success'); // Adjust the route name 
+          
         }
 
-
-        return $this->render('listing/add.html.twig', [
+        return $this->render('listing/addListing.html.twig', [
             'controller_name' => 'ListingAddController',
             'form' => $form->createView(),
         ]);
-
         
     }
 }
