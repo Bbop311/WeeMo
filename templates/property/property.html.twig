@@ -1,28 +1,62 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ property.noVoie }} {{ property.typeVoie }} {{ property.voie }}{% endblock %}
+{% block title %}
+	{{ property.noVoie }}
+	{{ property.typeVoie }}
+	{{ property.voie }}
+{% endblock %}
 
 {% block body %}
 
-<section class="py-5">
-    <div class="container px-4 px-lg-5 my-5">
-        <div class="row gx-4 gx-lg-5 align-items-center">
-            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0"
-                    src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" alt="..." /></div>
-            <div class="col-md-6">
-                <h1 class="display-5 fw-bolder">Un joli appartement</h1>
-                <div class="fs-5 mb-5">
-                    <span>500 000 euros</span>
-                </div>
-                <p class="lead">{{ property.noVoie }} {{ property.typeVoie }} {{ property.voie }}</p>
-                <p>Un magnifique apprtement de {{ property.propertyFeatures.numberOfBedrooms }} chambres à coucher</p>
-                <button class="btn btn-outline-dark flex-shrink-0" type="button">
-                    <!-- Créer un lien vers une page de contact ici -->
-                    Contacter l'agence
-                </button>
-            </div>
-        </div>
-    </div>
-</section>
+	<section class="py-5">
+		<div class="container px-4 px-lg-5 my-5">
 
-{% endblock %}
+
+			<div class="row gx-4 gx-lg-5 align-items-center">
+				<div class="col-md-6">
+
+					<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="{{asset('images/1.jpeg')}}" alt="image" class="image">
+							</div>
+						
+							<div class="carousel-item">
+								<img src="{{asset('images/2.jpeg')}}" alt="image" class="image">
+							</div>
+					
+					<div class="carousel-item">
+						<img src="{{asset('images/3.jpeg')}}" alt="image" class="image">
+					</div>
+				</div>	</div>
+					</div>
+			</div>
+			<div class="carousel-item">
+				<img src="{{asset('images/4.jpeg')}}" alt="image" class="image">
+                
+			</div>
+	
+
+	<div class="col-md-6">
+		<h1 class="display-5 fw-bolder">Un joli appartement</h1>
+		<div class="fs-5 mb-5">
+			<span>{{property.valeurFonciere}}€</span>
+
+			<p class="lead">{{ property.noVoie }}
+				{{ property.typeVoie }}
+				{{ property.voie }}</p>
+			<p>Un magnifique appartement de
+				{{ property.propertyFeatures.numberOfBedrooms }}
+				chambres à coucher</p>
+
+
+		</div>
+
+
+		<button
+			class="btn btn-outline-dark flex-shrink-0" type="button">
+			<!-- Créer un lien vers une page de contact ici -->
+			Contacter l'agence
+		</button>
+	</div>
+</div></div></section>{% endblock %}

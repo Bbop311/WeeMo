@@ -13,6 +13,11 @@ li {
     align-items: center;
   }
 
+/* format img list*/
+  .listimg{
+    width: 375px;
+  }
+
 .search-form label {
     color: rgb(255, 0, 0);
     text-align: center;
@@ -27,3 +32,4 @@ li {
 ::placeholder {
 	text-align: center;
 }
+
