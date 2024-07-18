@@ -57,8 +57,6 @@ Le script, tel que configuré par défaut, va procéder ainsi :
 
 ### Se mettre à jour et utiliser la base de données
 
-J'ai changé pas mal de choses au niveau des fixtures et de la base de données, il faut : 
-
 * Pull la branch dev qui est propre et à jour (Ne pas toucher à cette branche !!!)
 * créer dans PHPMyAdmin une base de données ‘recupdb’
 * Dans cette BDD, importer le dump de js (dans le dossier ‘_ressources’)
