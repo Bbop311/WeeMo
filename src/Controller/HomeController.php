@@ -19,21 +19,23 @@ class HomeController extends AbstractController
         $form = $this->createForm(SearchType::class);
         $form->handleRequest($request);
 
-        $properties_list = $propertyListGenerator->getList($propertyRepository);
         $properties = [];
+        /* if ($form->isSubmitted() && $form->isValid()) {
+            // dd($request->request);
+            // $foo = $_GET['Ville'];
+            // $var = $request->request;
+            $data = $form->getData();
+        } */
+        $data = $form->getData();
+        // dd($data);
+        $propertyRepository = $propertyRepository->findByArrondissement($data);
+        $properties_list = $propertyListGenerator->getList($propertyRepository);
         for ($i = 24*($page-1) ; $i < 24*($page) ;$i++ )
         {
             $properties[] = $properties_list[$i];
         }
         dump($form);
         if($request->getMethod() === 'POST') dd($form->isValid()) ;
-        if ($form->isSubmitted() && $form->isValid()) {
-            // dd($request->request);
-            // $foo = $_GET['Ville'];
-            // $var = $request->request;
-            $data = $form->getData();
-            dd($data);
-        }
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
             'properties' => $properties,
@@ -42,6 +44,7 @@ class HomeController extends AbstractController
         ]);
     }
 
+    // Helps with pagination (prevents register or login to mistaken for page numbers)
     #[Route('/', name: 'home')]
     public function redirect_to_home(): Response
     {
