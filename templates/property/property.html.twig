@@ -27,15 +27,19 @@
 							<div class="carousel-item">
 								<img src="{{asset('images/3.jpeg')}}" alt="image" class="image">
 							</div>
+							<div class="carousel-item">
+								<img src="{{asset('images/4.jpeg')}}" alt="image" class="image">
+							</div>
+
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="carousel-item">
-				<img src="{{asset('images/4.jpeg')}}" alt="image" class="image">
-			</div>
+
+
 			<div class="col-md-6">
-				<h1 class="display-5 fw-bolder">Un joli appartement</h1>
+				<h1 class="display-5 fw-bolder">Un joli
+					{{property.typeLocal}}</h1>
 				<div class="fs-5 mb-5">
 					<span>{{property.valeurFonciere}}€</span>
 
@@ -90,5 +94,6 @@
 				</button>
 			</div>
 		</div>
-	
-</section>{% endblock %}
+
+	</section>
+{% endblock %}
