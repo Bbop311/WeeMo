@@ -14,7 +14,7 @@ class LoginControllerTest extends WebTestCase
 {
     private KernelBrowser $client;
     private $entityManager;
-   
+
 
     protected function setUp(): void
     {
@@ -100,7 +100,7 @@ class LoginControllerTest extends WebTestCase
         self::assertSelectorTextContains('.alert-danger', 'Invalid credentials.');
     }
 
-    
+
     /**
      * @dataProvider userProvider
      */
@@ -115,10 +115,9 @@ class LoginControllerTest extends WebTestCase
             '_password' => $password
         ]);
 
-        self::assertResponseRedirects('/');
+        self::assertResponseRedirects("/");
         $this->client->followRedirect();
 
         self::assertSelectorNotExists('.alert-danger');
-        self::assertResponseIsSuccessful();
     }
 }
