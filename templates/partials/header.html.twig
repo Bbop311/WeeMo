@@ -19,6 +19,11 @@
            
         </ul>
         <ul class="nav">
+            {% if is_granted('ROLE_ADMIN') %}
+            <li class="nav-item">
+                <a href="{{ path('app_admin')}}" class="nav-link link-body-emphasis px-2">Espace Administrateur</a>
+            </li>
+            {% endif %}
             <li class="nav-item">
                 <a href="#" class="nav-link link-body-emphasis px-2">MON ESPACE</a>
             </li>
