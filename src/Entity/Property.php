@@ -87,6 +87,10 @@ class Property
     #[ORM\OneToMany(targetEntity: Listing::class, mappedBy: 'property')]
     private Collection $listings;
 
+    #[ORM\OneToOne(mappedBy: 'property', cascade: ['persist', 'remove'])]
+    private ?PropertyFeatures $propertyFeatures = null;
+
+
     public function __construct()
     {
         $this->images = new ArrayCollection();
@@ -397,4 +401,27 @@ class Property
 
         return $this;
     }
+
+    public function getPropertyFeatures(): ?PropertyFeatures
+    {
+        return $this->propertyFeatures;
+    }
+
+    public function setPropertyFeatures(?PropertyFeatures $propertyFeatures): static
+    {
+        // unset the owning side of the relation if necessary
+        if ($propertyFeatures === null && $this->propertyFeatures !== null) {
+            $this->propertyFeatures->setProperty(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($propertyFeatures !== null && $propertyFeatures->getProperty() !== $this) {
+            $propertyFeatures->setProperty($this);
+        }
+
+        $this->propertyFeatures = $propertyFeatures;
+
+        return $this;
+    }
+
 }
