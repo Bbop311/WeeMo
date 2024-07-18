@@ -18,10 +18,10 @@ class ListingValidationType extends AbstractType
         $builder
             ->add('status', ChoiceType::class, [
                 'choices' => [
-                    'active' => false,
-                    'inactive' => true,
-                    'expired' => false,
-                    'suspended' => false,
+                    'active' => 'active',
+                    'inactive' => 'inactive',
+                    'expired' => 'expired',
+                    'suspended' => 'suspended',
                 ]
             ])
             ->add('save', SubmitType::class, [
