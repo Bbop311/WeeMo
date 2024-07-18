@@ -55,3 +55,20 @@ Le script, tel que configuré par défaut, va procéder ainsi :
 3. tester le modèle 10 fois, avec 1000 données à chaque fois afin d'établir un score moyen de précision,
 4. rennomer le fichier de sauvegarde pour y intégrer le score afin de proposer une classification des modèles les plus efficaces.
 
+### Se mettre à jour et utiliser la base de données
+
+J'ai changé pas mal de choses au niveau des fixtures et de la base de données, il faut : 
+
+Pull la branch dev qui est propre et à jour (Ne pas toucher à cette branche !!!)
+créer dans PHPMyAdmin une base de données ‘recupdb’
+Dans cette BDD, importer le dump de js (dans le dossier ‘_ressources’)
+Faire une migration (doctrine:migration:migrate)
+Utiliser cette commande pour le fixtures:load :
+
+```shell
+php -d memory_limit=1024M bin/console doctrine:fixtures:load
+```
+
+ 
+
+
