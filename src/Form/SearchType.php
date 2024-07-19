@@ -84,7 +84,7 @@ class SearchType extends AbstractType
                 'required' => false,
                 // 'data' => 'SALUT',
             ]) */
-            ->add('nb_pieces', TextType::class, [
+            ->add('nb_of_bedrooms', TextType::class, [
                 // 'help' => 'SALUT',
                 'label' => 'Nombres de pièces',
                 'label_attr' => [

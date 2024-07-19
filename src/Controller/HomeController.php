@@ -22,6 +22,7 @@ class HomeController extends AbstractController
         $properties = [];
         if ($form->isSubmitted() && $form->isValid()) {
             $parameters['code_postal'] = $form->get('code_postal')->getData();
+            $parameters['nb_of_bedrooms'] = $form->get('nb_of_bedrooms')->getData();
             $propertyRepository = $propertyRepository->filter($parameters);
             return $this->redirectToRoute('property_display', [
                 // makes the array parameters in a string that cna be passed in the url
@@ -63,16 +64,15 @@ class HomeController extends AbstractController
     {
         // decodes the string that was passed in the URL
         parse_str($parameters, $array);
-        print_r($array);
         $propertyRepository = $propertyRepository->filter($array);
         /* $propertyRepository = $propertyRepository->findByNumberOfRooms($number_of_bedrooms); */
-        for ($i = 24 * ($page - 1); $i < 24 * ($page); $i++) {
+        /* for ($i = 24 * ($page - 1); $i < 24 * ($page); $i++) {
             $properties[] = $propertyRepository[$i];
-        }
+        } */
         // dd($properties);
         return $this->render('home/property_display.html.twig', [
             'controller_name' => 'HomeController',
-            'properties' => $properties,
+            'properties' => $propertyRepository,
             'page' => $page,
         ]);
     }

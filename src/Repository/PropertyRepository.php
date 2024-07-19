@@ -23,9 +23,13 @@ class PropertyRepository extends ServiceEntityRepository
     {
         if ($parameters) {
             $code_postal = intval($parameters['code_postal']);
+            $nb_of_bedrooms = $parameters['nb_of_bedrooms'];
             return $this->createQueryBuilder('p')
-                ->andWhere('p.code_postal = :val')
-                ->setParameter('val', $code_postal)
+                ->innerJoin('p.propertyFeatures', 'f')
+                ->where('f.number_of_bedrooms = :nb_of_bedrooms')
+                ->setParameter('nb_of_bedrooms', $nb_of_bedrooms)
+                ->andWhere('p.code_postal = :code_postal')
+                ->setParameter('code_postal', $code_postal)
                 ->orderBy('p.id', 'ASC')
                 //    ->setMaxResults(10)
                 ->getQuery()
@@ -47,7 +51,7 @@ class PropertyRepository extends ServiceEntityRepository
     //     if ($code_postal) {
     //         $code_postal = intval($code_postal);
     //         return $this->createQueryBuilder('p')
-    //             ->andWhere('p.property_features.number_of_bedrooms = :val')
+    //             ->andWhere('p.property_features.nb_of_bedrooms = :val')
     //             ->setParameter('val', $code_postal)
     //             ->orderBy('p.id', 'ASC')
     //             //    ->setMaxResults(10)
