@@ -46,6 +46,7 @@ class ImageFixtures extends Fixture implements DependentFixtureInterface
             [
                 "img_url" => "assets/images/12.jpeg"
             ]
+          
         ];
 
         // Loops on the first 25 appartments to associate the set of images to them
