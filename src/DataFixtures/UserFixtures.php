@@ -11,14 +11,14 @@ class UserFixtures extends Fixture
 {
     private $userPasswordHasher;
     public const USERS = [
+        ['email' => 'admin@example.com', 'password' => 'lplp', 'firstname' => 'Alex', 'lastname' => 'Joe', 'roles' => ['ROLE_ADMIN']],
         ['email' => 'alice.smith@example.com', 'password' => 'a1b2c3d4', 'firstname' => 'Alice', 'lastname' => 'Smith', 'roles' => ['ROLE_USER']],
         ['email' => 'bob.jones@example.com', 'password' => 'b2c3d4e5', 'firstname' => 'Bob', 'lastname' => 'Jones', 'roles' => ['ROLE_USER']],
         ['email' => 'charlie.brown@example.com', 'password' => 'c3d4e5f6', 'firstname' => 'Charlie', 'lastname' => 'Brown', 'roles' => ['ROLE_USER']],
         ['email' => 'diana.williams@example.com', 'password' => 'd4e5f6g7', 'firstname' => 'Diana', 'lastname' => 'Williams', 'roles' => ['ROLE_USER']],
         ['email' => 'edward.johnson@example.com', 'password' => 'e5f6g7h8', 'firstname' => 'Edward', 'lastname' => 'Johnson', 'roles' => ['ROLE_USER']],
         ['email' => 'fiona.white@example.com', 'password' => 'f6g7h8i9', 'firstname' => 'Fiona', 'lastname' => 'White', 'roles' => ['ROLE_USER']],
-        ['email' => 'george.green@example.com', 'password' => 'g7h8i9j0', 'firstname' => 'George', 'lastname' => 'Green', 'roles' => ['ROLE
-    _USER']],
+        ['email' => 'george.green@example.com', 'password' => 'g7h8i9j0', 'firstname' => 'George', 'lastname' => 'Green', 'roles' => ['ROLE_USER']],
         ['email' => 'hannah.martin@example.com', 'password' => 'h8i9j0k1', 'firstname' => 'Hannah', 'lastname' => 'Martin', 'roles' => ['ROLE_USER']],
         ['email' => 'ian.davis@example.com', 'password' => 'i9j0k1l2', 'firstname' => 'Ian', 'lastname' => 'Davis', 'roles' => ['ROLE_USER']],
         ['email' => 'julia.miller@example.com', 'password' => 'j0k1l2m3', 'firstname' => 'Julia', 'lastname' => 'Miller', 'roles' => ['ROLE_USER']],
