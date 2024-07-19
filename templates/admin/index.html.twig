@@ -14,8 +14,8 @@
     {% for listing in listings %}
     <div class="card" style="width: 18rem;">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+          <h5 class="card-title">{{listing.listingTitle }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">		<img src="{{asset('images/imglisting1.jpeg')}}" alt="image" class="image d-block w-100"></h6>
           <p class="card-text">{{ listing.listingDescription }}</p>
           <a href="{{ path('listing_validation', {listing_id : listing.id})}}" class="card-link">Validation page</a>
           <a href="#" class="card-link">Another link</a>

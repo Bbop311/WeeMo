@@ -11,52 +11,97 @@
 	<section class="py-5">
 		<div class="container px-4 px-lg-5 my-5">
 
-
 			<div class="row gx-4 gx-lg-5 align-items-center">
 				<div class="col-md-6">
 
-					<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+					<div id="carouselExample" class="carousel slide">
 						<div class="carousel-inner">
 							<div class="carousel-item active">
-								<img src="{{asset('images/1.jpeg')}}" alt="image" class="image">
+								<img src="{{asset('images/1.jpeg')}}" alt="image" class="image d-block w-100">
 							</div>
-						
+
 							<div class="carousel-item">
-								<img src="{{asset('images/2.jpeg')}}" alt="image" class="image">
+								<img src="{{asset('images/2.jpeg')}}" alt="image" class="image d-block w-100">
 							</div>
-					
-					<div class="carousel-item">
-						<img src="{{asset('images/3.jpeg')}}" alt="image" class="image">
+
+							<div class="carousel-item">
+								<img src="{{asset('images/3.jpeg')}}" alt="image" class="image d-block w-100">
+							</div>
+							<div class="carousel-item">
+								<img src="{{asset('images/4.jpeg')}}" alt="image" class="image d-block w-100">
+							</div>
+
+						</div>
+						<button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Previous</span>
+						</button>
+						<button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Next</span>
+						</button>
 					</div>
-				</div>	</div>
-					</div>
+				</div>
 			</div>
-			<div class="carousel-item">
-				<img src="{{asset('images/4.jpeg')}}" alt="image" class="image">
-                
-			</div>
-	
-
-	<div class="col-md-6">
-		<h1 class="display-5 fw-bolder">Un joli appartement</h1>
-		<div class="fs-5 mb-5">
-			<span>{{property.valeurFonciere}}€</span>
-
-			<p class="lead">{{ property.noVoie }}
-				{{ property.typeVoie }}
-				{{ property.voie }}</p>
-			<p>Un magnifique appartement de
-				{{ property.propertyFeatures.numberOfBedrooms }}
-				chambres à coucher</p>
-
-
 		</div>
 
 
-		<button
-			class="btn btn-outline-dark flex-shrink-0" type="button">
-			<!-- Créer un lien vers une page de contact ici -->
-			Contacter l'agence
-		</button>
+		<div class="col-md-6">
+			<h1 class="display-5 fw-bolder">Un joli
+				{{property.typeLocal}}</h1>
+			<div class="fs-5 mb-5">
+				<span>{{property.valeurFonciere}}€</span>
+
+				<p class="lead">{{ property.noVoie }}
+					{{ property.typeVoie }}
+					{{ property.voie }}</p>
+
+				<p>
+					Type de chambre :
+					{{ property.propertyFeatures.typeOfrooms }}
+				</p>
+
+				<p>
+					Etage :
+					{{ property.propertyFeatures.floor }}
+				</p>
+				<p>
+					Etat :
+					{{ property.propertyFeatures.propertyCondition }}
+				</p>
+				<p>
+					Classe énergétique :
+					{{ property.propertyFeatures.energyClass}}
+				</p>
+				<p>
+					Ascenseur :
+					{{ property.propertyFeatures.elevator }}
+				</p>
+				<p>
+					Balcon :
+					{{ property.propertyFeatures.balcony }}
+				</p>
+				<p>
+					Parking :
+					{{ property.propertyFeatures.parking }}
+				</p>
+				<p>
+					Type de chauffage :
+					{{ property.propertyFeatures.heatingType }}
+				</p>
+				<p>
+					Climatisation :
+					{{ property.propertyFeatures.airCondition}}
+				</p>
+
+			</div>
+
+			<button
+				class="btn btn-outline-dark flex-shrink-0" type="button">
+				<!-- Créer un lien vers une page de contact ici -->
+				Contacter l'agence
+			</button>
+		</div>
 	</div>
-</div></div></section>{% endblock %}
+
+</section>{% endblock %}
