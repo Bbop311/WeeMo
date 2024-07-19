@@ -7,33 +7,41 @@
                     <img src="{{asset('images/weemo-logo.png')}}"  alt="weemo" class="logo-img"> 
                 </a>
             </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link link-body-emphasis px-2">NOS ANNONCES</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link link-body-emphasis px-2">ACHETER</a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ path('app_listing_add')}}" class="nav-link link-body-emphasis px-2">VENDRE</a>
-            </li>
+            
            
         </ul>
+    <ul class="nav" style="margin-right: 50px;">
+    <li class="nav-item"><a href="#" class="btn btn-info px-2" style="margin-right: 10px;">Publiez une Annonce</a></li> 
+    <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">NOS ANNONCES</a></li>
+    <li class="nav-item"> <a href="#" class="nav-link link-body-emphasis px-2">ACHETER</a></li>
+    <li class="nav-item"> <a href="#" class="nav-link link-body-emphasis px-2">VENDRE</a></li>
+    <li class="nav-item"> <a href="#" class="nav-link link-body-emphasis px-2">SIMILATEUR</a></li>
+    
+    </ul>
+
         <ul class="nav">
-            {% if is_granted('ROLE_ADMIN') %}
-            <li class="nav-item">
-                <a href="{{ path('app_admin')}}" class="nav-link link-body-emphasis px-2">Espace Administrateur</a>
-            </li>
-            {% endif %}
-            <li class="nav-item">
-                <a href="#" class="nav-link link-body-emphasis px-2">MON ESPACE</a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ path('app_login')}}" class="nav-link link-body-emphasis px-2">Se connecter</a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ path('app_register')}}" class="nav-link link-body-emphasis px-2">S'inscrire</a>
-            </li>
-        </ul>
+
+ <li class="nav-item"><span class="nav-link link-body-emphasis px-2">MON ESPACE | </span></li>
+
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <li class="nav-item dropdown">
+            <a href="#" class="nav-link link-body-emphasis px-2 dropdown-toggle" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Bonjour {{ app.user.firstName }} {{ app.user.lastName }}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                {% if is_granted('ROLE_ADMIN') %}
+                    <li><a class="dropdown-item" href="{{ path('app_admin') }}">ADMIN DASHBOARD</a></li>
+                {% endif %}
+                <li><a class="dropdown-item" href="#">MON PROFIL</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="{{ path('app_logout') }}">DECONNEXION</a></li>
+            </ul>
+        </li>
+    {% else %}
+        <li class="nav-item"><a href="{{ path('app_login') }}" class="nav-link link-body-emphasis px-2">CONNEXION</a></li>
+        <li class="nav-item"><a href="{{ path('app_register') }}" class="nav-link link-body-emphasis px-2">INSCRIPTION</a></li>
+    {% endif %}
+</ul>
     </div>
 </nav>
 </header>
