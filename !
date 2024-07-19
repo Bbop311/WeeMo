@@ -1,0 +1,19 @@
+Refactor pagination
+
+- I refactored my hand made pagination for the paginator element
+- I still need to reinclue the form now
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch refactor_pagination
+# Changes to be committed:
+#	modified:   composer.json
+#	modified:   composer.lock
+#	modified:   config/bundles.php
+#	modified:   src/Controller/HomeController.php
+#	modified:   symfony.lock
+#	modified:   templates/form/search.html.twig
+#	modified:   templates/home/index.html.twig
+#	modified:   templates/partials/list.html.twig
+#
