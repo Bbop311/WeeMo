@@ -30,7 +30,7 @@ class Listing
     private ?string $status = null;
 
     #[ORM\ManyToOne(inversedBy: 'listings')]
-    private ?property $property = null;
+    private ?Property $property = null;
 
     public function getId(): ?int
     {

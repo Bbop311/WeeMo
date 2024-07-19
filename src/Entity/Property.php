@@ -131,11 +131,11 @@ class Property
         return $this->valeur_fonciere;
     }
 
-    public function setValeurFonciere(?int $valeur_fonciere): ?static
+    public function setValeurFonciere(?int $valeur_fonciere): static
     {
         $this->valeur_fonciere = $valeur_fonciere;
 
-        return $this->valeur_fonciere;
+        return $this;
     }
 
     public function getNoVoie(): ?string

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Listing Validation{% endblock %}
+
+{% block body %}
+
+<p>What should be the status of the Listing {{ listing.id }} ?</p>
+
+{{ form(form) }}
+
+{% endblock %}
