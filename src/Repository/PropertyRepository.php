@@ -21,42 +21,25 @@ class PropertyRepository extends ServiceEntityRepository
      */
     public function filter(array $parameters): array
     {
-        if ($parameters) {
+        $qb = $this->createQueryBuilder('p');
+        // I'm using isset here to check if the parameter has been given by the user (I should be able to check if the parameter is null but symfony seems to consider that nulll =not set)
+        if (isset($parameters['code_postal'])) {
             $code_postal = intval($parameters['code_postal']);
+            $qb->andWhere('p.code_postal = :code_postal')
+                ->setParameter('code_postal', $code_postal);
+            //    ->setMaxResults(10)
+        }
+        if (isset($parameters['nb_of_bedrooms'])) {
+            // Joining on the property_features table where the number of bedrooms field is set
             $nb_of_bedrooms = $parameters['nb_of_bedrooms'];
-            return $this->createQueryBuilder('p')
-                ->innerJoin('p.propertyFeatures', 'f')
-                ->where('f.number_of_bedrooms = :nb_of_bedrooms')
-                ->setParameter('nb_of_bedrooms', $nb_of_bedrooms)
-                ->andWhere('p.code_postal = :code_postal')
-                ->setParameter('code_postal', $code_postal)
-                ->orderBy('p.id', 'ASC')
-                //    ->setMaxResults(10)
-                ->getQuery()
-                ->getResult();
+            $qb->innerJoin('p.propertyFeatures', 'f')
+                ->andWhere('f.number_of_bedrooms = :nb_of_bedrooms')
+                ->setParameter('nb_of_bedrooms', $nb_of_bedrooms);
         }
 
-        //    public function findOneBySomeField($value): ?Property
-        //    {
-        //        return $this->createQueryBuilder('p')
-        //            ->andWhere('p.exampleField = :val')
-        //            ->setParameter('val', $value)
-        //            ->getQuery()
-        //            ->getOneOrNullResult()
-        //        ;
-        //    }
+        return $qb->orderBy('p.id', 'ASC')
+            ->getQuery()
+            ->getResult();
+
     }
-    // public function findByNumberOfRooms($number_of_rooms): array
-    // {
-    //     if ($code_postal) {
-    //         $code_postal = intval($code_postal);
-    //         return $this->createQueryBuilder('p')
-    //             ->andWhere('p.property_features.nb_of_bedrooms = :val')
-    //             ->setParameter('val', $code_postal)
-    //             ->orderBy('p.id', 'ASC')
-    //             //    ->setMaxResults(10)
-    //             ->getQuery()
-    //             ->getResult();
-    //     }
-    // }
 }
