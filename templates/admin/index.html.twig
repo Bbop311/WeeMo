@@ -39,17 +39,16 @@
 							<div class="card" style="width: 18rem;">
 								<div class="card-bod">
 
-									<p>Annonce n°{{listing.id }}
-									</p>
-									<p>
-										<h5 class="card-title">
-											{{listing.listingTitle }}</h5>
+									<h5>Annonce n°{{listing.id }}</h5>
+									
+										<h5>Titre : {{listing.listingTitle }}</h5>
+											
 
 										<h6 class="card-subtitle mb-2 text-muted">
 											<img src="{{asset('images/imglisting1.jpeg')}}" alt="image" class="image d-block w-100"></h6>
 									</p>
-									<p>
-										Description :</p>
+									<h5>
+										Description :</h5>
 									<p class="card-text">{{ listing.listingDescription }}</p>
 									<p class="card-text">Status :{{ listing.Status }}</p>
 									<a href="{{ path('listing_validation', {listing_id : listing.id})}}" class="card-link">Valider une annonce</a>
