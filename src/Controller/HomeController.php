@@ -20,28 +20,26 @@ class HomeController extends AbstractController
         $form->handleRequest($request);
 
         $properties = [];
-        /* if ($form->isSubmitted() && $form->isValid()) {
-            // dd($request->request);
-            // $foo = $_GET['Ville'];
-            // $var = $request->request;
-            $data = $form->getData();
-        } */
-        $data = $form->getData();
-        // dd($data);
-        $propertyRepository = $propertyRepository->findByArrondissement($data);
-        $properties_list = $propertyListGenerator->getList($propertyRepository);
-        for ($i = 24*($page-1) ; $i < 24*($page) ;$i++ )
-        {
-            $properties[] = $properties_list[$i];
+        if ($form->isSubmitted() && $form->isValid()) {
+            // $data = $form->getData();
+            // dd($form->get('code_postal')->getData());
+            $propertyRepository = $propertyRepository->findByArrondissement($form->get('code_postal')->getData());
+            // $properties_list = $propertyListGenerator->getList($propertyRepository);
+            // dd($propertyRepository);
+            return $this->redirectToRoute('property_display', ['code_postal' => $form->get('code_postal')->getData(), 'page' => $page ]);
         }
-        dump($form);
-        if($request->getMethod() === 'POST') dd($form->isValid()) ;
-        return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
-            'properties' => $properties,
-            'page' => $page,
-            'form' => $form,
-        ]);
+        else {
+            $properties_list = $propertyListGenerator->getList($propertyRepository);
+            for ($i = 24 * ($page - 1); $i < 24 * ($page); $i++) {
+                $properties[] = $properties_list[$i];
+            }
+            return $this->render('home/index.html.twig', [
+                'controller_name' => 'HomeController',
+                'properties' => $properties,
+                'page' => $page,
+                'form' => $form
+            ]);
+        }
     }
 
     // Helps with pagination (prevents register or login to mistaken for page numbers)
@@ -51,12 +49,27 @@ class HomeController extends AbstractController
         return $this->redirectToRoute('app_home');
     }
 
-    #[Route('/property/{id}', name:'property_show')]
+    #[Route('/property/{id}', name: 'property_show')]
     public function property_show(PropertyRepository $propertyRepository, int $id): Response
     {
         $property = $propertyRepository->find($id);
         return $this->render('property/property.html.twig', [
             'property' => $property
+        ]);
+    }
+
+    #[Route('/property_display/{page}/{code_postal}', name: 'property_display')]
+    public function property_display(PropertyRepository $propertyRepository, int $page = 1, int $code_postal): Response
+    {
+        $propertyRepository = $propertyRepository->findByArrondissement($code_postal);
+        for ($i = 24 * ($page - 1); $i < 24 * ($page); $i++) {
+            $properties[] = $propertyRepository[$i];
+        }
+        // dd($properties);
+        return $this->render('home/property_display.html.twig', [
+            'controller_name' => 'HomeController',
+            'properties' => $properties,
+            'page' => $page,
         ]);
     }
 }

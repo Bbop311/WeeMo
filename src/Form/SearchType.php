@@ -27,6 +27,7 @@ class SearchType extends AbstractType
                 'attr' => [
                     'placeholder' => 'Ex: 75019'
                 ],
+                'required' => false,
                 // 'data' => 'SALUT',
             ])
             ->add('commune', ChoiceType::class, [
@@ -51,7 +52,8 @@ class SearchType extends AbstractType
                     'Paris 03'=> 'Paris 03',
                     'Paris 02'=> 'Paris 02',
                     'Paris 01'=> 'Paris 01',
-                ]
+                ],
+                'required' => false,
             ])
             ->add('type_local', TextType::class, [
                 // 'help' => 'SALUT',
@@ -63,6 +65,7 @@ class SearchType extends AbstractType
                 'attr' => [
                     'placeholder' => 'Ex: ???'
                 ],
+                'required' => false,
                 // 'data' => 'SALUT',
             ])
             ->add('created_at', DateType::class, [
@@ -76,6 +79,7 @@ class SearchType extends AbstractType
                     'placeholder' => 'Renseignez le nombres de pièces',
                     'color' => 'color: blue',
                 ],
+                'required' => false,
                 // 'data' => 'SALUT',
             ])
             ->add('updated_at', DateType::class, [
@@ -89,6 +93,7 @@ class SearchType extends AbstractType
                     'placeholder' => 'Renseignez le nombres de pièces',
                     'color' => 'color: blue',
                 ],
+                'required' => false,
                 // 'data' => 'SALUT',
             ])
             ->add('nb_pieces', TextType::class, [
@@ -102,6 +107,7 @@ class SearchType extends AbstractType
                     'placeholder' => 'Ex: 4',
                     'color' => 'color: blue',
                 ],
+                'required' => false,
                 // 'data' => 'SALUT',
             ])
             ->add('surface_terrain', NumberType::class, [
@@ -114,6 +120,7 @@ class SearchType extends AbstractType
                 'attr' => [
                     'placeholder' => 'Renseignez la surface du terrain'
                 ],
+                'required' => false,
                 // 'data' => 'SALUT',
             ])
             ->add('Submit', SubmitType::class, [
