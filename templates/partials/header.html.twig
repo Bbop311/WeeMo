@@ -26,9 +26,9 @@
             {% endif %}
 
             {% if app.user %}
-            <div class="mb-3">
-                <a class="btn btn-primary disabled" href="#">MON ESPACE</a> <a class="btn btn-danger" href="{{ path('app_logout') }}">Se deconnecter</a>
-            </div>
+            <li class="nav-item">
+                <a class="btn btn-primary text-uppercase disabled" href="#">Mon espace</a> <span class="white">-</span> <a class="btn btn-danger" href="{{ path('app_logout') }}">Se deconnecter</a>
+            </li>
             {% else %}
             <ul class="nav">
                 <li class="nav-item"><a class="btn btn-primary me-1" href="/login" class="nav-link link-body-emphasis px-2">Se connecter</a></li>
