@@ -13,8 +13,8 @@ li {
     align-items: center;
   }
 
-.search-form label {
-    color: rgb(255, 0, 0);
+.label-color label {
+    color: rgb(0, 98, 255);
     text-align: center;
 }
 
@@ -26,4 +26,10 @@ li {
 
 ::placeholder {
 	text-align: center;
+}
+
+.checkbox {
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
 }
