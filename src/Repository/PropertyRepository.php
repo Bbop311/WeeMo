@@ -19,10 +19,10 @@ class PropertyRepository extends ServiceEntityRepository
     /**
      * @return Property[] Returns an array of Property objects
      */
-    public function findByArrondissement($code_postal): array
+    public function filter(array $parameters): array
     {
-        if ($code_postal) {
-            $code_postal = intval($code_postal);
+        if ($parameters) {
+            $code_postal = intval($parameters['code_postal']);
             return $this->createQueryBuilder('p')
                 ->andWhere('p.code_postal = :val')
                 ->setParameter('val', $code_postal)
@@ -42,4 +42,17 @@ class PropertyRepository extends ServiceEntityRepository
         //        ;
         //    }
     }
+    // public function findByNumberOfRooms($number_of_rooms): array
+    // {
+    //     if ($code_postal) {
+    //         $code_postal = intval($code_postal);
+    //         return $this->createQueryBuilder('p')
+    //             ->andWhere('p.property_features.number_of_bedrooms = :val')
+    //             ->setParameter('val', $code_postal)
+    //             ->orderBy('p.id', 'ASC')
+    //             //    ->setMaxResults(10)
+    //             ->getQuery()
+    //             ->getResult();
+    //     }
+    // }
 }

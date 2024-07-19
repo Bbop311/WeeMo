@@ -3,23 +3,11 @@
     {{ form_start(form) }}
 
     <div class="row form-input">
-        <div class="col my-2">
-            {{ form_label(form.commune) }}
-            {{ form_help(form.commune) }}
-            {{ form_widget(form.commune) }}
-            {{ form_errors(form.commune) }}
-        </div>
             <div class="col my-2">  
             {{ form_label(form.code_postal) }}
             {{ form_help(form.code_postal) }}
             {{ form_widget(form.code_postal) }}
             {{ form_errors(form.code_postal) }}
-        </div>
-        <div class="col my-2">
-            {{ form_label(form.type_local) }}
-            {{ form_help(form.type_local) }}
-            {{ form_widget(form.type_local) }}
-            {{ form_errors(form.type_local) }}
         </div>
     </div>
     <div class="row form-input">
@@ -34,20 +22,6 @@
             {{ form_help(form.surface_terrain) }}
             {{ form_widget(form.surface_terrain) }}
             {{ form_errors(form.surface_terrain) }}
-        </div>
-    </div>
-    <div class="row form-input">
-        <div class="col my-2">
-            {{ form_label(form.created_at) }}
-            {{ form_help(form.created_at) }}
-            {{ form_widget(form.created_at) }}
-            {{ form_errors(form.created_at) }}
-        </div>
-        <div class="col my-2">
-            {{ form_label(form.updated_at) }}
-            {{ form_help(form.updated_at) }}
-            {{ form_widget(form.updated_at) }}
-            {{ form_errors(form.updated_at) }}
         </div>
     </div>
     <div class="text-center mt-5">

@@ -21,14 +21,14 @@ class HomeController extends AbstractController
 
         $properties = [];
         if ($form->isSubmitted() && $form->isValid()) {
-            // $data = $form->getData();
-            // dd($form->get('code_postal')->getData());
-            $propertyRepository = $propertyRepository->findByArrondissement($form->get('code_postal')->getData());
-            // $properties_list = $propertyListGenerator->getList($propertyRepository);
-            // dd($propertyRepository);
-            return $this->redirectToRoute('property_display', ['code_postal' => $form->get('code_postal')->getData(), 'page' => $page ]);
-        }
-        else {
+            $parameters['code_postal'] = $form->get('code_postal')->getData();
+            $propertyRepository = $propertyRepository->filter($parameters);
+            return $this->redirectToRoute('property_display', [
+                // makes the array parameters in a string that cna be passed in the url
+                'parameters' => http_build_query($parameters),
+                'page' => $page
+            ]);
+        } else {
             $properties_list = $propertyListGenerator->getList($propertyRepository);
             for ($i = 24 * ($page - 1); $i < 24 * ($page); $i++) {
                 $properties[] = $properties_list[$i];
@@ -58,10 +58,14 @@ class HomeController extends AbstractController
         ]);
     }
 
-    #[Route('/property_display/{page}/{code_postal}', name: 'property_display')]
-    public function property_display(PropertyRepository $propertyRepository, int $page = 1, int $code_postal): Response
+    #[Route('/property_display/{page}/{parameters}', name: 'property_display')]
+    public function property_display(PropertyRepository $propertyRepository, int $page = 1, string $parameters): Response
     {
-        $propertyRepository = $propertyRepository->findByArrondissement($code_postal);
+        // decodes the string that was passed in the URL
+        parse_str($parameters, $array);
+        print_r($array);
+        $propertyRepository = $propertyRepository->filter($array);
+        /* $propertyRepository = $propertyRepository->findByNumberOfRooms($number_of_bedrooms); */
         for ($i = 24 * ($page - 1); $i < 24 * ($page); $i++) {
             $properties[] = $propertyRepository[$i];
         }
