@@ -2,25 +2,64 @@
 
 {% block title %}Hello AdminController!{% endblock %}
 
+
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+	<style>
+		.example-wrapper {
+			margin: 1em auto;
+			max-width: 800px;
+			width: 95%;
+			font: 18px / 1.5 sans-serif;
+		}
+		.example-wrapper code {
+			background: #F5F5F5;
+			padding: 2px 6px;
+		}
 
+    .annonces {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      gap:1rem;
+    }
+	</style>
 
-<div class="example-wrapper">
-    <p>Hello {{ app.user.firstName }} !</p>
-    {% for listing in listings %}
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">{{listing.listingTitle }}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">		<img src="{{asset('images/imglisting1.jpeg')}}" alt="image" class="image d-block w-100"></h6>
-          <p class="card-text">{{ listing.listingDescription }}</p>
-          <a href="{{ path('listing_validation', {listing_id : listing.id})}}" class="card-link">Validation page</a>
-          <a href="#" class="card-link">Another link</a>
-        </div>
-      </div>
-    {% endfor %}
-</div>
+	<section class="py-5">
+		<div class="container px-4 px-lg-5 my-5 d-sm-inline-flex ">
+
+			<div class="row gx-4 gx-lg-5 align-items-center">
+				<div class="flex-column ">
+<div><p>Hello
+							{{ app.user.firstName }}
+							!</p></div>
+					<div class="annonces">
+						
+           
+						{% for listing in listings %}
+							<div class="card" style="width: 18rem;">
+								<div class="card-bod">
+
+									<p>Annonce n°{{listing.id }}
+									</p>
+									<p>
+										<h5 class="card-title">
+											{{listing.listingTitle }}</h5>
+
+										<h6 class="card-subtitle mb-2 text-muted">
+											<img src="{{asset('images/imglisting1.jpeg')}}" alt="image" class="image d-block w-100"></h6>
+									</p>
+									<p>
+										Description :</p>
+									<p class="card-text">{{ listing.listingDescription }}</p>
+									<p class="card-text">Status :{{ listing.Status }}</p>
+									<a href="{{ path('listing_validation', {listing_id : listing.id})}}" class="card-link">Valider une annonce</a>
+
+								</div>
+							</div>
+					
+					{% endfor %}
+				</div>
+			</div>	</section>
+		
+
 {% endblock %}
