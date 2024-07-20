@@ -67,5 +67,19 @@ class ImageFixtures extends Fixture implements DependentFixtureInterface
         return [
             PropertyFixtures::class,
         ];
+
+
+
+
+
+
+        
     }
+
+
+
+
+
+
+
 }
