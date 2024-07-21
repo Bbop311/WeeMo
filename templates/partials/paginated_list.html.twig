@@ -1,0 +1,38 @@
+<div class="pagination">
+	{{ knp_pagination_render(pagination) }}
+</div>
+
+<ul>
+	<div class="row">
+		{% for property in pagination.items %}
+			<div class="card col-4" style="width: 30 rem;">
+				<div class="card-body">
+					<div class="col-md-6"><img src="{{asset('images/1.jpeg')}}" alt="weemo" class="listimg" " >
+						
+						
+															             <h5 class=" card-title">{{property.typeLocal}}</h5>
+					<p class="card-text">Une belle propriété</p>
+					<p>{{ property.noVoie }}
+						{{ property.typeVoie }}
+						{{ property.voie }}</p>
+					<p>{{ property.commune }}
+					</p>
+					<p>
+						Nombre de pièces :
+						{{property.nbPieces}}
+					</p>
+					<p>
+						Nombre de pièces :
+						{{property.nbPieces}}
+					</p>
+					<P>Surface Bati :
+						{{property.surfaceReelleBati}}m2</p>
+
+
+					<a href="{{ path('property_show', {'id': property.id})}}" class="btn btn-primary">Détails</a>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+</div></ul><div class="pagination">
+{{ knp_pagination_render(pagination) }}</div>
