@@ -18,15 +18,19 @@
             {{ form_errors(form.nb_of_bedrooms) }}
         </div>
         <div class="col my-2">
-            {{ form_label(form.surface_terrain) }}
-            {{ form_help(form.surface_terrain) }}
-            {{ form_widget(form.surface_terrain) }}
-            {{ form_errors(form.surface_terrain) }}
+            {{ form_label(form.surface_reelle_bati_min) }}
+            {{ form_help(form.surface_reelle_bati_min) }}
+            {{ form_widget(form.surface_reelle_bati_min) }}
+            {{ form_errors(form.surface_reelle_bati_min) }}
+        </div><div class="col my-2">
+            {{ form_label(form.surface_reelle_bati_max) }}
+            {{ form_help(form.surface_reelle_bati_max) }}
+            {{ form_widget(form.surface_reelle_bati_max) }}
+            {{ form_errors(form.surface_reelle_bati_max) }}
         </div>
     </div>
     <div class="text-center mt-5">
         {{ form_widget(form.Submit) }}
-        {{ form_widget(form.Reset) }}
     </div>
 
     {# <input type="hidden"  id="search__token" name="search[_token]" value="{{ csrf_token('search-form') }}"> #}

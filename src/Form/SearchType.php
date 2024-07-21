@@ -98,24 +98,33 @@ class SearchType extends AbstractType
                 'required' => false,
                 // 'data' => 'SALUT',
             ])
-            ->add('surface_terrain', NumberType::class, [
+            ->add('surface_reelle_bati_min', NumberType::class, [
                 // 'help' => 'SALUT',
-                'label' => 'Surface du terrain',
+                'label' => 'Surface Min',
                 'label_attr' => [
                     'class' => 'form-label',
                     // 'style' => 'color: blue',
                 ],
                 'attr' => [
-                    'placeholder' => 'Renseignez la surface du terrain'
+                    'placeholder' => 'Renseignez la surface minimum'
+                ],
+                'required' => false,
+                // 'data' => 'SALUT',
+            ])->add('surface_reelle_bati_max', NumberType::class, [
+                // 'help' => 'SALUT',
+                'label' => 'Surface Max',
+                'label_attr' => [
+                    'class' => 'form-label',
+                    // 'style' => 'color: blue',
+                ],
+                'attr' => [
+                    'placeholder' => 'Renseignez la surface maximum'
                 ],
                 'required' => false,
                 // 'data' => 'SALUT',
             ])
             ->add('Submit', SubmitType::class, [
                 'label' => 'Rechercher'
-            ])
-            ->add('Reset', ResetType::class, [
-                'label' => 'Réinitialiser'
             ])
         ;
     }
