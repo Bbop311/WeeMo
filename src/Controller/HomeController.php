@@ -29,7 +29,7 @@ class HomeController extends AbstractController
             return $this->redirectToRoute('property_display', [
                 // makes the array parameters in a string that can be passed in the url
                 'parameters' => http_build_query($parameters),
-                'page' => $page
+                // 'form' => $form
             ]);
         }
 
@@ -56,21 +56,22 @@ class HomeController extends AbstractController
         ]);
     }
 
-    #[Route('/property_display/{page}/{parameters}', name: 'property_display')]
-    public function property_display(PropertyRepository $propertyRepository, int $page = 1, string $parameters): Response
+    #[Route('/property_display/{parameters}', name: 'property_display')]
+    public function property_display(PropertyRepository $propertyRepository, string $parameters, Request $request, PaginatorInterface $paginator): Response
     {
         // decodes the string that was passed in the URL
         parse_str($parameters, $array);
-        $propertyRepository = $propertyRepository->filter($array);
-        /* $propertyRepository = $propertyRepository->findByNumberOfRooms($number_of_bedrooms); */
-        /* for ($i = 24 * ($page - 1); $i < 24 * ($page); $i++) {
-            $properties[] = $propertyRepository[$i];
-        } */
-        // dd($properties);
+        $queryBuilder = $propertyRepository->filter($array);
+
+        $pagination = $paginator->paginate(
+            $queryBuilder,
+            $request->query->getInt('page',1),
+            24
+        );
         return $this->render('home/property_display.html.twig', [
             'controller_name' => 'HomeController',
             'properties' => $propertyRepository,
-            'page' => $page,
+            'pagination' => $pagination,
         ]);
     }
 }
