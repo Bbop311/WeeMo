@@ -6,6 +6,7 @@ use App\Repository\PropertyRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use App\Entity\User;
 
 #[ORM\Entity(repositoryClass: PropertyRepository::class)]
 class Property
@@ -89,7 +90,8 @@ class Property
 
     #[ORM\OneToOne(mappedBy: 'property', cascade: ['persist', 'remove'])]
     private ?PropertyFeatures $propertyFeatures = null;
-
+    
+    
 
     public function __construct()
     {
@@ -365,7 +367,15 @@ class Property
         return $this->user;
     }
 
-    public function setUser(?User $user): static
+    // public function setUser(?User $user): static
+    // {
+    //     $this->user = $user;
+
+    //     return $this;
+    // }
+    
+    //Fix property id not stored in user table
+    public function setUser(?User $user): self
     {
         $this->user = $user;
 

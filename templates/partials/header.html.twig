@@ -1,6 +1,6 @@
-<header class="py-3 mb-4 border-bottom">
+<header>
 <nav class="py-2 bg-body-tertiary border-bottom">
-    <div class="container d-flex flex-wrap">
+    <div class="container d-flex flex-wrap ">
         <ul class="nav me-auto">
             <li class="nav-item">
                 <a href="{{ path('app_home')}}" class="nav-link link-body-emphasis px-2">
@@ -10,11 +10,11 @@
             
            
         </ul>
-    <ul class="nav" style="margin-right: 50px;">
-    <li class="nav-item"><a href="#" class="btn btn-info px-2" style="margin-right: 10px;">Publiez une Annonce</a></li> 
+    <ul class="nav mr" ">
+    <li class="nav-item"><a href="{{ path('app_add_property_step1') }}" class="btn btn-nav-addlisting px-2 text-white" style="margin-right: 10px;">Publiez une Annonce</a></li> 
     <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">NOS ANNONCES</a></li>
     <li class="nav-item"> <a href="#" class="nav-link link-body-emphasis px-2">ACHETER</a></li>
-    <li class="nav-item"> <a href="#" class="nav-link link-body-emphasis px-2">VENDRE</a></li>
+    <li class="nav-item"> <a href="{{ path('app_add_property_step1') }}" class="nav-link link-body-emphasis px-2">VENDRE</a></li>
     <li class="nav-item"> <a href="#" class="nav-link link-body-emphasis px-2">SIMILATEUR</a></li>
     
     </ul>
@@ -27,6 +27,7 @@
         <li class="nav-item dropdown">
             <a href="#" class="nav-link link-body-emphasis px-2 dropdown-toggle" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Bonjour {{ app.user.firstName }} {{ app.user.lastName }}
+                
             </a>
             <ul class="dropdown-menu" aria-labelledby="userDropdown">
                 {% if is_granted('ROLE_ADMIN') %}
@@ -45,3 +46,11 @@
     </div>
 </nav>
 </header>
+
+{% if app.request.get('_route') == 'app_home' %}
+{% include "partials/home_hero.html.twig" %}
+{% else %}
+    
+{% endif %}
+
+
