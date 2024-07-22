@@ -9,13 +9,17 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use App\Repository\PropertyRepository;
 use App\Service\propertyListGenerator;
+use Scheb\TwoFactorBundle\Security\TwoFactor\Provider\Totp\TotpAuthenticator;
+
 
 
 class HomeController extends AbstractController
 {
     #[Route('/home/{page}', name: 'app_home')]
-    public function index(Request $request, PropertyRepository $propertyRepository, propertyListGenerator $propertyListGenerator, int $page = 1): Response
+    public function index(TotpAuthenticator $TotpAuthenticator, Request $request, PropertyRepository $propertyRepository, propertyListGenerator $propertyListGenerator, int $page = 1): Response
     {
+        // dd($TotpAuthenticator->generateSecret());
+
         $form = $this->createForm(SearchType::class);
         $form->handleRequest($request);
 
@@ -28,9 +32,6 @@ class HomeController extends AbstractController
         dump($form);
         if($request->getMethod() === 'POST') dd($form->isValid()) ;
         if ($form->isSubmitted() && $form->isValid()) {
-            // dd($request->request);
-            // $foo = $_GET['Ville'];
-            // $var = $request->request;
             $data = $form->getData();
             dd($data);
         }

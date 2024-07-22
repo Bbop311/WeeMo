@@ -5,6 +5,8 @@
 {% block body %}
 
     {% if app.user %}
+    {# {% redirect "home/index.html.twig" %} #}
+    
         <div class="container text-center">
             Tu est déjà connecté en tant que: <br> {{ app.user.userIdentifier }} <a href="{{ path('app_logout') }}">Se deconnecter</a>
         </div>
