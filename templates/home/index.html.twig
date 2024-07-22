@@ -1,18 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Hello HomeController!
+{% endblock %}
 
 {% block body %}
 
-<section class="mt-0">
+	<section class="mt-5">
+		{% include "partials/search_form.html.twig" %}
+			<h3 class="my-5">Trouvez votre Bien de rêve parmi notre sélection.</h3>
 
 
+			{% include "partials/paginated_list.html.twig" %}
 
- {% include "form/search.html.twig" %}
-
-{% include "partials/list.html.twig" %}
-
-
-</section>
+	</section>
 
 {% endblock %}

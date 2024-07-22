@@ -17,43 +17,33 @@ class SearchType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('code_postal', NumberType::class, [
-                // 'help' => 'SALUT',
-                'label' => 'Code Postal',
-                'label_attr' => [
-                    'class' => 'form-label',
-                    // 'style' => 'color: blue',
-                ],
-                'attr' => [
-                    'placeholder' => 'Ex: 75019'
-                ],
-                // 'data' => 'SALUT',
-            ])
-            ->add('commune', ChoiceType::class, [
+            ->add('code_postal', ChoiceType::class, [
                 'choices' => [
-                    'Paris 20'=> 'Paris 20',
-                    'Paris 19'=> 'Paris 19',
-                    'Paris 18'=> 'Paris 18',
-                    'Paris 17'=> 'Paris 17',
-                    'Paris 16'=> 'Paris 16',
-                    'Paris 15'=> 'Paris 15',
-                    'Paris 14'=> 'Paris 14',
-                    'Paris 13'=> 'Paris 13',
-                    'Paris 12'=> 'Paris 12',
-                    'Paris 11'=> 'Paris 11',
-                    'Paris 10'=> 'Paris 10',
-                    'Paris 09'=> 'Paris 09',
-                    'Paris 08'=> 'Paris 08',
-                    'Paris 07'=> 'Paris 07',
-                    'Paris 06'=> 'Paris 06',
-                    'Paris 05'=> 'Paris 05',
-                    'Paris 04'=> 'Paris 04',
-                    'Paris 03'=> 'Paris 03',
-                    'Paris 02'=> 'Paris 02',
-                    'Paris 01'=> 'Paris 01',
-                ]
+                    'Paris 20'=> 75020,
+                    'Paris 19'=> 75019,
+                    'Paris 18'=> 75018,
+                    'Paris 17'=> 75017,
+                    'Paris 16'=> 75016,
+                    'Paris 15'=> 75015,
+                    'Paris 14'=> 75014,
+                    'Paris 13'=> 75013,
+                    'Paris 12'=> 75012,
+                    'Paris 11'=> 75011,
+                    'Paris 10'=> 75010,
+                    'Paris 09'=> 75009,
+                    'Paris 08'=> 75008,
+                    'Paris 07'=> 75007,
+                    'Paris 06'=> 75006,
+                    'Paris 05'=> 75005,
+                    'Paris 04'=> 75004,
+                    'Paris 03'=> 75003,
+                    'Paris 02'=> 75002,
+                    'Paris 01'=> 75001,
+                ],
+                'required' => false,
+                'label' => 'Arrondissement'
             ])
-            ->add('type_local', TextType::class, [
+            /* ->add('type_local', TextType::class, [
                 // 'help' => 'SALUT',
                 'label' => 'Type de bien',
                 'label_attr' => [
@@ -63,9 +53,10 @@ class SearchType extends AbstractType
                 'attr' => [
                     'placeholder' => 'Ex: ???'
                 ],
+                'required' => false,
                 // 'data' => 'SALUT',
-            ])
-            ->add('created_at', DateType::class, [
+            ]) */
+            /* ->add('created_at', DateType::class, [
                 // 'help' => 'SALUT',
                 'label' => 'Déposé le:',
                 'label_attr' => [
@@ -76,9 +67,10 @@ class SearchType extends AbstractType
                     'placeholder' => 'Renseignez le nombres de pièces',
                     'color' => 'color: blue',
                 ],
+                'required' => false,
                 // 'data' => 'SALUT',
-            ])
-            ->add('updated_at', DateType::class, [
+            ]) */
+            /* ->add('updated_at', DateType::class, [
                 // 'help' => 'SALUT',
                 'label' => 'Mis à jour le:',
                 'label_attr' => [
@@ -89,9 +81,10 @@ class SearchType extends AbstractType
                     'placeholder' => 'Renseignez le nombres de pièces',
                     'color' => 'color: blue',
                 ],
+                'required' => false,
                 // 'data' => 'SALUT',
-            ])
-            ->add('nb_pieces', TextType::class, [
+            ]) */
+            ->add('nb_of_bedrooms', TextType::class, [
                 // 'help' => 'SALUT',
                 'label' => 'Nombres de pièces',
                 'label_attr' => [
@@ -102,25 +95,36 @@ class SearchType extends AbstractType
                     'placeholder' => 'Ex: 4',
                     'color' => 'color: blue',
                 ],
+                'required' => false,
                 // 'data' => 'SALUT',
             ])
-            ->add('surface_terrain', NumberType::class, [
+            ->add('surface_reelle_bati_min', NumberType::class, [
                 // 'help' => 'SALUT',
-                'label' => 'Surface du terrain',
+                'label' => 'Surface Min',
                 'label_attr' => [
                     'class' => 'form-label',
                     // 'style' => 'color: blue',
                 ],
                 'attr' => [
-                    'placeholder' => 'Renseignez la surface du terrain'
+                    'placeholder' => 'Renseignez la surface minimum'
                 ],
+                'required' => false,
+                // 'data' => 'SALUT',
+            ])->add('surface_reelle_bati_max', NumberType::class, [
+                // 'help' => 'SALUT',
+                'label' => 'Surface Max',
+                'label_attr' => [
+                    'class' => 'form-label',
+                    // 'style' => 'color: blue',
+                ],
+                'attr' => [
+                    'placeholder' => 'Renseignez la surface maximum'
+                ],
+                'required' => false,
                 // 'data' => 'SALUT',
             ])
             ->add('Submit', SubmitType::class, [
                 'label' => 'Rechercher'
-            ])
-            ->add('Reset', ResetType::class, [
-                'label' => 'Réinitialiser'
             ])
         ;
     }

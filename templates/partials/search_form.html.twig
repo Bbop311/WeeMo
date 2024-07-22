@@ -1,0 +1,13 @@
+<div class="accordion" id="Search">
+	<div class="accordion-item">
+		<h2 class="accordion-header" id="headingOne">
+			<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+				Faire une recherche immobilières
+			</button>
+		</h2>
+		<div id="collapseOne" class="accordion-collapse collapse collapse" aria-labelledby="headingOne" data-bs-parent="#Search">
+			<div class="accordion-body">
+				{% include "form/search.html.twig" %}
+			</div>
+		</div>
+	</div>

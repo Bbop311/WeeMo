@@ -2,9 +2,14 @@
 
 {% block title %}Listing Validation{% endblock %}
 
+
+
 {% block body %}
 
-<p>What should be the status of the Listing {{ listing.id }} ?</p>
+
+ <p class="card-text"> Nom propriétaire: {{listing.property.user.Firstname}} {{listing.property.user.Lastname}}</p>
+  
+<p> Quel devrait être le statut de l'annonce {{ listing.id }} ?</p>
 
 {{ form(form) }}
 

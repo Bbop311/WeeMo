@@ -43,7 +43,6 @@ class UserFixtures extends Fixture
         ['email' => 'carl.harris@example.com', 'password' => 'c9d0e1f2', 'firstname' => 'Carl', 'lastname' => 'Harris', 'roles' => ['ROLE_USER']],
         ['email' => 'diana.lee@example.com', 'password' => 'd0e1f2g3', 'firstname' => 'Diana', 'lastname' => 'Lee', 'roles' => ['ROLE_USER']],
         ['email' => 'ethan.martin@example.com', 'password' => 'e1f2g3h4', 'firstname' => 'Ethan', 'lastname' => 'Martin', 'roles' => ['ROLE_USER']],
-        ['email' => 'admin@example.com', 'password' => 'lplp', 'firstname' => 'Ramatoulaye', 'lastname' => 'Fainke', 'roles' => ['ROLE_ADMIN']],
     ];
     public function __construct(UserPasswordHasherInterface $userPasswordHasher)
     {

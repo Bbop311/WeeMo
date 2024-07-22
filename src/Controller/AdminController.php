@@ -16,11 +16,13 @@ class AdminController extends AbstractController
     public function adminDashboard(ListingRepository $listingRepository): Response
     {
         $listings = $listingRepository->findAll();
+    
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
         
         return $this->render('admin/index.html.twig', [
             'listings' => $listings,
-            'controller_name' => 'AdminController',
+        
+            'controller_name' => 'AdminController'
         ]);
     }
     
@@ -28,20 +30,22 @@ class AdminController extends AbstractController
     public function listing_validation(Request $request, ListingRepository $listingRepository, int $listing_id, EntityManagerInterface $entityManager): Response
     {
         $listing = $listingRepository->find($listing_id);
-        
+
         $form = $this->createForm(ListingValidationType::class, $listing);
         
         $form->handleRequest($request);
         
         if ($form->isSubmitted() && $form->isValid()) {
             $listing->setStatus($form->get('status')->getData());
+         
         }
         $entityManager->persist($listing);
         $entityManager->flush();
         
         return $this->render('admin/listing_validation.html.twig', [
             'form' => $form,
-            'listing' => $listing
+            'listing' => $listing,
+           
         ]);
     }
 }
