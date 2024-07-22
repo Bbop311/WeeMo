@@ -70,7 +70,7 @@ class Images extends Fixture
                 ],
                 [
                     "property_id" => 13,
-                    "img_url" => "images/1.pg"
+                    "img_url" => "assets/images/1.jpeg"
                 ],
                 [
                     "property_id" => 14,

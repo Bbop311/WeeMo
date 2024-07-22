@@ -6,16 +6,18 @@
 
 
 <div class="example-wrapper">
-    <h1>List a property for sale</h1>
-
-    <h1>Ajouter une nouvelle annonce</h1>
+    <h1>Ajouter une nouvelle annonce : Step 2</h1>
 
     
+    <h1>Step 2: Property Features</h1>
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <button class="btn btn-primary">Enregistrer</button>
+        <button type="submit">Next</button>
+        <a href="{{ path(previous_route) }}" class="btn btn-secondary">Back</a>
     {{ form_end(form) }}
 </div>
 
 
 {% endblock %}
+
+
