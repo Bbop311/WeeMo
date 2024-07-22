@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Summary{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="my-4">Review Your Submission</h1>
+
+        <h3>Step 1 Data:</h3>
+        <ul>
+            <li><strong>Listing Title:</strong> {{ step1_data.listing_title }}</li>
+            <li><strong>Date Mutation:</strong> {{ step1_data.date_mutation|date('Y-m-d') }}</li>
+            <li><strong>Nature Mutation:</strong> {{ step1_data.nature_mutation }}</li>
+        </ul>
+
+        <h3>Step 2 Data:</h3>
+        <ul>
+            <li><strong>Type of Rooms:</strong> {{ step2_data.type_of_rooms }}</li>
+            <li><strong>Number of Bedrooms:</strong> {{ step2_data.number_of_bedrooms }}</li>
+            <li><strong>Floor:</strong> {{ step2_data.floor }}</li>
+            <li><strong>Property Condition:</strong> {{ step2_data.property_condition }}</li>
+            <li><strong>Heating Type:</strong> {{ step2_data.heating_type }}</li>
+            <li><strong>Energy Class:</strong> {{ step2_data.energy_class }}</li>
+            <li><strong>Elevator:</strong> {{ step2_data.elevator ? 'Yes' : 'No' }}</li>
+            <li><strong>Image URL:</strong> {{ step2_data.img_url }}</li>
+        </ul>
+
+        {{ form_start(form) }}
+            {{ form_widget(form.confirm) }}
+        {{ form_end(form) }}
+
+        <a href="{{ path('app_add_property_step1') }}" class="btn btn-secondary">Go Back to Step 1</a>
+        <a href="{{ path('app_add_property_step2') }}" class="btn btn-secondary">Go Back to Step 2</a>
+    </div>
+{% endblock %}
+

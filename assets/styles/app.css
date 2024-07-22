@@ -1,12 +1,32 @@
 body {
     background-color: white;
 }
+/* custom buttons */ 
 
+.btn-nav-addlisting,
+.btn-nav-addlisting:hover,
+.btn-nav-addlisting:active,
+.btn-nav-addlisting:visited,
+.btn-nav-addlisting:focus {
+    background-color: #FD6B6B;
+    color: white;  
+    margin: 0px 12px 0px 0px;
+    padding:10px 10px;
+    border-radius: 0px;
+
+}
+
+
+/* Header CSS */
+
+/* Header  Navbar CSS */
 .logo-img {
     width: 180px; /* Adjust the size as needed */
     height: auto;
     vertical-align: middle;
 }
+
+
 /* align li img with li text*/
 li {
     display: flex;
@@ -33,3 +53,141 @@ li {
 	text-align: center;
 }
 
+
+/* Footer CSS */
+footer {
+  background-color: #f8f9fa; /* Couleur de fond similaire à PAP.fr */
+  padding: 40px 0;
+  color: #333;
+}
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+footer ul li {
+  margin: 5 0px; /* Espacement entre les éléments du menu */
+  
+}
+footer ul li a {
+  color: #000; /* Couleur noire pour le texte des liens */
+  text-decoration: none;
+}
+footer ul li a:hover {
+  color: #007bff; /* Couleur bleue au survol */
+}
+footer p {
+  margin: 15px 0;
+  text-align: justify;
+}
+footer p a {
+  color: #000; /* Couleur noire pour les liens dans le texte */
+  text-decoration: none;
+}
+footer p a:hover {
+  color: #007bff; /* Couleur bleue au survol */
+}
+
+
+/* Homepage cover */
+.homepage-cover .item-title {
+  /* background-color:#331acc; */
+  background-color:transparent;
+}
+.homepage-cover .item-title h1 {
+  color: white;
+  font-size: 2.125rem;
+  margin-top: 0px;
+
+}
+.homepage-cover .item-title h1,
+.homepage-cover .item-title p {
+  color: white;
+}
+.homepage-cover .item-tampon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1;
+  width: 125px;
+  height: 125px;
+  content: "";
+  background-image: url(/vendor/brownie/images/logos/logo-pap-tampon-light.svg);
+  background-repeat: no-repeat;
+}
+.homepage-cover .item-form form {
+  padding: 12px;
+  margin-bottom: 14px;
+}
+.homepage-cover .item-form a {
+  color: white;
+}
+
+/* Homepage cover desktop only */
+@media only screen and (min-width: 968px) {
+  .homepage-cover {
+    position: relative;
+    height: 440px;
+    background-color: #0ac5ff;
+    background-position: center center;
+    background-size: cover;
+  }
+  .homepage-cover::before, .homepage-cover::after {
+    position: absolute;
+    top: 220px;
+    right: 0;
+    width: 220px;
+    height: 220px;
+    content: "";
+    background:  #e0f3db;
+  }
+  .homepage-cover::after {
+    top: 0;
+    right: 0;
+    background-color: #228cd7;
+    mix-blend-mode: multiply;
+  }
+  .homepage-cover .wrapper {
+    position: relative;
+  }
+  .homepage-cover .item-title {
+    height: 440px;
+    padding-top: 80px;
+  }
+  .homepage-cover .item-form {
+    position: absolute;
+    right: 20px;
+    bottom: 35px;
+    left: 20px;
+  }
+  .homepage-cover-1 {
+    background-image: url(/images/visuels/homepage/visuel-homepage-desktop-1.jpg);
+  }
+  .homepage-cover-2 {
+    background-image: url(/images/visuels/homepage/visuel-homepage-desktop-2.jpg);
+  }
+  .homepage-cover-3 {
+    background-image: url(/images/visuels/homepage/visuel-homepage-desktop-3.jpg);
+  }
+  .homepage-cover-4 {
+    background-image: url(/images/visuels/homepage/visuel-homepage-desktop-4.jpg);
+  }
+  .homepage-cover-5 {
+    background-image: url(/images/visuels/homepage/visuel-homepage-desktop-5.jpg);
+  }
+  .homepage-cover-6 {
+    background-image: url(/images/visuels/homepage/visuel-homepage-desktop-6.jpg);
+  }
+  .homepage-cover-7 {
+    background-image: url(/images/visuels/homepage/visuel-homepage-desktop-7.jpg);
+  }
+  .homepage-cover-8 {
+    background-image: url(/images/visuels/homepage/visuel-homepage-desktop-8.jpg);
+  }
+  .homepage-cover-9 {
+    background-image: url(/images/visuels/homepage/visuel-homepage-desktop-9.jpg);
+  }
+  .homepage-cover-10 {
+    background-image: url(/images/visuels/homepage/visuel-homepage-desktop-10.jpg);
+  }
+}

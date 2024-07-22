@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}List a property for sale{% endblock %}
+
+{% block body %}
+
+
+<div class="example-wrapper">
+    <h1>List a property for sale</h1>
+
+    <h1>Step 3: Property Details and Images</h1>
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button type="submit">Finish</button>
+        <a href="{{ path(previous_route) }}" class="btn btn-secondary">Back</a>
+    {{ form_end(form) }}
+</div>
+
+
+{% endblock %}
