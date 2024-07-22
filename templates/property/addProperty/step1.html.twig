@@ -1,0 +1,59 @@
+{# templates/add_property/step1.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h1 class="mb-4">Add Property - Step 1</h1>
+        {{ form_start(form, {'attr': {'class': 'row g-3'}}) }}
+
+        <h3 class="mb-4">Où se trouve votre appartement à vendre ?</h3>
+            <div class="col-md-4">
+                {{ form_label(form.Ville, null, {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.Ville, {'attr': {'class': 'form-select', 'placeholder': 'Choisir une ville'}}) }}
+                {{ form_errors(form.Ville) }}
+            </div>
+            <div class="col-md-4">
+                {{ form_label(form.no_voie, null, {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.no_voie, {'attr': {'class': 'form-control', 'placeholder': 'Entrez le numéro de la voie'}}) }}
+                {{ form_errors(form.no_voie) }}
+            </div>
+            <div class="col-md-4">
+                {{ form_label(form.type_voie, null, {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.type_voie, {'attr': {'class': 'form-select'}}) }}
+                {{ form_errors(form.type_voie) }}
+            </div>
+            <div class="col-md-4">
+                {{ form_label(form.b_t_q, null, {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.b_t_q, {'attr': {'class': 'form-select'}}) }}
+                {{ form_errors(form.b_t_q) }}
+            </div>
+            <div class="col-md-4">
+                {{ form_label(form.voie, null, {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.voie, {'attr': {'class': 'form-control'}}) }}
+                {{ form_errors(form.voie) }}
+            </div>
+            <div class="col-md-4">
+                {{ form_label(form.code_postal, null, {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.code_postal, {'attr': {'class': 'form-select'}}) }}
+                {{ form_errors(form.code_postal) }}
+            </div>
+
+            <h3 class="mb-4">Caractéristiques de votre appartement</h3>
+
+            <div class="col-md-4">
+                {{ form_label(form.nb_pieces, null, {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.nb_pieces, {'attr': {'class': 'form-select'}}) }}
+                {{ form_errors(form.nb_pieces) }}
+            </div>
+            <div class="col-md-4">
+                {{ form_label(form.surface_reelle_bati, null, {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.surface_reelle_bati, {'attr': {'class': 'form-control'}}) }}
+                {{ form_errors(form.surface_reelle_bati) }}
+            </div>
+
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

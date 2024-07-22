@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Step 3{% endblock %}
+
+{% block body %}
+    <h1>Step 3: Additional Info</h1>
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button class="btn btn-primary">Next</button>
+    {{ form_end(form) }}
+{% endblock %}
+
