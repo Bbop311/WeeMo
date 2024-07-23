@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!
+{% endblock %}
+
+{% block body %}
+
+<h1>Effectuer une simulation</h1>
+
+{{ form_start(form) }}
+        {{ form_row(form.type_voie) }}
+        {{ form_row(form.code_postal) }}
+        {{ form_row(form.type_local) }}
+        {{ form_row(form.surface_reelle_bati) }}
+        {{ form_row(form.nb_pieces) }}
+        {{ form_row(form.surface_terrain) }}
+
+        {{ form_widget(form.Submit) }}
+    {{ form_end(form) }}
+
+{% endblock %}
