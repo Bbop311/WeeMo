@@ -122,9 +122,6 @@ class SearchType extends AbstractType
                 'required' => false,
                 // 'data' => 'SALUT',
             ])
-            ->add('Submit', SubmitType::class, [
-                'label' => 'Rechercher'
-            ])
             ->add('valeur_fonciere', TextType::class, [
                 // 'help' => 'SALUT',
                 'label' => 'Prix maximum',
