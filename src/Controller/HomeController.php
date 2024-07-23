@@ -29,6 +29,7 @@ class HomeController extends AbstractController
             $parameters['surface_reelle_bati_min'] = $form->get('surface_reelle_bati_min')->getData();
             $parameters['surface_reelle_bati_max'] = $form->get('surface_reelle_bati_max')->getData();
             $parameters['valeur_fonciere'] = $form->get('valeur_fonciere')->getData();
+            $parameters['only_active_listings'] = $form->get('only_active_listings')->getData();
             return $this->redirectToRoute('property_display', [
                 // makes the array parameters in a string that can be passed in the url
                 'parameters' => http_build_query($parameters),

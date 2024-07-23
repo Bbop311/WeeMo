@@ -7,7 +7,7 @@
 		{% for property in pagination.items %}
 		<div class="card col-4" style="width: 30 rem;">
 			<div class="card-body">
-				<div class="col-md-6"><img src="{{asset('images/1.jpeg')}}" alt="weemo" class="listimg" " >
+				<div class="col-md-6"><img src="{{asset('images/1.jpeg')}}" alt="weemo" class="listimg" >
 						
 						
 															             <h5 class=" card-title">{{property.typeLocal}}</h5>
@@ -30,7 +30,20 @@
 						Prix : {{ property.valeurFonciere |number_format(0, '.', ' ')  }} euros
 					</p>
 					<P>Surface Bati :
-						{{property.surfaceReelleBati}}m2</p>
+						{{property.surfaceReelleBati}}m2
+					</p>
+					<!-- The following twig code displays a line 'Statut : disponible' if one of the listings linked to the property is active -->
+					{% set active = false%}
+					{% for listing in property.listings %}
+						{% if listing.status == 'active' %}
+							{% set active = true %}
+						{% endif %}
+					{% endfor %}
+					{% if active == true%}
+						<p>
+							Statut : Disponible
+						</p>
+					{% endif %}
 
 
 					<a href="{{ path('property_show', {'id': property.id})}}" class="btn btn-primary">Détails</a>

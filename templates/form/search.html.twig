@@ -38,6 +38,9 @@
             {{ form_errors(form.valeur_fonciere) }}
         </div>
     </div>
+    <div class="row form-input">
+        {{ form_row(form.only_active_listings) }}
+    </div>
 
     <div class="text-center mt-5">
         {{ form_widget(form.Submit) }}

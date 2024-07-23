@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -137,6 +138,10 @@ class SearchType extends AbstractType
                 ],
                 'required' => false,
                 // 'data' => 'SALUT',
+            ])
+            ->add('only_active_listings', CheckboxType::class, [
+                'label' => 'Only display active listings',
+                'required' => false,
             ])
             ->add('Submit', SubmitType::class, [
                 'label' => 'Rechercher'
