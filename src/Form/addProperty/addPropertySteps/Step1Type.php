@@ -23,7 +23,7 @@ class Step1Type extends AbstractType
                 'disabled' => true,
                 'mapped' => false,
             ])
-            ->add('no_voie', TextType::class, [
+            ->add('no_voie', NumberType::class, [
                 'label' => 'Numéro Voie',
                 'attr' => ['class' => 'form-control', 'placeholder' => 'Entrez le numéro de la voie']
             ])
@@ -44,12 +44,13 @@ class Step1Type extends AbstractType
             ->add('b_t_q', ChoiceType::class, [
                 'label' => 'Complément d\'adresse',
                 'choices' => [
-                    'N\A' => 'N\A',
+                    '' => '',
                     'Bis' => 'Bis',
                     'Ter' => 'Ter',
                     'Quarter' => 'Quarter'
                 ],
-                'attr' => ['class' => 'form-select']
+                'attr' => ['class' => 'form-select'],
+                'required' => false // Set this to false to remove the required attribute
             ])
             ->add('voie', TextType::class, [
                 'label' => 'Voie',
@@ -59,6 +60,16 @@ class Step1Type extends AbstractType
                 'label' => 'Code Postale',
                 'choices' => array_combine(range(75001, 75020), range(75001, 75020)),
                 'attr' => ['class' => 'form-select']
+            ])
+
+            ->add('type_local', ChoiceType::class, [
+                'label' => 'Type du Bien',
+                'attr' => ['class' => 'form-select', 'placeholder' => 'Apaprtement'],
+                'choices' => [
+                    'Appartement' => 'Appartement',
+                ],
+                'disabled' => true,
+               
             ])
 
            ->add('nb_pieces', ChoiceType::class, [

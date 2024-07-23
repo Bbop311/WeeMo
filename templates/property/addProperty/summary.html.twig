@@ -1,42 +1,64 @@
+{# templates/Property/addProperty/summary.html.twig #}
 {% extends 'base.html.twig' %}
 
-{% block title %}Property Listing Summary{% endblock %}
-
 {% block body %}
+    <div class="container mt-5 mb-5">
+        <h2 class="mb-4">Résumé de l'annonce</h2>
+        
+        <h3>Étape 1</h3>
+        
+        <p>Numéro Voie: {{ step1_data.no_voie }}</p>
+        <p>Type Voie: {{ step1_data.type_voie }}</p>
+        <p>Complément d'adresse: {{ step1_data.b_t_q }}</p>
+        <p>Voie: {{ step1_data.voie }}</p>
+        <p>Code Postale: {{ step1_data.code_postal }}</p>
+        
+        <p>Nombre de pièces: {{ step1_data.nb_pieces }}</p>
+        <p>Surface du bien m2: {{ step1_data.surface_reelle_bati }}</p>
 
-<div class="container">
-    <h1 class="my-4">Review Your Submissionxx</h1>
+        <h3>Étape 2</h3>
+        <p>Nombre de chambres: {{ step2_data.number_of_bedrooms }}</p>
+        <p>Etage: {{ step2_data.floor }}</p>
+        <p>Type chauffage: {{ step2_data.heating_type }}</p>
+        <p>Etat du bien: {{ step2_data.property_condition }}</p>
+        <p>Ascenseur: {{ step2_data.elevator ? 'Oui' : 'Non' }}</p>
+        <p>Balcon: {{ step2_data.balcony ? 'Oui' : 'Non' }}</p>
+        <p>Parking: {{ step2_data.parking ? 'Oui' : 'Non' }}</p>
+        <p>Climatisation: {{ step2_data.air_condition ? 'Oui' : 'Non' }}</p>
+        <p>Classe énergétique: {{ step2_data.energy_class }}</p>
 
-    <h2>Step 1:</h2>
-    <p><strong>Listing Title:</strong> {{ step1_data['listing_title'] }}</p>
-    <p><strong>Type of Rooms:</strong> {{ step1_data['type_of_rooms'] }}</p>
-    <p><strong>Elevator:</strong> {{ step1_data['elevator'] ? 'Yes' : 'No' }}</p>
+        <h3>Étape 3</h3>
+        <p>Titre: {{ step3_data.listing_title }}</p>
+        <p>Description: {{ step3_data.listing_description }}</p>
+        <p>Image url: {{ step3_data.img_url }}</p>
 
-    <h2>Step 2:</h2>
-    <p><strong>Date of Mutation:</strong> {{ step2_data['date_mutation']|date('Y-m-d') }}</p>
-    <p><strong>Number of Bedrooms:</strong> {{ step2_data['number_of_bedrooms'] }}</p>
+        <h3>Étape 4</h3>
+        <p>Valeur foncière: {{ step4_data.valeur_fonciere }}</p>
 
-    <h2>Step 3:</h2>
-    <p><strong>Nature of Mutation:</strong> {{ step3_data['nature_mutation'] }}</p>
-    <p><strong>Property Condition:</strong> {{ step3_data['property_condition'] }}</p>
-    <p><strong>Floor:</strong> {{ step3_data['floor'] }}</p>
+       
 
-    <h2>Step 4:</h2>
-    <p><strong>Heating Type:</strong> {{ step4_data['heating_type'] }}</p>
-    <p><strong>Image URL:</strong> {{ step4_data['img_url'] }}</p>
-    <p><strong>Energy Class:</strong> {{ step4_data['energy_class'] }}</p>
+        {{ form_start(form, {'attr': {'class': 'row g-3'}}) }}
 
-    <h2>Confirm Your Information</h2>
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    {{ form_end(form) }}
-
+        <div class="col-md-6">
+            <div class="mb-3">
+                {{ form_label(form.phone_number, null, {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.phone_number, {'attr': {'class': 'form-control'}}) }}
+                {{ form_errors(form.phone_number) }}
+            </div>
+        </div>
     
-    <a href="{{ path('app_add_property_step1') }}" class="btn btn-secondary">Go Back to Step 1</a>
-    <a href="{{ path('app_add_property_step2') }}" class="btn btn-secondary">Go Back to Step 2</a>
-</div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Soumettre</button>
+        </div>
+    
+        {{ form_end(form) }}
 
 
-  
+
+        <a href="{{ path('app_add_property_step1') }}" class="btn btn-secondary">Go Back to Step 1</a>
+        <a href="{{ path('app_add_property_step2') }}" class="btn btn-secondary">Go Back to Step 2</a>
+    </div>
 {% endblock %}
+
+
 

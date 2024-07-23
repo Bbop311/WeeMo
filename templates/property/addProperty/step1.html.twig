@@ -2,11 +2,12 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="container mt-5">
-        <h1 class="mb-4">Add Property - Step 1</h1>
+    <div class="container mt-5 mb-5">
+        <h2 class="mb-4">Ajouter une annonce - étape 1</h2>
         {{ form_start(form, {'attr': {'class': 'row g-3'}}) }}
 
         <h3 class="mb-4">Où se trouve votre appartement à vendre ?</h3>
+           
             <div class="col-md-4">
                 {{ form_label(form.Ville, null, {'label_attr': {'class': 'form-label'}}) }}
                 {{ form_widget(form.Ville, {'attr': {'class': 'form-select', 'placeholder': 'Choisir une ville'}}) }}
@@ -39,7 +40,11 @@
             </div>
 
             <h3 class="mb-4">Caractéristiques de votre appartement</h3>
-
+            <div class="col-md-4">
+                {{ form_label(form.type_local, null, {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.type_local, {'attr': {'class': 'form-select', 'placeholder': 'Choisir le type de votre bien'}}) }}
+                {{ form_errors(form.type_local) }}
+            </div>
             <div class="col-md-4">
                 {{ form_label(form.nb_pieces, null, {'label_attr': {'class': 'form-label'}}) }}
                 {{ form_widget(form.nb_pieces, {'attr': {'class': 'form-select'}}) }}
@@ -52,7 +57,7 @@
             </div>
 
             <div class="col-12">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Continuer</button>
             </div>
         {{ form_end(form) }}
     </div>

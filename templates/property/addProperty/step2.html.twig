@@ -1,8 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="container mt-5">
+    <div class="container mt-5 mb-5">
+        <h2 class="mb-4">Ajouter Une annonce - étape 2</h2>
         {{ form_start(form, {'attr': {'class': 'row g-3'}}) }}
+
+        <h3 class="mb-4">Ajoutez les proprietés de votre bien ?</h3>
 
         <div class="col-md-6">
             <div class="mb-3">
@@ -21,7 +24,7 @@
         <div class="col-md-6">
             <div class="mb-3">
                 {{ form_label(form.heating_type, null, {'label_attr': {'class': 'form-label'}}) }}
-                {{ form_widget(form.heating_type, {'attr': {'class': 'form-select', 'data-toggle-additional-info': 'true'}}) }}
+                {{ form_widget(form.heating_type, {'attr': {'class': 'form-select'}}) }}
             </div>
         </div>
 
@@ -61,7 +64,7 @@
         </div>
 
         <div class="col-12">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Continuer</button>
         </div>
 
         {{ form_end(form) }}

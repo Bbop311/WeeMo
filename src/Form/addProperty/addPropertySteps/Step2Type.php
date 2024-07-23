@@ -48,16 +48,16 @@ class Step2Type extends AbstractType
                     ->add('property_condition', ChoiceType::class, [
                         'label' => 'Etat du bien',
                         'choices' => [
-                            'Neuf' => 'neuf',
-                            'Renové (-2ans)' => 'renove',
-                            'Très bon' => 'tres_bon',
+                            'Neuf' => 'Neuf',
+                            'Rénové (-2ans)' => 'Rénové (-2ans)',
+                            'Très bon' => 'Trés bon',
                             'Bon' => 'bon',
-                            'A rafraichir' => 'a_rafraichir',
-                            'A rénover' => 'a_renover',
+                            'A rafraichir' => 'A Rafraichir',
+                            'A rénover' => 'A rénover',
                         ],
                         'attr' => [
                             'class' => 'form-select',
-                            'placeholder' => 'Select property condition'
+                            'placeholder' => 'Selectionner l\'état du bien'
                         ]
                     ])
                     ->add('elevator', CheckboxType::class, [
@@ -91,6 +91,7 @@ class Step2Type extends AbstractType
                     ->add('energy_class', ChoiceType::class, [
                         'label' => 'Classe énergétique',
                         'choices' => [
+                            'Non Applicable' => 'Non applicable',
                             'A' => 'A',
                             'B' => 'B',
                             'C' => 'C',
@@ -98,7 +99,7 @@ class Step2Type extends AbstractType
                             'E' => 'E',
                             'F' => 'F',
                             'G' => 'G',
-                            'N/A' => 'N/A',
+                            
                         ],
                         'attr' => [
                             'class' => 'form-select',

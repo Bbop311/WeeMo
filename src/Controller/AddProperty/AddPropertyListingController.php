@@ -5,10 +5,12 @@ use App\Entity\Listing;
 use App\Entity\Property;
 use App\Entity\PropertyFeatures;
 use App\Entity\Image;
+use App\Entity\User;
 use App\Form\addProperty\addPropertySteps\Step1Type;
 use App\Form\addProperty\addPropertySteps\Step2Type;
 use App\Form\addProperty\addPropertySteps\Step3Type;
 use App\Form\addProperty\addPropertySteps\Step4Type;
+use App\Form\addProperty\addPropertySteps\Step5Type;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,6 +18,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
+use App\Repository\UserRepository;
 
 class AddPropertyListingController extends AbstractController
 {
@@ -40,7 +43,9 @@ class AddPropertyListingController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $session->set('step1_data', $form->getData());
+            $data = $form->getData();
+            $data['Ville'] = 'Paris'; // Manually add the "Ville" key to the data
+            $session->set('step1_data', $data);
             return $this->redirectToRoute('app_add_property_step2');
         }
 
@@ -105,17 +110,15 @@ class AddPropertyListingController extends AbstractController
 
     #[Route('/add-property-listing/summary', name: 'app_add_property_summary')]
     #[IsGranted('ROLE_USER')]
-    public function summary(Request $request, SessionInterface $session): Response
+    public function summary(Request $request, SessionInterface $session, UserRepository $userRepository): Response
     {
         $step1Data = $session->get('step1_data', []);
         $step2Data = $session->get('step2_data', []);
         $step3Data = $session->get('step3_data', []);
         $step4Data = $session->get('step4_data', []);
+        $step5Data = $session->get('step5_data', []);
 
-        $form = $this->createFormBuilder()
-            ->add('confirm', \Symfony\Component\Form\Extension\Core\Type\SubmitType::class, ['label' => 'Submit'])
-            ->getForm();
-
+        $form = $this->createForm(Step5Type::class, $step5Data);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -125,31 +128,58 @@ class AddPropertyListingController extends AbstractController
             $image = new Image();
 
             // Populate data from steps 1 to 4
-            $listing->setListingTitle($step1Data['listing_title']);
-            $property->setDateMutation($step2Data['date_mutation']->format('Y-m-d'));
-            $property->setNatureMutation($step3Data['nature_mutation']);
-            $propertyFeatures->setTypeOfRooms($step1Data['type_of_rooms']);
-            $propertyFeatures->setNumberOfBedrooms($step2Data['number_of_bedrooms']);
-            $propertyFeatures->setFloor($step3Data['floor']);
-            $propertyFeatures->setPropertyCondition($step3Data['property_condition']);
-            $propertyFeatures->setHeatingType($step4Data['heating_type']);
-            $propertyFeatures->setEnergyClass($step4Data['energy_class']);
-            $propertyFeatures->setElevator($step1Data['elevator']);
-            $image->setImgUrl($step4Data['img_url']);
+            // Step 1
+            $property->setNoVoie($step1Data['no_voie'] ?? null);
+            $property->setTypeVoie($step1Data['type_voie'] ?? null);
+            $property->setBTQ($step1Data['b_t_q'] ?? null);
+            $property->setVoie($step1Data['voie'] ?? null);
+            $property->setCodePostal($step1Data['code_postal'] ?? null);
+            $property->setNbPieces($step1Data['nb_pieces'] ?? null);
+            $property->setSurfaceReelleBati($step1Data['surface_reelle_bati'] ?? null);
+            $property->setDateMutation((new \DateTime())->format('d-m-Y'));
+            $property->setTypeLocal('Appartement');
+            $property->setNatureMutation('Vente');
+            $property->setCodeTypeLocal('2');
+
+            // Step 2
+            $propertyFeatures->setNumberOfBedrooms($step2Data['number_of_bedrooms'] ?? null);
+            $propertyFeatures->setFloor($step2Data['floor'] ?? null);
+            $propertyFeatures->setHeatingType($step2Data['heating_type'] ?? null);
+            $propertyFeatures->setPropertyCondition($step2Data['property_condition'] ?? null);
+            $propertyFeatures->setElevator($step2Data['elevator'] ?? false);
+            $propertyFeatures->setBalcony($step2Data['balcony'] ?? false);
+            $propertyFeatures->setParking($step2Data['parking'] ?? false);
+            $propertyFeatures->setAirCondition($step2Data['air_condition'] ?? false);
+            $propertyFeatures->setEnergyClass($step2Data['energy_class'] ?? null);
+            $propertyFeatures->setTypeOfRooms($step1Data['nb_pieces'] ?? null);
+
+            // Step 3
+            $listing->setListingTitle($step3Data['listing_title']);
+            $listing->setListingDescription($step3Data['listing_description']);
+            $listing->setStatus('Inactive');
+            $listing->setStartDate((new \DateTimeImmutable()));
+            $listing->setEndDate((new \DateTimeImmutable())->modify('+3 months'));
+            $image->setImgUrl($step3Data['img_url']);
+
+            // Step 4
+            $property->setValeurFonciere($step4Data['valeur_fonciere'] ?? null);
+
+            // Step 5
+            $user = $userRepository->find($this->getUser());
+
+            $user->setPhoneNumber($step5Data['phone_number'] ?? null);
 
             // Link entities
             $listing->setProperty($property);
             $property->setPropertyFeatures($propertyFeatures);
             $property->addImage($image);
-
-            // Associate the logged-in user
-            $user = $this->getUser();
             $property->setUser($user);
 
             $this->entityManager->persist($listing);
             $this->entityManager->persist($propertyFeatures);
             $this->entityManager->persist($property);
             $this->entityManager->persist($image);
+            $this->entityManager->persist($user);
             $this->entityManager->flush();
 
             // Clear session data after successful submission
@@ -157,6 +187,7 @@ class AddPropertyListingController extends AbstractController
             $session->remove('step2_data');
             $session->remove('step3_data');
             $session->remove('step4_data');
+            $session->remove('step5_data');
 
             return $this->redirectToRoute('app_add_property_success');
         }
@@ -166,6 +197,7 @@ class AddPropertyListingController extends AbstractController
             'step2_data' => $step2Data,
             'step3_data' => $step3Data,
             'step4_data' => $step4Data,
+            'step5_data' => $step5Data,
             'form' => $form->createView(),
         ]);
     }
