@@ -3,7 +3,7 @@
     {{ form_start(form) }}
 
     <div class="row form-input">
-            <div class="col my-2">  
+        <div class="col my-2">
             {{ form_label(form.code_postal) }}
             {{ form_help(form.code_postal) }}
             {{ form_widget(form.code_postal) }}
@@ -11,7 +11,7 @@
         </div>
     </div>
     <div class="row form-input">
-        <div class="col my-2">  
+        <div class="col my-2">
             {{ form_label(form.nb_of_bedrooms) }}
             {{ form_help(form.nb_of_bedrooms) }}
             {{ form_widget(form.nb_of_bedrooms) }}
@@ -22,18 +22,28 @@
             {{ form_help(form.surface_reelle_bati_min) }}
             {{ form_widget(form.surface_reelle_bati_min) }}
             {{ form_errors(form.surface_reelle_bati_min) }}
-        </div><div class="col my-2">
+        </div>
+        <div class="col my-2">
             {{ form_label(form.surface_reelle_bati_max) }}
             {{ form_help(form.surface_reelle_bati_max) }}
             {{ form_widget(form.surface_reelle_bati_max) }}
             {{ form_errors(form.surface_reelle_bati_max) }}
         </div>
     </div>
+    <div class="row form-input">
+        <div class="col my-2">
+            {{ form_label(form.valeur_fonciere) }}
+            {{ form_help(form.valeur_fonciere) }}
+            {{ form_widget(form.valeur_fonciere) }}
+            {{ form_errors(form.valeur_fonciere) }}
+        </div>
+    </div>
+
     <div class="text-center mt-5">
         {{ form_widget(form.Submit) }}
     </div>
 
-    {# <input type="hidden"  id="search__token" name="search[_token]" value="{{ csrf_token('search-form') }}"> #}
+    {# <input type="hidden" id="search__token" name="search[_token]" value="{{ csrf_token('search-form') }}"> #}
     {# {{ form_end(form, {'render_rest': false}) }} #}
     {{ form_end(form)}}
 </section>
