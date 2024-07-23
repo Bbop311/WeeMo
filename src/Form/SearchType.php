@@ -84,6 +84,31 @@ class SearchType extends AbstractType
                 'required' => false,
                 // 'data' => 'SALUT',
             ]) */
+           ->add('surface_reelle_bati_min', NumberType::class, [
+               // 'help' => 'SALUT',
+               'label' => 'Surface Min',
+               'label_attr' => [
+                   'class' => 'form-label',
+                   // 'style' => 'color: blue',
+               ],
+               'attr' => [
+                   'placeholder' => 'Renseignez la surface minimum'
+               ],
+               'required' => false,
+               // 'data' => 'SALUT',
+           ])->add('surface_reelle_bati_max', NumberType::class, [
+               // 'help' => 'SALUT',
+               'label' => 'Surface Max',
+               'label_attr' => [
+                   'class' => 'form-label',
+                   // 'style' => 'color: blue',
+               ],
+               'attr' => [
+                   'placeholder' => 'Renseignez la surface maximum'
+               ],
+               'required' => false,
+               // 'data' => 'SALUT',
+           ])
             ->add('nb_of_bedrooms', TextType::class, [
                 // 'help' => 'SALUT',
                 'label' => 'Nombres de pièces',
@@ -94,31 +119,6 @@ class SearchType extends AbstractType
                 'attr' => [
                     'placeholder' => 'Ex: 4',
                     'color' => 'color: blue',
-                ],
-                'required' => false,
-                // 'data' => 'SALUT',
-            ])
-            ->add('surface_reelle_bati_min', NumberType::class, [
-                // 'help' => 'SALUT',
-                'label' => 'Surface Min',
-                'label_attr' => [
-                    'class' => 'form-label',
-                    // 'style' => 'color: blue',
-                ],
-                'attr' => [
-                    'placeholder' => 'Renseignez la surface minimum'
-                ],
-                'required' => false,
-                // 'data' => 'SALUT',
-            ])->add('surface_reelle_bati_max', NumberType::class, [
-                // 'help' => 'SALUT',
-                'label' => 'Surface Max',
-                'label_attr' => [
-                    'class' => 'form-label',
-                    // 'style' => 'color: blue',
-                ],
-                'attr' => [
-                    'placeholder' => 'Renseignez la surface maximum'
                 ],
                 'required' => false,
                 // 'data' => 'SALUT',
