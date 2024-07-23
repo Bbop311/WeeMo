@@ -29,7 +29,7 @@ class PropertyRepository extends ServiceEntityRepository
             $qb->andWhere('p.code_postal = :code_postal')
                 ->setParameter('code_postal', $code_postal);
         }
-        
+
         if (isset($parameters['surface_reelle_bati_min']) && isset($parameters['surface_reelle_bati_max'])) {
             $surface_reelle_bati_max = intval($parameters['surface_reelle_bati_max']);
             $surface_reelle_bati_min = intval($parameters['surface_reelle_bati_min']);
@@ -46,10 +46,18 @@ class PropertyRepository extends ServiceEntityRepository
                 ->setParameter('nb_of_bedrooms', $nb_of_bedrooms);
         }
 
-        if (isset($parameters['valeur_fonciere'])){
+        if (isset($parameters['valeur_fonciere'])) {
             $valeur_fonciere_max = $parameters['valeur_fonciere'];
             $qb->andWhere('p.valeur_fonciere < :valeur_fonciere_max')
-            ->setParameter('valeur_fonciere_max', $valeur_fonciere_max);
+                ->setParameter('valeur_fonciere_max', $valeur_fonciere_max);
+        }
+        // This will filter the listings to display only those that have the status 'active'
+        if (isset($parameters['only_active_listings']) && $parameters['only_active_listings'] == 1) {
+            // dd($parameters);
+            $status = 'active';
+            $qb->innerJoin('p.listings', 'l')
+                ->andWhere('l.status = :status')
+                ->setParameter('status', $status);
         }
         // returns the filtered querrybuilder
         return $qb->orderBy('p.id', 'ASC')
