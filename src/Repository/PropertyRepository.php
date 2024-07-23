@@ -28,10 +28,10 @@ class PropertyRepository extends ServiceEntityRepository
             $qb->andWhere('p.code_postal = :code_postal')
                 ->setParameter('code_postal', $code_postal);
             //    ->setMaxResults(10)
-        }if (isset($parameters['surface_reelle_bati_min']) && isset($parameters['surface_relle_bati_max'])) {
+        }if (isset($parameters['surface_reelle_bati_min']) && isset($parameters['surface_reelle_bati_max'])) {
             $surface_reelle_bati_max = intval($parameters['surface_reelle_bati_max']);
             $surface_reelle_bati_min = intval($parameters['surface_reelle_bati_min']);
-            $qb->andWhere('p.surface_reelle_bati BETWEEN :surface_reelle_batin_min AND :surface_reelle_batin_max')
+            $qb->andWhere('p.surface_reelle_bati BETWEEN :surface_reelle_bati_min AND :surface_reelle_bati_max')
                 ->setParameter('surface_reelle_bati_min', $surface_reelle_bati_min)
                 ->setParameter('surface_reelle_bati_max', $surface_reelle_bati_max);
             //    ->setMaxResults(10)
