@@ -3,8 +3,6 @@
 namespace App\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\ResetType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -111,13 +109,30 @@ class SearchType extends AbstractType
            ])
             ->add('nb_of_bedrooms', TextType::class, [
                 // 'help' => 'SALUT',
-                'label' => 'Nombres de pièces',
+                'label' => 'Nombres de chambres',
                 'label_attr' => [
                     'class' => 'form-label',
                     // 'style' => 'color: blue',
                 ],
                 'attr' => [
                     'placeholder' => 'Ex: 4',
+                    'color' => 'color: blue',
+                ],
+                'required' => false,
+                // 'data' => 'SALUT',
+            ])
+            ->add('Submit', SubmitType::class, [
+                'label' => 'Rechercher'
+            ])
+            ->add('valeur_fonciere', TextType::class, [
+                // 'help' => 'SALUT',
+                'label' => 'Prix maximum',
+                'label_attr' => [
+                    'class' => 'form-label',
+                    // 'style' => 'color: blue',
+                ],
+                'attr' => [
+                    'placeholder' => '300000',
                     'color' => 'color: blue',
                 ],
                 'required' => false,

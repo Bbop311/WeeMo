@@ -5,9 +5,9 @@
 <ul>
 	<div class="row">
 		{% for property in pagination.items %}
-			<div class="card col-4" style="width: 30 rem;">
-				<div class="card-body">
-					<div class="col-md-6"><img src="{{asset('images/1.jpeg')}}" alt="weemo" class="listimg" " >
+		<div class="card col-4" style="width: 30 rem;">
+			<div class="card-body">
+				<div class="col-md-6"><img src="{{asset('images/1.jpeg')}}" alt="weemo" class="listimg" " >
 						
 						
 															             <h5 class=" card-title">{{property.typeLocal}}</h5>
@@ -21,9 +21,13 @@
 						Nombre de pièces :
 						{{property.nbPieces}}
 					</p>
+					{% if property.propertyFeatures.numberOfBedRooms is defined %}
 					<p>
-						Nombre de pièces :
-						{{property.nbPieces}}
+						Nombre de chambres : {{ property.propertyFeatures.numberOfBedrooms }}
+					</p>
+					{% endif %}
+					<p>
+						Prix : {{ property.valeurFonciere |number_format(0, '.', ' ')  }} euros
 					</p>
 					<P>Surface Bati :
 						{{property.surfaceReelleBati}}m2</p>
@@ -33,6 +37,8 @@
 				</div>
 			</div>
 		</div>
-	{% endfor %}
-</div></ul><div class="pagination">
-{{ knp_pagination_render(pagination) }}</div>
+		{% endfor %}
+	</div>
+</ul>
+<div class="pagination">
+	{{ knp_pagination_render(pagination) }}</div>

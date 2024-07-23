@@ -23,16 +23,15 @@ class HomeController extends AbstractController
 
         $properties = [];
         if ($form->isSubmitted() && $form->isValid()) {
+            // The parameters are assigned to an array that will be pased in the url
             $parameters['code_postal'] = $form->get('code_postal')->getData();
             $parameters['nb_of_bedrooms'] = $form->get('nb_of_bedrooms')->getData();
             $parameters['surface_reelle_bati_min'] = $form->get('surface_reelle_bati_min')->getData();
             $parameters['surface_reelle_bati_max'] = $form->get('surface_reelle_bati_max')->getData();
-            $propertyRepository = $propertyRepository->filter($parameters);
-            // dd($parameters);
+            $parameters['valeur_fonciere'] = $form->get('valeur_fonciere')->getData();
             return $this->redirectToRoute('property_display', [
                 // makes the array parameters in a string that can be passed in the url
                 'parameters' => http_build_query($parameters),
-                // 'form' => $form
             ]);
         }
 
@@ -64,6 +63,7 @@ class HomeController extends AbstractController
     {
         // decodes the string that was passed in the URL
         parse_str($parameters, $array);
+        // This function filters the results from the database with the parameters given by the user
         $queryBuilder = $propertyRepository->filter($array);
 
         $pagination = $paginator->paginate(
