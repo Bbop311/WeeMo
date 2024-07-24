@@ -24,7 +24,7 @@ class AddPropertyController extends AbstractController
         $this->entityManager = $entityManager;
     }
 
-    #[Route('/add-property-listing', name: 'app_add_property_step1')]
+    #[Route('/add-property-listing-test', name: 'app_add_property_step12')]
     #[IsGranted('ROLE_USER')]
     public function step1(Request $request, SessionInterface $session): Response
     {
@@ -49,7 +49,7 @@ class AddPropertyController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $session->set('step1_data', $form->getData());
-            return $this->redirectToRoute('app_add_property_step2');
+            return $this->redirectToRoute('app_add_property_step122');
         }
 
         return $this->render('addProperty/step1.html.twig', [
@@ -57,7 +57,7 @@ class AddPropertyController extends AbstractController
         ]);
     }
 
-    #[Route('/add-property/step2', name: 'app_add_property_step2')]
+    #[Route('/add-property/step2', name: 'app_add_property_step122')]
     #[IsGranted('ROLE_USER')]
     public function step2(Request $request, SessionInterface $session): Response
     {
@@ -76,7 +76,7 @@ class AddPropertyController extends AbstractController
         ]);
     }
 
-    #[Route('/add-property/summary', name: 'app_add_property_summary')]
+    #[Route('/add-property/summary', name: 'app_add_property_summary_2')]
     #[IsGranted('ROLE_USER')]
     public function summary(Request $request, SessionInterface $session): Response
     {
@@ -128,7 +128,7 @@ class AddPropertyController extends AbstractController
             $session->remove('step1_data');
             $session->remove('step2_data');
 
-            return $this->redirectToRoute('app_add_property_success');
+            return $this->redirectToRoute('app_add_property_success_2');
         }
 
         return $this->render('addProperty/summary.html.twig', [
@@ -138,7 +138,7 @@ class AddPropertyController extends AbstractController
         ]);
     }
 
-    #[Route('/add-property/success', name: 'app_add_property_success')]
+    #[Route('/add-property/success', name: 'app_add_property_success_2')]
     #[IsGranted('ROLE_USER')]
     public function success(): Response
     {
