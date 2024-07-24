@@ -17,7 +17,7 @@
             <div class="mb-3">
                 <h4 class="mb-4">Valeur Fonciére de votre Bien Voici  estimé  par notre IA </h4>
 
-                {# afficher EStimation #}
+                Votre bien est estimé à {{ predict_value | json_encode | number_format(0, '.', ' ') }} euros
                
             </div>
         </div>

@@ -27,6 +27,18 @@
             {{ form_errors(form.surface_reelle_bati_max) }}
         </div>
     </div>
+    <div class="row form-input">
+        <div class="col my-2">
+            {{ form_label(form.valeur_fonciere) }}
+            {{ form_help(form.valeur_fonciere) }}
+            {{ form_widget(form.valeur_fonciere) }}
+            {{ form_errors(form.valeur_fonciere) }}
+        </div>
+    </div>
+    <div class="row form-input">
+        {{ form_row(form.only_active_listings) }}
+    </div>
+
     <div class="text-center mt-5">
         {{ form_widget(form.Submit, {'attr': {'class': 'btn btn-primary'}}) }}
     </div>
