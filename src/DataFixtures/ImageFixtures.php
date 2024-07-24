@@ -14,37 +14,37 @@ class ImageFixtures extends Fixture implements DependentFixtureInterface
         $images = [
 
             [
-                "img_url" => "assets/images/1.jpeg"
+                "img_url" => "images/1.jpeg"
             ],
             [
-                "img_url" => "assets/images/2.jpeg"
+                "img_url" => "images/2.jpeg"
             ],
             [
-                "img_url" => "assets/images/3.jpeg"
+                "img_url" => "images/3.jpeg"
             ],
             [
-                "img_url" => "assets/images/5.jpeg"
+                "img_url" => "images/5.jpeg"
             ],
             [
-                "img_url" => "assets/images/6.jpeg"
+                "img_url" => "images/6.jpeg"
             ],
             [
-                "img_url" => "assets/images/7.jpeg"
+                "img_url" => "images/7.jpeg"
             ],
             [
-                "img_url" => "assets/images/8.jpeg"
+                "img_url" => "images/8.jpeg"
             ],
             [
-                "img_url" => "assets/images/9.jpeg"
+                "img_url" => "images/9.jpeg"
             ],
             [
-                "img_url" => "assets/images/10.jpeg"
+                "img_url" => "images/10.jpeg"
             ],
             [
-                "img_url" => "assets/images/11.jpeg"
+                "img_url" => "images/11.jpeg"
             ],
             [
-                "img_url" => "assets/images/12.jpeg"
+                "img_url" => "images/12.jpeg"
             ]
           
         ];
