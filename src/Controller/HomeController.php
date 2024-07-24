@@ -9,7 +9,6 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use App\Repository\PropertyRepository;
-use App\Service\propertyListGenerator;
 use Knp\Component\Pager\PaginatorInterface;
 use App\Service\ModelDVFService;
 
@@ -96,9 +95,6 @@ class HomeController extends AbstractController
             return $this->redirectToRoute('simulator_result', [
                 'parameters' => http_build_query($parameters),
             ]);
-            /* return $this->render('simulator/simulator_result.html.twig',[
-                'predict_value' =>  $model->predict([$type_voie, $code_postal, $type_local, $surface_reelle_bati, $nb_pieces, $surface_terrain]),
-            ]);            */
         }
         return $this->render('home/simulator.html.twig', [
             'form' => $form,
@@ -113,6 +109,7 @@ class HomeController extends AbstractController
         $model->loadSavedModel();
         
         return $this->render('simulator/simulator_result.html.twig', [
+            // uses the model with the set of values given by the user to generated an IA estimated price
             'predict_value' =>  $model->predict([
                 $array['type_voie'],
                 $array['code_postal'],
