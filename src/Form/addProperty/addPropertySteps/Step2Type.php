@@ -24,7 +24,7 @@ class Step2Type extends AbstractType
                     ])
                     ->add('floor', ChoiceType::class, [
                         'label' => 'Etage',
-                        'choices' => array_combine(range(1, 25), range(1, 25)),
+                        'choices' => array_combine(range(0, 10), range(0, 10)),
                         'attr' => [
                             'class' => 'form-select',
                             'placeholder' => 'Select floor'

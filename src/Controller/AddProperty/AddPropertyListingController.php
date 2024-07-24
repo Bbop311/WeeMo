@@ -19,6 +19,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
 use App\Repository\UserRepository;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 class AddPropertyListingController extends AbstractController
 {
@@ -82,6 +83,26 @@ class AddPropertyListingController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $session->set('step3_data', $form->getData());
+            $imageFile = $form->get('image')->getData();
+
+            if ($imageFile) {
+                $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = transliterator_transliterate('Any-Latin; Latin-ASCII; [^A-Za-z0-9_] remove; Lower()', $originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$imageFile->guessExtension();
+
+                try {
+                    $imageFile->move(
+                        $this->getParameter('images_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // Handle exception if something happens during file upload
+                }
+
+                $step3Data['img_url'] = 'http://localhost/uploads/property-images/'.$newFilename;
+                $session->set('step3_data', $step3Data);
+            }
+
             return $this->redirectToRoute('app_add_property_step4');
         }
 

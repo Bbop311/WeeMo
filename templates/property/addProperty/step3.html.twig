@@ -13,22 +13,27 @@
                 {{ form_errors(form.listing_title) }}
             </div>
             
-            <div class="mb-3">
-                {{ form_label(form.listing_description, null, {'label_attr': {'class': 'form-label'}}) }}
-                {{ form_widget(form.listing_description, {'attr': {'class': 'form-control'}}) }}
-                {{ form_errors(form.listing_description) }}
+          
+
+                {# Display the file upload field and its label #}
+            <div class="form-group">
+                xx
+                {{ form_label(form.image , null, {'label_attr': {'class': 'form-label'}}   ) }}
+                {{ form_widget(form.image, {'attr': {'class': 'form-control-file'}}) }}
+                {{ form_help(form.image) }}
             </div>
 
         </div>
 
-        <div class="col-md-6">
-            {{ form_label(form.img_url, null, {'label_attr': {'class': 'form-label'}}) }}
-            {{ form_widget(form.img_url, {'attr': {'class': 'form-control'}}) }}
-            {{ form_errors(form.img_url) }}
-        </div>
 
         <div class="col-md-6">
             <div class="mb-3">
+
+                <div class="mb-3">
+                    {{ form_label(form.listing_description, null, {'label_attr': {'class': 'form-label'}}) }}
+                    {{ form_widget(form.listing_description, {'attr': {'class': 'form-control'}}) }}
+                    {{ form_errors(form.listing_description) }}
+                </div>
                
             </div>
         </div>
