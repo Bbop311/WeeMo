@@ -1,0 +1,39 @@
+{# templates/property/addPropertySteps/step4.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container mt-5 mb-5">
+        <h2 class="mb-4">Ajouter une annonce - étape 4</h2>
+        {{ form_start(form, {'attr': {'class': 'row g-3'}}) }}
+
+        <div class="col-md-6">
+            <div class="mb-3">
+                {{ form_label(form.valeur_fonciere, null, {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.valeur_fonciere, {'attr': {'class': 'form-control'}}) }}
+                {{ form_errors(form.valeur_fonciere) }}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <h4 class="mb-4">Valeur Fonciére de votre Bien Voici  estimé  par notre IA </h4>
+
+                {# afficher EStimation #}
+               
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                {{ form_label(form.phone_number, null, {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.phone_number, {'attr': {'class': 'form-control'}}) }}
+                {{ form_errors(form.phone_number) }}
+            </div>
+        </div>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Continuer</button>
+        </div>
+
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
+

@@ -191,3 +191,40 @@ footer p a:hover {
     background-image: url(/images/visuels/homepage/visuel-homepage-desktop-10.jpg);
   }
 }
+
+
+
+.search-form {
+  max-width: 800px;
+  margin: auto;
+}
+.search-form h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.search-form .form-input {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.search-form .form-input > div {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 1rem;
+}
+.search-form .form-input > div:not(:last-child) {
+  margin-right: 1rem;
+}
+.search-form .form-input label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.search-form .form-input input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}
+.search-form .btn {
+  padding: 0.5rem 1.5rem;
+}

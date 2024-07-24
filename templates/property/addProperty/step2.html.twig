@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container mt-5 mb-5">
+        <h2 class="mb-4">Ajouter Une annonce - étape 2</h2>
+        {{ form_start(form, {'attr': {'class': 'row g-3'}}) }}
+
+        <h3 class="mb-4">Ajoutez les proprietés de votre bien ?</h3>
+
+        <div class="col-md-6">
+            <div class="mb-3">
+                {{ form_label(form.number_of_bedrooms, null, {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.number_of_bedrooms, {'attr': {'class': 'form-select'}}) }}
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="mb-3">
+                {{ form_label(form.floor, null, {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.floor, {'attr': {'class': 'form-select'}}) }}
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="mb-3">
+                {{ form_label(form.heating_type, null, {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.heating_type, {'attr': {'class': 'form-select'}}) }}
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="mb-3">
+                {{ form_label(form.property_condition, null, {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.property_condition, {'attr': {'class': 'form-select'}}) }}
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="d-flex flex-wrap mb-3">
+                <div class="form-check me-3">
+                    {{ form_widget(form.elevator, {'attr': {'class': 'form-check-input'}}) }}
+                    {{ form_label(form.elevator, null, {'label_attr': {'class': 'form-check-label'}}) }}
+                </div>
+                <div class="form-check me-3">
+                    {{ form_widget(form.balcony, {'attr': {'class': 'form-check-input'}}) }}
+                    {{ form_label(form.balcony, null, {'label_attr': {'class': 'form-check-label'}}) }}
+                </div>
+                <div class="form-check me-3">
+                    {{ form_widget(form.parking, {'attr': {'class': 'form-check-input'}}) }}
+                    {{ form_label(form.parking, null, {'label_attr': {'class': 'form-check-label'}}) }}
+                </div>
+                <div class="form-check">
+                    {{ form_widget(form.air_condition, {'attr': {'class': 'form-check-input'}}) }}
+                    {{ form_label(form.air_condition, null, {'label_attr': {'class': 'form-check-label'}}) }}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="mb-3">
+                {{ form_label(form.energy_class, null, {'label_attr': {'class': 'form-label'}}) }}
+                {{ form_widget(form.energy_class, {'attr': {'class': 'form-select'}}) }}
+            </div>
+        </div>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Continuer</button>
+        </div>
+
+        {{ form_end(form) }}
+    </div>
+
+   
+{% endblock %}
