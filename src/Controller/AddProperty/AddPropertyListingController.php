@@ -20,6 +20,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
 use App\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use App\Service\ModelDVFService;
 
 class AddPropertyListingController extends AbstractController
 {
@@ -113,7 +114,7 @@ class AddPropertyListingController extends AbstractController
 
     #[Route('/add-property-listing/step/4', name: 'app_add_property_step4')]
     #[IsGranted('ROLE_USER')]
-    public function step4(Request $request, SessionInterface $session): Response
+    public function step4(Request $request, SessionInterface $session, ModelDVFService $model): Response
     {
         $step4Data = $session->get('step4_data', []);
         $form = $this->createForm(Step4Type::class, $step4Data);
@@ -124,8 +125,18 @@ class AddPropertyListingController extends AbstractController
             return $this->redirectToRoute('app_add_property_summary');
         }
 
+        $model->loadSavedModel();
         return $this->render('Property/addProperty/step4.html.twig', [
             'form' => $form->createView(),
+            // uses the model with the set of values given by the user to generated an IA estimated price
+                'predict_value' =>  $model->predict([
+                    $session->get('step1_data')['type_voie'],
+                    $session->get('step1_data')['code_postal'],
+                    'Appartement',
+                    $session->get('step1_data')['surface_reelle_bati'],
+                    $session->get('step1_data')['type_voie'],
+                    0
+                ])
         ]);
     }
 
