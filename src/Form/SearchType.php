@@ -3,8 +3,7 @@
 namespace App\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\ResetType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -84,9 +83,34 @@ class SearchType extends AbstractType
                 'required' => false,
                 // 'data' => 'SALUT',
             ]) */
+           ->add('surface_reelle_bati_min', NumberType::class, [
+               // 'help' => 'SALUT',
+               'label' => 'Surface Min',
+               'label_attr' => [
+                   'class' => 'form-label',
+                   // 'style' => 'color: blue',
+               ],
+               'attr' => [
+                   'placeholder' => 'Renseignez la surface minimum'
+               ],
+               'required' => false,
+               // 'data' => 'SALUT',
+           ])->add('surface_reelle_bati_max', NumberType::class, [
+               // 'help' => 'SALUT',
+               'label' => 'Surface Max',
+               'label_attr' => [
+                   'class' => 'form-label',
+                   // 'style' => 'color: blue',
+               ],
+               'attr' => [
+                   'placeholder' => 'Renseignez la surface maximum'
+               ],
+               'required' => false,
+               // 'data' => 'SALUT',
+           ])
             ->add('nb_of_bedrooms', TextType::class, [
                 // 'help' => 'SALUT',
-                'label' => 'Nombres de pièces',
+                'label' => 'Nombres de chambres',
                 'label_attr' => [
                     'class' => 'form-label',
                     // 'style' => 'color: blue',
@@ -98,30 +122,23 @@ class SearchType extends AbstractType
                 'required' => false,
                 // 'data' => 'SALUT',
             ])
-            ->add('surface_reelle_bati_min', NumberType::class, [
+            ->add('valeur_fonciere', TextType::class, [
                 // 'help' => 'SALUT',
-                'label' => 'Surface Min',
+                'label' => 'Prix maximum',
                 'label_attr' => [
                     'class' => 'form-label',
                     // 'style' => 'color: blue',
                 ],
                 'attr' => [
-                    'placeholder' => 'Renseignez la surface minimum'
+                    'placeholder' => '300000',
+                    'color' => 'color: blue',
                 ],
                 'required' => false,
                 // 'data' => 'SALUT',
-            ])->add('surface_reelle_bati_max', NumberType::class, [
-                // 'help' => 'SALUT',
-                'label' => 'Surface Max',
-                'label_attr' => [
-                    'class' => 'form-label',
-                    // 'style' => 'color: blue',
-                ],
-                'attr' => [
-                    'placeholder' => 'Renseignez la surface maximum'
-                ],
+            ])
+            ->add('only_active_listings', CheckboxType::class, [
+                'label' => 'Only display active listings',
                 'required' => false,
-                // 'data' => 'SALUT',
             ])
             ->add('Submit', SubmitType::class, [
                 'label' => 'Rechercher'
