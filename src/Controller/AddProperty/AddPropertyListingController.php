@@ -116,16 +116,25 @@ class AddPropertyListingController extends AbstractController
         $step2Data = $session->get('step2_data', []);
         $step3Data = $session->get('step3_data', []);
         $step4Data = $session->get('step4_data', []);
-        $step5Data = $session->get('step5_data', []);
+        
 
-        $form = $this->createForm(Step5Type::class, $step5Data);
+        //$form = $this->createForm(Step5Type::class);
+
+        $form = $this->createFormBuilder()
+            ->add('confirm', \Symfony\Component\Form\Extension\Core\Type\SubmitType::class, ['label' => 'Submit'])
+            ->getForm();
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            
+
             $listing = new Listing();
             $property = new Property();
             $propertyFeatures = new PropertyFeatures();
             $image = new Image();
+            $user = new User();
 
             // Populate data from steps 1 to 4
             // Step 1
@@ -160,14 +169,20 @@ class AddPropertyListingController extends AbstractController
             $listing->setStartDate((new \DateTimeImmutable()));
             $listing->setEndDate((new \DateTimeImmutable())->modify('+3 months'));
             $image->setImgUrl($step3Data['img_url']);
-
+            
+            
             // Step 4
+            $user = $userRepository->find($this->getUser());
             $property->setValeurFonciere($step4Data['valeur_fonciere'] ?? null);
+            //phone nulber is stored without leading zero as table input is an integer not string
+            $user->setPhoneNumber($step4Data['phone_number'] ?? null);
 
             // Step 5
-            $user = $userRepository->find($this->getUser());
+            
 
-            $user->setPhoneNumber($step5Data['phone_number'] ?? null);
+            
+          
+            
 
             // Link entities
             $listing->setProperty($property);
@@ -187,7 +202,7 @@ class AddPropertyListingController extends AbstractController
             $session->remove('step2_data');
             $session->remove('step3_data');
             $session->remove('step4_data');
-            $session->remove('step5_data');
+            
 
             return $this->redirectToRoute('app_add_property_success');
         }
@@ -197,7 +212,7 @@ class AddPropertyListingController extends AbstractController
             'step2_data' => $step2Data,
             'step3_data' => $step3Data,
             'step4_data' => $step4Data,
-            'step5_data' => $step5Data,
+          
             'form' => $form->createView(),
         ]);
     }
