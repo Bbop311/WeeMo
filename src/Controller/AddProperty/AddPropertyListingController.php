@@ -79,16 +79,22 @@ class AddPropertyListingController extends AbstractController
     public function step3(Request $request, SessionInterface $session): Response
     {
         $step3Data = $session->get('step3_data', []);
+
+        // Ensure step3Data is always an array
+        if (!is_array($step3Data)) {
+            $step3Data = [];
+        }
+
         $form = $this->createForm(Step3Type::class, $step3Data);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $session->set('step3_data', $form->getData());
+            $formData = $form->getData();
             $imageFile = $form->get('image')->getData();
 
             if ($imageFile) {
                 $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
-                $safeFilename = transliterator_transliterate('Any-Latin; Latin-ASCII; [^A-Za-z0-9_] remove; Lower()', $originalFilename);
+                $safeFilename = transliterator_transliterate('Any-Latin; Latin-ASCII; [^A-Za-z0-9] remove; Lower()', $originalFilename);
                 $newFilename = $safeFilename.'-'.uniqid().'.'.$imageFile->guessExtension();
 
                 try {
@@ -100,10 +106,10 @@ class AddPropertyListingController extends AbstractController
                     // Handle exception if something happens during file upload
                 }
 
-                $step3Data['img_url'] = 'http://localhost/uploads/property-images/'.$newFilename;
-                $session->set('step3_data', $step3Data);
+                $formData['img_url'] = 'uploads/property-images/'.$newFilename;
             }
 
+            $session->set('step3_data', $formData);
             return $this->redirectToRoute('app_add_property_step4');
         }
 
