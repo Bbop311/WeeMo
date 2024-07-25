@@ -1,46 +1,43 @@
-<section class="container search-form text-center">
-    <h1 class="text-uppercase my-3">Rechercher un bien</h1>
+
+
     {{ form_start(form) }}
-    <div class="form-input">
-        <div>  
-            {{ form_label(form.code_postal) }}
-            {{ form_help(form.code_postal) }}
-            {{ form_widget(form.code_postal) }}
+    <div class="row m-1 ">
+       
+        <div class="col-lg-2  text-start">
+            {{ form_label(form.code_postal, null, {'label_attr': {'class': 'form-label'}}) }}
+            {{ form_widget(form.code_postal, {'attr': {'class': 'form-select'}}) }}
             {{ form_errors(form.code_postal) }}
         </div>
-        <div>  
-            {{ form_label(form.nb_of_bedrooms) }}
-            {{ form_help(form.nb_of_bedrooms) }}
-            {{ form_widget(form.nb_of_bedrooms) }}
+        <div class="col-lg-2 text-start">
+            {{ form_label(form.nb_of_bedrooms, null, {'label_attr': {'class': 'form-label'}}) }}
+            {{ form_widget(form.nb_of_bedrooms, {'attr': {'class': 'form-control'}}) }}
             {{ form_errors(form.nb_of_bedrooms) }}
         </div>
-        <div>
-            {{ form_label(form.surface_reelle_bati_min) }}
-            {{ form_help(form.surface_reelle_bati_min) }}
-            {{ form_widget(form.surface_reelle_bati_min) }}
+        <div class="col-lg-2 text-start">
+            {{ form_label(form.surface_reelle_bati_min, null, {'label_attr': {'class': 'form-label'}}) }}
+            {{ form_widget(form.surface_reelle_bati_min, {'attr': {'class': 'form-control'}}) }}
             {{ form_errors(form.surface_reelle_bati_min) }}
         </div>
-        <div>
-            {{ form_label(form.surface_reelle_bati_max) }}
-            {{ form_help(form.surface_reelle_bati_max) }}
-            {{ form_widget(form.surface_reelle_bati_max) }}
+        <div class="col-lg-2 text-start">
+            {{ form_label(form.surface_reelle_bati_max, null, {'label_attr': {'class': 'form-label'}}) }}
+            {{ form_widget(form.surface_reelle_bati_max, {'attr': {'class': 'form-control'}}) }}
             {{ form_errors(form.surface_reelle_bati_max) }}
         </div>
-    </div>
-    <div class="row form-input">
-        <div class="col my-2">
-            {{ form_label(form.valeur_fonciere) }}
-            {{ form_help(form.valeur_fonciere) }}
-            {{ form_widget(form.valeur_fonciere) }}
+        <div class="col-lg-2 text-start">
+            {{ form_label(form.valeur_fonciere, null, {'label_attr': {'class': 'form-label'}}) }}
+            {{ form_widget(form.valeur_fonciere, {'attr': {'class': 'form-control'}}) }}
             {{ form_errors(form.valeur_fonciere) }}
         </div>
-    </div>
-    <div class="row form-input">
-        {{ form_row(form.only_active_listings) }}
-    </div>
 
-    <div class="text-center mt-5">
-        {{ form_widget(form.Submit, {'attr': {'class': 'btn btn-primary'}}) }}
+        
+        <div class="col-lg-4 d-flex mt-3 activelistingsthickbox">
+            
+            {{ form_row(form.only_active_listings) }}
+        </div>
+        <div class="col-lg-4 mx-auto mt-3">
+            {{ form_widget(form.Submit, {'attr': {'class': 'btn btn-primary'}}) }}
+        </div>
     </div>
-    {{ form_end(form)}}
-</section>
+    {{ form_end(form) }}
+
+

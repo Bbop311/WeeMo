@@ -51,7 +51,7 @@ class AddPropertyListingController extends AbstractController
             return $this->redirectToRoute('app_add_property_step2');
         }
 
-        return $this->render('Property/addProperty/step1.html.twig', [
+        return $this->render('property/addProperty/step1.html.twig', [
             'form' => $form->createView(),
         ]);
     }
@@ -113,7 +113,7 @@ class AddPropertyListingController extends AbstractController
             return $this->redirectToRoute('app_add_property_step4');
         }
 
-        return $this->render('Property/addProperty/step3.html.twig', [
+        return $this->render('property/addProperty/step3.html.twig', [
             'form' => $form->createView(),
         ]);
     }
@@ -132,7 +132,7 @@ class AddPropertyListingController extends AbstractController
         }
 
         $model->loadSavedModel();
-        return $this->render('Property/addProperty/step4.html.twig', [
+        return $this->render('property/addProperty/step4.html.twig', [
             'form' => $form->createView(),
             // uses the model with the set of values given by the user to generated an IA estimated price
                 'predict_value' =>  $model->predict([
@@ -245,7 +245,7 @@ class AddPropertyListingController extends AbstractController
             return $this->redirectToRoute('app_add_property_success');
         }
 
-        return $this->render('Property/addProperty/summary.html.twig', [
+        return $this->render('property/addProperty/summary.html.twig', [
             'step1_data' => $step1Data,
             'step2_data' => $step2Data,
             'step3_data' => $step3Data,
@@ -259,6 +259,6 @@ class AddPropertyListingController extends AbstractController
     #[IsGranted('ROLE_USER')]
     public function success(): Response
     {
-        return $this->render('Property/addProperty/listing_success.html.twig');
+        return $this->render('property/addProperty/listing_success.html.twig');
     }
 }

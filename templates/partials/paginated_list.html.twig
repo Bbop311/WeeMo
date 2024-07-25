@@ -9,8 +9,16 @@
 		<div class="col-4">
 			<div class="card h-100" >
 				<div class="card-body">
+					
+					{% if not property.Images is empty %}
+
 					<div class="col-md-6"><img src="{{asset(random(property.Images).ImgUrl)}}" alt="weemo" class="listimg">
-		
+					
+					{% else %}
+					
+					<div class="col-md-6"><img src="{{asset('images/default.jpg')}}" alt="weemo" class="listimg">
+
+					{% endif %}
 		
 						<h5 class=" card-title">{{property.typeLocal}}</h5>
 						<p class="card-text">Une belle propriété</p>
