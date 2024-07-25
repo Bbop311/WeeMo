@@ -17,7 +17,7 @@
 					<div id="carouselExample" class="carousel slide">
 						<div class="carousel-inner">
 							<div class="carousel-item active">
-								<img src="{{asset(img1)}}" alt="image" class="image d-block w-100">
+								<img src="{{asset(property.Images|first.ImgUrl)}}" alt="image" class="image d-block w-100">
 							</div>
 							{% for image in property.images %}
 							<div class="carousel-item">
