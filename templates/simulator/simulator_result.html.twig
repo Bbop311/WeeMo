@@ -5,7 +5,9 @@
 
 {% block body %}
 
-<h1>Résultat de notre simulation propulsée par l'IA</h1>
-<p>D'après notre modèle, votre appartement est estimé à : {{ predict_value | json_encode | number_format(0, '.', ' ') }} euros</p>
+<div id="simulator_result">
+    <h1>Résultat de notre simulation propulsée par l'IA</h1>
+    <p>D'après notre modèle, votre appartement est estimé à : {{ predict_value | json_encode | number_format(0, '.', ' ') }} euros</p>
+</div>
 
 {% endblock %}

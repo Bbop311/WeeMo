@@ -228,3 +228,9 @@ footer p a:hover {
 .search-form .btn {
   padding: 0.5rem 1.5rem;
 }
+#simulator_result{
+  margin : 100px 0;
+}
+#simulator_result p{
+  margin-top : 30px;
+}
