@@ -160,42 +160,48 @@ footer p a:hover {
     bottom: 35px;
     left: 20px;
   }
-  .homepage-cover-1 {
-    background-image: url(/images/visuels/homepage/visuel-homepage-desktop-1.jpg);
-  }
-  .homepage-cover-2 {
-    background-image: url(/images/visuels/homepage/visuel-homepage-desktop-2.jpg);
-  }
-  .homepage-cover-3 {
-    background-image: url(/images/visuels/homepage/visuel-homepage-desktop-3.jpg);
-  }
-  .homepage-cover-4 {
-    background-image: url(/images/visuels/homepage/visuel-homepage-desktop-4.jpg);
-  }
-  .homepage-cover-5 {
-    background-image: url(/images/visuels/homepage/visuel-homepage-desktop-5.jpg);
-  }
-  .homepage-cover-6 {
-    background-image: url(/images/visuels/homepage/visuel-homepage-desktop-6.jpg);
-  }
-  .homepage-cover-7 {
-    background-image: url(/images/visuels/homepage/visuel-homepage-desktop-7.jpg);
-  }
-  .homepage-cover-8 {
-    background-image: url(/images/visuels/homepage/visuel-homepage-desktop-8.jpg);
-  }
-  .homepage-cover-9 {
-    background-image: url(/images/visuels/homepage/visuel-homepage-desktop-9.jpg);
-  }
-  .homepage-cover-10 {
-    background-image: url(/images/visuels/homepage/visuel-homepage-desktop-10.jpg);
-  }
+  
+}
+
+.bottom-content {
+  position: absolute;
+  bottom: 0;
+  /* max-width: 950px; */
+  width: 100%;
+  /* Optional: Add some padding and background color */
+  padding: 0px;
+  background-color: rgba(165, 161, 161, 0.3); /* semi-transparent background */
+  color: #fff; /* text color */
+  mix-blend-mode:hard-light; 
 }
 
 
+.form-label {
+  color: #6a1dc3; /* Ensure the labels are visible on the dark background */
+}
 
-.search-form {
-  max-width: 800px;
+.btn-primary {
+  background-color:   #6a1dc3;;
+  border-color: #007bff;
+}
+.activelistingsthickbox {
+  color: #6a1dc3; 
+}
+
+
+.mb-4 .col-lg-2, .mb-4 .col-lg-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 992px) {
+  .mb-4 .col-lg-2, .mb-4 .col-lg-1 {
+      text-align: center;
+  }
+}
+/* .search-form {
+  width:100%;
   margin: auto;
 }
 .search-form h1 {
@@ -226,5 +232,5 @@ footer p a:hover {
   border-radius: 0.25rem;
 }
 .search-form .btn {
-  padding: 0.5rem 1.5rem;
-}
+  padding: 0.5rem 1.5rem; 
+} */
