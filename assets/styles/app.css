@@ -38,10 +38,6 @@ li {
     width: 375px;
   }
 
-.search-form label {
-    color: rgb(255, 0, 0);
-    text-align: center;
-}
 
 .form-input {
     width: 50%;
@@ -175,12 +171,21 @@ footer p a:hover {
   mix-blend-mode:hard-light; 
 }
 
+.btn-primary{
+  outline: none !important;
+  outline:0px !important;
+  -webkit-appearance:none;
+  border-radius: 0px;
+}
+
+
+
 
 .form-label {
   color: #6a1dc3; /* Ensure the labels are visible on the dark background */
 }
 
-.btn-primary {
+.homepage-cover .btn-primary {
   background-color:   #6a1dc3;;
   border-color: #007bff;
 }
@@ -189,11 +194,7 @@ footer p a:hover {
 }
 
 
-.mb-4 .col-lg-2, .mb-4 .col-lg-1 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+
 
 @media (max-width: 992px) {
   .mb-4 .col-lg-2, .mb-4 .col-lg-1 {
