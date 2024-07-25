@@ -54,7 +54,12 @@ class Step3Type extends AbstractType
             ])
         ],
     ])
-    ->add('img_url', HiddenType::class);
+    ->add('img_url', HiddenType::class, [
+        'mapped' => false, // Mark as false if not mapped to an entity field
+        'attr' => [
+            'value' => '', // Optionally set a default value
+        ],
+    ]);
             
     }
 

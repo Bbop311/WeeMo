@@ -19,7 +19,7 @@ class Step4Type extends AbstractType
         $builder
         
         ->add('valeur_fonciere', NumberType::class, [
-            'label' => 'Renseignez la valeur foncière de votre bien',
+            'label' => 'Renseignez Votre prix de vente souhaité',
             'attr' => ['class' => 'form-control', 'placeholder' => 'Prix de vente']
         ])
 
