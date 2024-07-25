@@ -50,7 +50,7 @@ class ImageFixtures extends Fixture implements DependentFixtureInterface
         ];
 
         // Loops on the first 25 appartments to associate the set of images to them
-        for ($i = 1; $i < 25; $i++) {
+        for ($i = 1; $i < 500; $i++) {
             foreach ($images as $imageData) {
                 $image = new Image;
 
