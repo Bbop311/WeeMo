@@ -2,56 +2,60 @@
 	{{ knp_pagination_render(pagination) }}
 </div>
 
-<ul>
-	<div class="row">
+
+<div class="container overflow-hidden">
+	<div class="row g-3">
 		{% for property in pagination.items %}
-		<div class="card col-4" style="width: 30 rem;">
-			<div class="card-body">
-				<div class="col-md-6"><img src="{{asset('images/1.jpeg')}}" alt="weemo" class="listimg" >
-						
-						
-															             <h5 class=" card-title">{{property.typeLocal}}</h5>
-					<p class="card-text">Une belle propriété</p>
-					<p>{{ property.noVoie }}
-						{{ property.typeVoie }}
-						{{ property.voie }}</p>
-					<p>{{ property.commune }}
-					</p>
-					<p>
-						Nombre de pièces :
-						{{property.nbPieces}}
-					</p>
-					{% if property.propertyFeatures.numberOfBedRooms is defined %}
-					<p>
-						Nombre de chambres : {{ property.propertyFeatures.numberOfBedrooms }}
-					</p>
-					{% endif %}
-					<p>
-						Prix : {{ property.valeurFonciere |number_format(0, '.', ' ')  }} euros
-					</p>
-					<P>Surface Bati :
-						{{property.surfaceReelleBati}}m2
-					</p>
-					<!-- The following twig code displays a line 'Statut : disponible' if one of the listings linked to the property is active -->
-					{% set active = false%}
-					{% for listing in property.listings %}
-						{% if listing.status == 'active' %}
-							{% set active = true %}
+		<div class="col-4">
+			<div class="card h-100" >
+				<div class="card-body">
+					<div class="col-md-6"><img src="{{asset(random(property.Images).ImgUrl)}}" alt="weemo" class="listimg">
+		
+		
+						<h5 class=" card-title">{{property.typeLocal}}</h5>
+						<p class="card-text">Une belle propriété</p>
+						<p>{{ property.noVoie }}
+							{{ property.typeVoie }}
+							{{ property.voie }}</p>
+						<p>{{ property.commune }}
+						</p>
+						<p>
+							Nombre de pièces :
+							{{property.nbPieces}}
+						</p>
+						{% if property.propertyFeatures.numberOfBedRooms is defined %}
+						<p>
+							Nombre de chambres : {{ property.propertyFeatures.numberOfBedrooms }}
+						</p>
 						{% endif %}
-					{% endfor %}
-					{% if active == true%}
+						<p>
+							Prix : {{ property.valeurFonciere |number_format(0, '.', ' ') }} euros
+						</p>
+						<P>Surface Bati :
+							{{property.surfaceReelleBati}}m2
+						</p>
+						<!-- The following twig code displays a line 'Statut : disponible' if one of the listings linked to the property is active -->
+						{% set active = false%}
+						{% for listing in property.listings %}
+						{% if listing.status == 'active' %}
+						{% set active = true %}
+						{% endif %}
+						{% endfor %}
+						{% if active == true%}
 						<p>
 							Statut : Disponible
 						</p>
-					{% endif %}
-
-
-					<a href="{{ path('property_show', {'id': property.id})}}" class="btn btn-primary">Détails</a>
+						{% endif %}
+		
+		
+						<a href="{{ path('property_show', {'id': property.id})}}" class="btn btn-primary">Détails</a>
+					</div>
 				</div>
 			</div>
 		</div>
 		{% endfor %}
 	</div>
-</ul>
+</div>
+
 <div class="pagination">
 	{{ knp_pagination_render(pagination) }}</div>

@@ -55,9 +55,6 @@ class HomeController extends AbstractController
         $property = $propertyRepository->find($id);
         return $this->render('property/property.html.twig', [
             'property' => $property,
-            // Here I pass the first image's url because in the template it will be set in a "caroussel-item active" tag while the other images
-            // are in a "caroussel-itme" tag so it can't be passed in the for loop that is in the template
-            'img1' => $property->getImages()->first()->getImgUrl()
         ]);
     }
 
