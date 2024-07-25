@@ -37,10 +37,12 @@ class AdminController extends AbstractController
         
         if ($form->isSubmitted() && $form->isValid()) {
             $listing->setStatus($form->get('status')->getData());
+            $entityManager->persist($listing);
+            $entityManager->flush();
+            $this->addFlash('notice', 'Annonce modifiée');
+            return $this->redirectToRoute('app_admin');
          
         }
-        $entityManager->persist($listing);
-        $entityManager->flush();
         
         return $this->render('admin/listing_validation.html.twig', [
             'form' => $form,
