@@ -159,7 +159,7 @@ class AddPropertyListingController extends AbstractController
         //$form = $this->createForm(Step5Type::class);
 
         $form = $this->createFormBuilder()
-            ->add('confirm', \Symfony\Component\Form\Extension\Core\Type\SubmitType::class, ['label' => 'Submit'])
+            ->add('confirm', \Symfony\Component\Form\Extension\Core\Type\SubmitType::class, ['label' => 'Soumettre'])
             ->getForm();
 
         $form->handleRequest($request);
